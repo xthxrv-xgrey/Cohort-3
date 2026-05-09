@@ -121,7 +121,6 @@ main .card {
 }
 
 main .card img {
-    background-color: aqua;
     height: 50%;
     border-radius: 30px;
     object-fit: cover;
