@@ -133,7 +133,6 @@ main .display {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: cadetblue; */
 }
 
 main .display .product {
@@ -177,8 +176,6 @@ main .options {
     width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    background-color: blueviolet;
 }
 
 main .options .sizes {
@@ -204,6 +201,13 @@ main .options .sizes .size-options {
     gap: 1rem;
 }
 
+main .options .sizes h5 {
+    padding: 0.5rem 1rem 0 1rem;
+    font-family: montserrat;
+    font-size: 14px;
+    color: #000000;
+}
+
 main .options .sizes .size-options button {
     height: 50px;
     width: 50px;
@@ -216,3 +220,108 @@ main .options .sizes .size-options button {
     border: none;
     cursor: pointer;
 }
+
+main .options .sizes .size-options :nth-child(2) {
+    background-color: #E16E30;
+    color: #fff;
+}
+
+main .options .sizes .size-options button:hover {
+    background-color: #E16E30;
+    color: #fff;
+}
+
+main .options .colors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #FCF4EE;
+    padding: 1rem 2rem;
+}
+
+main .options .colors h4 {
+    font-family: montserrat;
+    font-size: 25px;
+    color: #000000;
+}
+
+main .options .colors .color-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .options .colors .color-options .color {
+    width: 80%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+main .options .colors .color-options .color p {
+    font-family: montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 0.5rem;
+}
+
+main .options .colors .color-options .color img {
+    width: 110%;
+    height: 110%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+main .options .colors .color-options :nth-child(1) img {
+    border: 2px solid #E16E30;
+}
+
+main .options .shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+main .options .shop button {
+    width: 70%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #E16E30;
+    font-family: montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .options .shop button i {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#wishlist {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #000;
+}
+
