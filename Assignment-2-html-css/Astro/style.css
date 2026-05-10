@@ -354,6 +354,10 @@ footer .footer2 .cards {
     display: flex;
 }
 
+footer .footer2 .cards {
+    width: 25%;
+}
+
 footer .footer1 .cards .image {
     width: 100%;
     margin-bottom: 1rem;
@@ -397,6 +401,10 @@ footer .footer2 .cards .text h3 {
     color: #000;
 }
 
+footer .footer2 .cards .text h3 {
+    font-size: 14px;
+}
+
 footer .footer1 .cards .text h3 {
     margin-bottom: 10px;
 }
@@ -406,4 +414,9 @@ footer .footer2 .cards .text p {
     font-size: 12px;
     font-family: monospace;
     color: #555;
+    padding-right: 30%;
+}
+
+footer .footer2 .cards .text p {
+    font-size: 10px;
 }
