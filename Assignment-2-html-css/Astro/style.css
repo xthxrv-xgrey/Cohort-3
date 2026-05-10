@@ -1,3 +1,8 @@
+@font-face {
+    font-family: montserrat;
+    src: url(./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +13,206 @@ html,
 body {
     height: 100%;
     width: 100%;
+    background-color: #FAF5EE;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #FCF4EE;
+    border-bottom: 1px solid #E16E30;
+}
+
+header .part1 {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+header .part1 .logo h1 {
+    font-family: montserrat;
+    font-size: 30px;
+    color: #000000;
+}
+
+header .part1 .logo h1 span {
+    color: #E16E30;
+}
+
+header .part1 .pages {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin-left: 50px;
+}
+
+header .part1 .pages a {
+    font-family: montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+header .part2 {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+header .part2 i {
+    font-size: 24px;
+    color: #000000;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+}
+
+main .content {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+main .content h4 {
+    font-family: montserrat;
+    font-size: 18px;
+    color: #E16E30;
+}
+
+main .content h1 {
+    font-family: montserrat;
+    font-size: 52px;
+    color: #000000;
+}
+
+main .content h1 span {
+    color: #E16E30;
+}
+
+main .content h3 {
+    font-family: montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+}
+
+main .content details {
+    font-family: montserrat;
+    font-size: 12px;
+    padding: 0 8rem 0 0;
+    gap: 1rem;
+    color: #000000;
+}
+
+main .content details summary {
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+main .content details p {
+    font-weight: 400;
+    padding: 0.5rem 0;
+    color: #222;
+}
+
+main .display {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: cadetblue; */
+}
+
+main .display .product {
+    width: 100%;
+}
+
+main .display .product img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, .75));
+}
+
+main .display .quality {
+    display: flex;
+    font-family: montserrat;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    color: #000000;
+}
+
+main .display .quality .checks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+main .display .quality .checks i {
+    font-size: 30px;
+}
+
+main .display .quality .checks p {
+    font-size: 12px;
+}
+
+main .options {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: blueviolet;
+}
+
+main .options .sizes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #FCF4EE;
+    padding: 1rem 2rem;
+}
+
+main .options .sizes h4 {
+    font-family: montserrat;
+    font-size: 25px;
+    color: #000000;
+}
+
+main .options .sizes .size-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .options .sizes .size-options button {
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    background-color: #F4ECE4;
+    font-family: montserrat;
+    font-size: 14px;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
 }
