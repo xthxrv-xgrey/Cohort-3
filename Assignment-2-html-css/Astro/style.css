@@ -166,6 +166,7 @@ main .display .quality .checks {
 
 main .display .quality .checks i {
     font-size: 30px;
+    color: #444;
 }
 
 main .display .quality .checks p {
@@ -325,3 +326,92 @@ main .options .shop button i {
     color: #000;
 }
 
+footer {
+    width: 100%;
+    padding: 2rem;
+    border-top: 2px solid #E16E30;
+}
+
+footer .footer1,
+footer .footer2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #F7F1EA;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 30px;
+}
+
+footer .footer2 {
+    border-top: none;
+}
+
+footer .footer1 .cards,
+footer .footer2 .cards {
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+}
+
+footer .footer1 .cards .image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+footer .footer2 .cards div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer2 .cards i {
+    font-size: 40px;
+}
+
+footer .footer2 :nth-child(3) i {
+    color: #E16E30;
+}
+
+footer .footer2 :nth-child(4) i {
+    color: #E16E30;
+}
+
+footer .footer1 .cards .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+footer .footer1 .cards .text,
+footer .footer2 .cards .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem;
+}
+
+footer .footer1 .cards .text {
+    gap: 1rem;
+}
+
+footer .footer1 .cards .text h3,
+footer .footer2 .cards .text h3 {
+    font-size: 18px;
+    font-family: monospace;
+    color: #000;
+}
+
+footer .footer1 .cards .text h3 {
+    margin-bottom: 10px;
+}
+
+footer .footer1 .cards .text p,
+footer .footer2 .cards .text p {
+    font-size: 12px;
+    font-family: monospace;
+    color: #555;
+}
