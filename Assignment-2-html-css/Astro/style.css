@@ -369,10 +369,7 @@ footer .footer2 .cards i {
     font-size: 40px;
 }
 
-footer .footer2 :nth-child(3) i {
-    color: #E16E30;
-}
-
+footer .footer2 :nth-child(3) i,
 footer .footer2 :nth-child(4) i {
     color: #E16E30;
 }
