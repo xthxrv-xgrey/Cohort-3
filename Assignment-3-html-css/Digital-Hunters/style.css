@@ -1,0 +1,22 @@
+@font-face {
+    font-family: orbitron;
+    src: url(./assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: rajdhani;
+    src: url(./assets/fonts/Rajdhani/Rajdhani-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #02090D;
+}
