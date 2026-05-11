@@ -36,9 +36,6 @@ section {
 
 .page1 header {
     height: 10%;
-    margin: 10px 0 0 0;
-    /* optional margin taken */
-    /* background-color: crimson; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,18 +89,102 @@ section {
     font-size: 1rem;
 }
 
-
 /* divinding 35 50 15*/
 
 .page1 main {
     display: flex;
     justify-content: space-between;
-    padding: 0 4rem;
+    padding: 0 2rem;
 }
 
 .page1 main .content {
     width: 35%;
-    /* background-color: #13C3A5; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 2rem 0rem 8rem 0rem;
+    font-family: rajdhani;
+    padding: 2rem;
+}
+
+.page1 main .content h3 {
+    color: #13C3A5;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.page1 main .content .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.page1 main .content h1 {
+    color: #ccc;
+    font-size: 8rem;
+    font-weight: 900;
+    font-family: orbitron;
+    letter-spacing: -.2rem;
+    margin: 0;
+    line-height: .8;
+    z-index: 1;
+}
+
+.page1 main .content h2 {
+    color: #13C3A5;
+    font-size: 6rem;
+    font-weight: 900;
+    font-family: orbitron;
+    letter-spacing: -.2rem;
+    margin: 0;
+    line-height: .8;
+    z-index: 1;
+}
+
+.page1 main .content h4 {
+    color: #ccc;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.page1 main .content p {
+    color: #aaa;
+    font-size: .8rem;
+    padding-right: 50%;
+}
+
+.page1 main .content .buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.page1 main .content .buttons #btn1 {
+    color: #ccc;
+    padding: .5rem 2rem;
+    border: 1px solid #13C3A5;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, transparent, #13C3A5);
+    font-family: rajdhani;
+    font-weight: 900;
+}
+
+.page1 main .content .buttons #btn2 {
+    color: #ccc;
+    background-color: transparent;
+    font-family: rajdhani;
+    font-weight: 900;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.page1 main .content .buttons #btn2 i {
+    font-size: 3rem;
 }
 
 .page1 main .hero {
@@ -126,6 +207,41 @@ section {
 
 .page1 main .play {
     width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-bottom: 8rem;
+}
+
+.page1 main .play .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.page1 main .play .box i {
+    font-size: 2rem;
+    color: #13C3A5;
+    border: 2px solid #13C3A5;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow:
+        0 0 5px #13C3A5,
+        0 0 30px #13C3A5,
+        inset 0 0 10px #13C3A5,
+        inset 0 0 5px rgba(19, 195, 165, 0.6);
+    text-shadow:
+        0 0 0px #13C3A5,
+        0 0 5px #13C3A5,
+        0 0 10 px #13C3A5;
+}
+
+.page1 main .play .box p {
+    color: #13C3A5;
+    font-family: rajdhani;
 }
 
 .page1 footer {
@@ -151,12 +267,25 @@ section {
 .page1 footer .box {
     width: 15%;
     object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: rajdhani;
+}
+
+.page1 footer .box h2 {
+    color: #13C3A5;
+    font-size: 2rem;
+}
+
+.page1 footer .box p {
+    color: #ccc;
 }
 
 .page1 footer .box img {
     height: 150%;
     width: 150%;
-    transform: translate(0, -25%);
 }
 
 .page1 footer hr {
