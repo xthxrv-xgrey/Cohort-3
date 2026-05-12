@@ -19,6 +19,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #020204;
+    font-family: rajdhani;
 }
 
 section {
@@ -293,4 +294,201 @@ section {
     color: #000;
     height: 4rem;
     align-self: center;
+}
+
+.page2 {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.page2 .featured {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+.page2 .featured h2 {
+    color: #13C3A5;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.page2 .featured .cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.page2 .featured .card {
+    width: 30%;
+    background: #090f16;
+    border-radius: 16px;
+    overflow: hidden;
+    color: white;
+    border: 1px solid #077562;
+}
+
+.page2 .featured .card .image {
+    width: 100%;
+    position: relative;
+}
+
+.page2 .featured .card .image img {
+    width: 100%;
+    display: block;
+}
+
+.page2 .featured .card .image h6 {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: #13C3A5;
+    color: black;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.page2 .featured .text {
+    margin-top: 1rem;
+    padding-right: 40%;
+    padding-left: 1rem;
+}
+
+.page2 .featured .text p {
+    font-size: .8rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.page2 .featured .btm {
+    margin: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page2 .featured .icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.page2 .featured button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #13C3A5;
+    border: 1px solid #13C3A5;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.page2 .process-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2 .process-section h2 {
+    color: #ccc;
+    font-size: 2rem;
+}
+
+.page2 .process-section .cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    position: relative;
+    padding: 1rem 0;
+}
+
+.page2 .process-section .cards hr {
+    position: absolute;
+
+    top: 50%;
+    left: 10%;
+
+    width: 80%;
+    height: 2px;
+
+    border: none;
+
+    background: linear-gradient(to right,
+            transparent,
+            #13C3A5,
+            #13C3A5,
+            transparent);
+
+    box-shadow:
+        0 0 5px #13C3A5,
+        0 0 15px #13C3A5;
+
+    transform: translateY(-50%);
+
+    z-index: 0;
+}
+
+.page2 .process-section .cards .card {
+    width: 18%;
+    display: flex;
+    gap: 1rem;
+
+    position: relative;
+    z-index: 1;
+
+    background: #090f16;
+    border: 1px solid #0f3f38;
+    border-radius: 12px;
+}
+
+.page2 .process-section .cards .card .icon {
+    width: 4rem;
+    height: 4rem;
+    border: .5px solid #13C3A5;
+    color: #13C3A5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: .5rem 0 0 .5rem;
+    text-shadow:
+        0 0 5px #13C3A5,
+        0 0 15px #13C3A5;
+}
+
+.page2 .process-section .cards .card .text {
+    margin: 0 1rem 0 .5rem;
+}
+
+.page2 .process-section .cards .card .text h3 {
+    color: #077562;
+    font-size: 1.5rem;
+}
+
+.page2 .process-section .cards .card .text h6 {
+    color: #ccc;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.page2 .process-section .cards .card .text p {
+    color: #ccc;
+    font-size: .8rem;
+    line-height: 1.5;
+    /* padding-right: 40%; */
 }
