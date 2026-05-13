@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* #################################################################### */
+/* ############################## page 1 ##############################*/
+/* #################################################################### */
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    padding: 0rem 8rem;
+
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+header {
+    padding: 2.5rem 0rem 1.5rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+header .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .left h4 {
+    font-size: 0.875rem;
+    font-weight: normal;
+    background-color: #EdDED5;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+header .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .right nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .right nav a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000;
+}
+
+header .right nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+
+    width: 100%;
+    height: 1px;
+    background: #000;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+header .right nav a:hover::after {
+    transform: scaleX(1);
+}
+
+header .right h4 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+header .right h4 span {
+    background-color: #EdDED5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+}
+
+header .right button {
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+    color: #000;
+
+    border: 1px solid #000;
+    border-radius: 2rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease,
+        transform 0.25s ease,
+        box-shadow 0.35s ease;
+}
+
+header .right button:hover {
+    background-color: #000;
+    color: #fff;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+header .right button:active {
+    transform: translateY(0);
+}
+
+#page1 section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+#page1 section h1 {
+    font-size: 6rem;
+    font-weight: normal;
+    font-family: sans-serif;
+    line-height: 6rem;
+}
+
+#page1 section h3 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    width: 42ch;
+}
+
+#page1 section button {
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+}
+
+/* #################################################################### */
+/* ############################## page 2 ##############################*/
+/* #################################################################### */
+
+#page2 {
+    height: 100vh;
+    width: 100vw;
+    padding: 0rem 8rem;
+
+    display: grid;
+    grid-template-rows: 30% 70%;
+
+    grid-template-areas:
+        "header"
+        "cards";
+}
+
+#page2 header {
+    grid-area: header;
+    display: flex;
+    grid-area: header;
+    background-color: blueviolet;
+}
+
+#page2 .cards {
+    grid-area: cards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#page2 .cards .card {
+    padding: 4rem 2rem;
+    height: 25rem;
+    background-color: #f4f4f5;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+#page2 .cards .card h2 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+
+#page2 .cards .card p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 2rem;
+}
+
+#page2 .cards .card a {
+    color: #000;
+}
+
+/* #################################################################### */
+/* ############################## page 3 ##############################*/
+/* #################################################################### */
