@@ -178,7 +178,8 @@ header .right button:active {
     grid-area: header;
     display: flex;
     grid-area: header;
-    background-color: blueviolet;
+    padding: 8rem 0rem 0rem 0rem;
+    align-items: flex-start;
 }
 
 #page2 .cards {
