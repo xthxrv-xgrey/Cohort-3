@@ -671,7 +671,7 @@ header .right button:active {
 #page7 .box {
     margin-top: 8rem;
     display: flex;
-    flex-direction: ;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -693,4 +693,55 @@ header .right button:active {
     font-size: .9rem;
     color: #666;
     line-height: 1.5rem;
+}
+
+/* #################################################################### */
+/* ############################## page 8 ##############################*/
+/* #################################################################### */
+
+#page8 {
+    min-height: 100vh;
+    width: 100%;
+    padding: 8rem;
+    display: flex;
+}
+
+#page8 section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: #eee;
+}
+
+#page8 section .left {
+    padding: 4rem;
+}
+
+#page8 section .right {
+    padding: 4rem 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#page8 section .right h1 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+
+#page8 section .right h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+
+#page8 section .right button {
+    width: fit-content;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: normal;
 }
