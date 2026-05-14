@@ -21,7 +21,7 @@ body {
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 30% 20% 20% 30%;
 
     grid-template-areas:
         "top-left top-left-2 top-right-2 top-right"
@@ -63,9 +63,21 @@ body {
 }
 
 #page1 .center {
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    background-color: #fdf8e3;
     grid-area: center;
     border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page1 .center img {
+    object-fit: contain;
+}
+
+#page1 .center h1 {
+    font-size: 6rem;
+    font-family: sans-serif;
 }
 
 #page1 .bottom-left {
