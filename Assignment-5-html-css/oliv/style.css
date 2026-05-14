@@ -424,7 +424,6 @@ header .right button:active {
 
 #page4 .card {
     padding: 20px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -604,7 +603,6 @@ header .right button:active {
     width: 100%;
     height: 500px;
     overflow: hidden;
-    border-radius: 8px;
 }
 
 #page6 .card img {
@@ -613,7 +611,6 @@ header .right button:active {
     object-fit: cover;
     display: block;
 }
-
 
 #page6 .card .info {
     display: flex;
