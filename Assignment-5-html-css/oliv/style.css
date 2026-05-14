@@ -199,12 +199,10 @@ header .right button:active {
     gap: 2rem;
 }
 
-
 #page2 .cards .card h2 {
     font-size: 2rem;
     font-weight: normal;
 }
-
 
 #page2 .cards .card p {
     font-size: 1.2rem;
@@ -643,4 +641,59 @@ header .right button:active {
 #page6 .card .info button:hover {
     background-color: #000;
     color: #fff;
+}
+
+/* #################################################################### */
+/* ############################## page 7 ##############################*/
+/* #################################################################### */
+
+#page7 {
+    min-height: 100vh;
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 2rem;
+
+    grid-template-areas:
+        ". top"
+        ". bottom"
+}
+
+#top {
+    grid-area: top;
+}
+
+#bottom {
+    grid-area: bottom;
+}
+
+#page7 .box {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: ;
+    gap: 1rem;
+}
+
+#page7 .box .text {
+    padding-right: 8rem;
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#page7 .box .text h1 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+#page7 .box .text p {
+    font-size: .9rem;
+    color: #666;
+    line-height: 1.5rem;
 }
