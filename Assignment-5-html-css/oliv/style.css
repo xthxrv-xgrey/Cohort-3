@@ -745,3 +745,137 @@ header .right button:active {
     border-radius: 2rem;
     font-weight: normal;
 }
+
+
+/* #################################################################### */
+/* ############################## page 9 ##############################*/
+/* #################################################################### */
+
+#page9 {
+    min-height: 150vh;
+    width: 100%;
+
+    padding: 4rem 8rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto 1fr 1fr auto;
+
+    gap: 2rem;
+
+    grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "card1 card2 card3 card4"
+        "socials pages cms utility"
+        "footer footer footer footer"
+    ;
+}
+
+#page9 header {
+    grid-area: header;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+#page9 header h6 {
+    font-weight: lighter;
+    font-size: .8rem;
+}
+
+#page9 .title {
+    grid-area: title;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page9 .title h1 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+#page9 .title button {
+    font-size: 1rem;
+    font-weight: light;
+    padding: 0.5rem 1rem;
+
+    border: 1px solid #000;
+    border-radius: 2rem;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+
+#card-4-1 {
+    grid-area: card1;
+}
+
+#card-4-2 {
+    grid-area: card2;
+}
+
+#card-4-3 {
+    grid-area: card3;
+}
+
+#card-4-4 {
+    grid-area: card4;
+}
+
+
+#page9 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#page9 .card .img-div {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+#page9 .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#page9 .card .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page9 .card .info h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#page9 .card .info button {
+    padding: 0.5rem 1rem;
+
+    border: 1px solid #000;
+    border-radius: 2rem;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+#page9 .title button:hover,
+#page9 .card .info button:hover {
+    background-color: #000;
+    color: #fff;
+}
