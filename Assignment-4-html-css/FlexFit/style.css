@@ -31,33 +31,169 @@ body {
     ;
 }
 
+/* area 1 */
 
 #page1 .top-left {
-    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    background-color: #fdfdfd;
+    position: relative;
     grid-area: top-left;
     border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
+
+#page1 .top-left #bg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page1 .top-left #round-top {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+#page1 .top-left .tags-container {
+    position: absolute;
+    width: 80%;
+    bottom: 5%;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+}
+
+#page1 .top-left .tags-container .tags {
+    background: rgba(0, 0, 0, 0.7);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    padding: 0.5rem .5rem;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+
+    color: white;
+    display: flex;
+}
+
+#page1 .top-left .tags-container .tags .icon {
+    padding: .25rem;
+    background-color: #fdd802;
+    color: #111;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+}
+
+#page1 .top-left .tags-container .tags .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.5rem;
+}
+
+#page1 .top-left .tags-container .tags .text h2 {
+    font-size: 1rem;
+}
+
+#page1 .top-left .tags-container .tags .text p {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* area 2 */
 
 #page1 .top-left-2 {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background-color: #fcd803;
     grid-area: top-left-2;
     border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30% 40% 30%;
+    grid-template-areas:
+        "art art"
+        "text-top-left-2 text-top-left-2"
+        "playstore appstore"
+    ;
 }
 
+#page1 .top-left-2 #art {
+    grid-area: art;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#page1 .top-left-2 #art img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#page1 .top-left-2 #text-top-left-2 {
+    grid-area: text-top-left-2;
+    padding-right: 20%;
+}
+
+#page1 .top-left-2 #text-top-left-2 p {
+    font-size: 1.25rem;
+    padding: 1rem;
+    font-weight: 600;
+    color: #111;
+}
+
+#page1 .top-left-2 #playstore {
+    grid-area: playstore;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page1 .top-left-2 #playstore img {
+    height: 60%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#page1 .top-left-2 #appstore {
+    grid-area: appstore;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page1 .top-left-2 #appstore img {
+    height: 60%;
+    object-fit: contain;
+    border-radius: 10px;
+
+}
+
+/* area 2 */
+
 #page1 .top-right-2 {
-    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    background-color: #fdfdfd;
     grid-area: top-right-2;
     border-radius: 16px;
 }
 
 #page1 .top-right {
-    background: linear-gradient(135deg, #f7971e, #ffd200);
+    background-color: #fdfdfd;
     grid-area: top-right;
     border-radius: 16px;
 }
 
 #page1 .center-left {
-    background: linear-gradient(135deg, #ff0844, #ffb199);
+    background-color: #fdfdfd;
     grid-area: center-left;
     border-radius: 16px;
 }
@@ -83,7 +219,7 @@ body {
 }
 
 #page1 .bottom-left {
-    background: linear-gradient(135deg, #30cfd0, #330867);
+    background-color: #ecb1a3;
     grid-area: bottom-left;
     border-radius: 16px;
 }
