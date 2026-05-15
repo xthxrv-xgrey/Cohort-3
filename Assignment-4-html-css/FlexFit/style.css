@@ -235,11 +235,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1rem;
 }
 
 #page1 .top-right .upper {
     display: flex;
-    padding: 1rem;
     justify-content: flex-start;
     gap: 2rem;
     align-items: center;
@@ -252,7 +252,6 @@ body {
 }
 
 #page1 .top-right .center {
-    padding: 1rem;
     background-color: #fdfdfd;
 }
 
@@ -264,7 +263,7 @@ body {
 
 #page1 .top-right .bottom {
     display: flex;
-    margin: 1rem;
+    width: 90%;
     border-radius: 1rem;
     flex-direction: column;
     background-color: #f4b8ac;
