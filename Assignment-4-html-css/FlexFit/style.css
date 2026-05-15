@@ -69,9 +69,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 #page1 .center img {
+    height: 30%;
     object-fit: contain;
 }
 

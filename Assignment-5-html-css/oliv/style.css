@@ -180,6 +180,28 @@ header .right button:active {
     grid-area: header;
     padding: 8rem 0rem 0rem 0rem;
     align-items: flex-start;
+    overflow: hidden;
+}
+
+#page2 header .inner {
+    grid-area: header;
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    animation: scroll 10s linear;
+    animation-iteration-count: infinite;
+    padding: 0rem 2rem;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-100%);
+    }
 }
 
 #page2 .cards {
