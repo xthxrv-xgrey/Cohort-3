@@ -474,7 +474,7 @@ body {
     position: absolute;
     bottom: 0%;
 
-    width: 70%;
+    height: 110%;
 
     object-fit: cover;
     border-radius: 16px;
