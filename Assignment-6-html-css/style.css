@@ -1,3 +1,13 @@
+@font-face {
+    font-family: roboto-mono;
+    src: url(./assets/fonts/RobotoMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: reckless;
+    src: url(./assets/fonts/Reckless.woff);
+}
+
 /* =========================
    RESET / GLOBAL STYLES
 ========================= */
@@ -13,6 +23,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #555;
+    font-family: roboto-mono, monospace;
 }
 
 /* =========================
@@ -32,8 +43,8 @@ body {
 #free-shiping h4 {
     color: #fff;
     font-size: .75rem;
-    font-weight: bold;
-    word-spacing: .25rem;
+    font-weight: 500;
+    word-spacing: .1rem;
 }
 
 header {
@@ -55,11 +66,11 @@ header nav {
 }
 
 header nav button {
+    font-family: reckless;
     display: none;
     font-size: 1.5rem;
     background-color: transparent;
     border: none;
-    font-weight: lighter;
     color: #000;
 }
 
