@@ -5,20 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Two Leaves and a Bud | Organic Tea</title>
 </head>
 
 <body>
-    <!-- <main> -->
     <div id="free-shiping">
         <h4>FREE US SHIPPING FOR ORDERS OVER $75</h4>
     </div>
 
     <header>
         <nav class="left">
-            <button>Shop</button>
-            <button>Learn</button>
-            <button>Reviews</button>
+            <button>Shop <i class="ri-arrow-drop-down-line"></i></button>
+            <button>Learn <i class="ri-arrow-drop-down-line"></i></button>
+            <button>Reviews
+                <span class="review-icon"><svg width="24" height="23" viewBox="0 0 24 23" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.9812 0.5L15.2477 8.06787L23.457 8.83867L17.269 14.2882L19.0747 22.3304L11.9812 18.1314L4.88764 22.3304L6.68798 14.2882L0.5 8.83867L8.70931 8.06787L11.9812 0.5Z"
+                            fill="#FFB500" stroke="#201C1A" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path
+                            d="M14.3623 15.9253C14.0301 16.2301 13.25 16.7223 11.9679 16.7223C10.6858 16.7224 9.64455 15.8909 9.64453 15.4546"
+                            stroke="#201C1A" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path
+                            d="M9.75832 14.9543C9.75832 14.9543 9.7335 15.2344 9.55474 15.5289C9.37597 15.8235 9.20904 16.0181 9.20904 16.0181"
+                            stroke="#201C1A" stroke-linecap="round"></path>
+                        <path
+                            d="M7.38728 11.2923C7.38724 10.5121 8.15647 9.87959 9.10445 9.87954C10.0524 9.87949 10.8217 10.5119 10.8218 11.2921"
+                            stroke="#201C1A" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path
+                            d="M13.1138 11.292C13.1138 10.5118 13.883 9.87932 14.831 9.87927C15.779 9.87922 16.5483 10.5116 16.5483 11.2918"
+                            stroke="#201C1A" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <ellipse cx="9.05864" cy="10.9366" rx="2.0737" ry="1.33229" fill="#201C1A"></ellipse>
+                        <ellipse cx="14.8765" cy="10.9363" rx="2.0737" ry="1.33229" fill="#201C1A"></ellipse>
+                        <path d="M10.6392 10.9088L13.1859 10.9087" stroke="#201C1A" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg></span>
+            </button>
+            <div class="menu">
+                <i class="ri-menu-line"></i>
+            </div>
         </nav>
         <div class="center">
             <img src="./assets/images/Twoleaves_logo.svg" alt="logo">
@@ -27,13 +53,30 @@
             <a href="#">MY ACCOUNT</a>
             <a href="#">CAFE & WHOLE SALE PARTNERS</a>
             <a href="#">TEA JOURNAL</a>
+            <div>
+                <svg width="22" height="31" viewBox="0 0 22 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.5 10V24.5C21.5 27.5376 19.0376 30 16 30H6C2.96243 30 0.5 27.5376 0.5 24.5V10H21.5Z"
+                        stroke="#201C1A"></path>
+                    <path d="M5 9.5V6.5C5 3.18629 7.68629 0.5 11 0.5C14.3137 0.5 17 3.18629 17 6.5V9.5"
+                        stroke="#201C1A"></path>
+                </svg>
+                <span x-text="$store.cart.cartCounter">0</span>
+            </div>
         </nav>
     </header>
 
-    <section>
+    <div class="accessibility"><i class="ri-accessibility-fill"></i></div>
 
+    <section id="page1">
+        <div>
+            <h1>A cup that fits the moment.</h1>
+            <p>From compostable whole leaf tea sachets and iced tea to tea lattes and matcha, we’ve got something for
+                everyone.</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="down-arrow"><i class="ri-arrow-down-line"></i></div>
     </section>
-    <!-- </main> -->
+    <section></section>
 </body>
 
 </html>

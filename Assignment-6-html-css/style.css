@@ -27,7 +27,8 @@ body {
     height: 100%;
     width: 100%;
     background-color: #555;
-    font-family: roboto-mono, monospace;
+    position: relative;
+    font-family: roboto-mono;
 }
 
 /* =========================
@@ -52,20 +53,32 @@ body {
 }
 
 header {
-    height: 4.25rem;
-    background-color: #fff;
-    position: static;
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    height: 4rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+
+    padding: 1rem 1.2rem;
     margin: 1rem;
-    border-radius: .75rem;
-    border-radius: 2px solid black;
+
+    background: white;
+
+    border: 1px solid black;
+    border-radius: .9rem;
+
+    transition: all 0.3s ease;
 }
 
 header nav {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -74,8 +87,23 @@ header nav button {
     display: none;
     font-size: 1.5rem;
     background-color: transparent;
+    justify-content: center;
+    align-items: center;
     border: none;
     color: #000;
+    gap: .5rem;
+}
+
+header nav button i {
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: #bfdbff;
+    border: 1px solid black;
+}
+
+header nav div i {
+    color: #777;
+    font-size: 2rem;
 }
 
 header nav a {
@@ -83,6 +111,113 @@ header nav a {
     font-size: .75rem;
     text-decoration: none;
     color: #000;
+}
+
+header nav div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav div span {
+    font-size: small;
+    padding: 0rem .25rem;
+    background-color: #ffb700;
+    border-radius: 1rem;
+    border: 1px solid black;
+    transform: translateX(-.5rem);
+}
+
+.accessibility {
+    border-radius: 50%;
+    position: fixed;
+    bottom: 2rem;
+    left: 3rem;
+    z-index: 1;
+    height: 2rem;
+    width: 2rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accessibility i {
+    font-size: 4rem;
+    color: lightseagreen;
+}
+
+#page1 {
+    margin-top: -6rem;
+    height: 85vh;
+    background-image: url('./assets/images/AlpineBerry.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    border: 1px solid black;
+}
+
+#page1 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    height: 100%;
+    padding: 2rem;
+    color: #fbf9eb;
+    gap: 1rem;
+}
+
+#page1 div h1 {
+    font-family: reckless;
+    font-size: 5rem;
+    font-weight: normal;
+}
+
+#page1 div p {
+    font-family: sans-serif;
+    font-family: 1.5rem;
+    font-weight: bold;
+}
+
+#page1 div button {
+    background-color: #2a2857;
+    color: #fff;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 2rem;
+    align-self: flex-start;
+    margin-left: 1rem;
+    font-size: 1rem;
+    margin-bottom: 4rem;
+}
+
+#page1 .down-arrow {
+    background-color: #2a2857;
+    padding: .5rem;
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    bottom: -1.5rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#page1 .down-arrow i {
+    font-size: 2rem;
+    color: #fbf9eb;
+}
+
+/* tmp */
+section {
+    height: 85vh;
 }
 
 /* =========================
@@ -105,12 +240,32 @@ header nav a {
 ========================= */
 
 @media (min-width: 1024px) {
+    header nav .menu {
+        display: none;
+    }
+
     header nav button {
-        display: inline;
+        display: flex;
+    }
+
+    header .center {
+        padding-left: 10%;
     }
 
     header nav a {
-        display: inline;
+        display: block;
+    }
+
+    #page1 {
+        height: 90vh;
+    }
+
+    #page1 div {
+        width: 35%;
+    }
+
+    #page1 div button {
+        margin-bottom: 0;
     }
 }
 
