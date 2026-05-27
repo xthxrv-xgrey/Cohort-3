@@ -12,6 +12,11 @@
     src: url(./assets/fonts/Reckless.woff);
 }
 
+@font-face {
+    font-family: midnight;
+    src: url(./assets/fonts/midnight-sans-rd-12-medium-trial.otf);
+}
+
 /* =========================
    RESET / GLOBAL STYLES
 ========================= */
@@ -26,7 +31,6 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-color: #555;
     position: relative;
     font-family: roboto-mono;
 }
@@ -65,12 +69,11 @@ header {
     align-items: center;
 
     padding: 1rem 1.2rem;
-    margin: 1rem;
+    margin: 1rem 0rem;
 
     background: white;
 
     border: 1px solid black;
-    border-radius: .9rem;
 
     transition: all 0.3s ease;
 }
@@ -193,7 +196,7 @@ header nav div span {
     align-self: flex-start;
     margin-left: 1rem;
     font-size: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 #page1 .down-arrow {
@@ -213,6 +216,179 @@ header nav div span {
 #page1 .down-arrow i {
     font-size: 2rem;
     color: #fbf9eb;
+}
+
+#page2 {
+    height: 150vh;
+    display: grid;
+
+    grid-template-rows: 30% 10% 45% 15%;
+    grid-template-areas:
+        "title"
+        "heading"
+        "products"
+        "bottom"
+    ;
+
+    background-color: #fbf9eb;
+    border: 1px solid black;
+}
+
+#page2 .title {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#page2 .title h1 {
+    width: 80%;
+    font-family: reckless;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+#page2 .heading {
+    grid-area: heading;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateZ(355deg);
+}
+
+#page2 .heading h2 {
+    font-family: midnight;
+    background-color: #daaeeb;
+    padding: 0rem .5rem;
+    font-size: 4rem;
+    font-weight: normal;
+    border: 1px solid black;
+    border-radius: .5rem;
+}
+
+#page2 .products {
+    grid-area: products;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+#page2 .product {
+    height: 95%;
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#page2 .product .card {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+#page2 .product .card button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    font-family: midnight;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+#page2 .product .card>p {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #000;
+}
+
+#page2 .product .card img {
+    height: 100%;
+}
+
+#page2 .product .card .add {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    background-color: #fff;
+    color: #000;
+    height: 3rem;
+    width: 3rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#page2 .product .card .add p {
+    font-size: small;
+    font-weight: 100;
+}
+
+#page2 .product h3 {
+    font-family: reckless;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+#page2 .product span {
+    font-family: sans-serif;
+    font-size: small;
+}
+
+#page2 .product>p {
+    font-family: sans-serif;
+    font-size: .9rem;
+    font-weight: 100;
+    color: #777;
+}
+
+#page2 .bottom {
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#page2 .bottom .lines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#page2 .bottom .lines div {
+    height: 3px;
+    width: 2rem;
+    background-color: #ccc;
+}
+
+#page2 .bottom .lines #selected {
+    background-color: #201c1a;
+}
+
+#page2 .bottom button {
+    width: fit-content;
+    align-self: center;
+    border: none;
+    background-color: #2a2857;
+    color: #fff;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    font-size: 1rem;
 }
 
 /* tmp */
@@ -266,6 +442,11 @@ section {
 
     #page1 div button {
         margin-bottom: 0;
+    }
+
+    #page2 .title h1 {
+        width: 55%;
+        font-size: 4rem;
     }
 }
 
