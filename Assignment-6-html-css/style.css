@@ -460,7 +460,8 @@ header nav div span {
 #page5 {
     height: 100vh;
     background-color: palegoldenrod;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
+
     display: grid;
     grid-template-rows: 40% 60%;
     grid-template-areas:
@@ -498,9 +499,78 @@ header nav div span {
 
 #page5 .cards {
     grid-area: cards;
-    background-color: #ff7f31;
     display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
     overflow: hidden;
+}
+
+#page5 .cards .card {
+    height: 100%;
+    width: 300px;
+    min-width: 270px;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+        "content"
+        "box"
+    ;
+
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+#page5 .cards .card .content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+#page5 .cards .card .content h3 {
+    font-family: reckless;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+#page5 .cards .card .content span {
+    font-family: sans-serif;
+    color: #555;
+    font-size: small;
+    font-weight: lighter;
+}
+
+#page5 .cards .card .box {
+    grid-area: box;
+    border-radius: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: .5rem;
+}
+
+#page5 .cards .card .box img {
+    height: 100%;
+    max-width: 30%;
+}
+
+#page5 .cards .card .box h4 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+#page5 .cards .card .box button {
+    padding: .5rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    font-size: large;
+    color: #000;
 }
 
 #page6 {
@@ -682,6 +752,10 @@ footer a {
     #page5 .title h2 {
         display: inline;
         width: 70%;
+    }
+
+    #page5 .cards .card .box h4 {
+        font-size: .75rem;
     }
 
     #page6 {
