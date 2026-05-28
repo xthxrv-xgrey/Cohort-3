@@ -373,6 +373,82 @@ header nav div span {
     font-size: 1rem;
 }
 
+#page3 {
+    height: min-content;
+    padding: 8rem 4rem;
+    background-color: #fbf9eb;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+#page3 .heading {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transform: rotateZ(355deg);
+}
+
+#page3 .heading h2 {
+    font-family: midnight;
+    background-color: #ff7f31;
+    padding: 0rem .5rem;
+    font-size: 4rem;
+    font-weight: normal;
+    border: 1px solid black;
+    border-radius: .5rem;
+}
+
+#page3 .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+}
+
+#page3 .title h1 {
+    width: 80%;
+    font-family: reckless;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+#page3 .box {
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+}
+
+#page3 .box span {
+    font-family: reckless;
+    font-size: 2rem;
+    color: #777;
+}
+
+#page3 h4 {
+    font-family: sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+#page3 .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+#page3 .card {
+    padding: .5rem 1rem;
+    background-color: #d9e9ff;
+    border-radius: 1rem;
+    border: 1px solid black;
+    font-family: reckless;
+    font-size: 2rem;
+}
+
 /* =========================
    SMALL DEVICES
    >= 480px
@@ -385,7 +461,15 @@ header nav div span {
    >= 768px
 ========================= */
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    #page3 {
+        padding: 8rem 10rem;
+    }
+
+    #page3 .box {
+        width: 70%;
+    }
+}
 
 /* =========================
    LAPTOPS
@@ -424,6 +508,18 @@ header nav div span {
     #page2 .title h1 {
         width: 55%;
         font-size: 4rem;
+    }
+
+    #page3 {
+        padding: 8rem 16rem;
+    }
+
+    #page3 .title h1 {
+        font-size: 3.5rem;
+    }
+
+    #page3 .box {
+        width: 40%;
     }
 }
 
