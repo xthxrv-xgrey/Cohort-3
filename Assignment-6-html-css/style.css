@@ -457,6 +457,52 @@ header nav div span {
     width: 100%;
 }
 
+#page5 {
+    height: 100vh;
+    background-color: palegoldenrod;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+        "title"
+        "cards"
+    ;
+}
+
+#page5 .title {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#page5 .title h1 {
+    font-family: midnight;
+    background-color: #74bd26;
+    width: fit-content;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+    transform: rotateZ(355deg);
+    font-size: 4rem;
+}
+
+#page5 .title h2 {
+    display: none;
+    font-family: reckless;
+    font-weight: normal;
+    font-size: 4rem;
+}
+
+#page5 .cards {
+    grid-area: cards;
+    background-color: #ff7f31;
+    display: flex;
+    overflow: hidden;
+}
+
 #page6 {
     height: 100vh;
     display: flex;
@@ -505,6 +551,35 @@ header nav div span {
     font-size: 1rem;
 }
 
+footer {
+    height: 30vh;
+    background-color: #bfdbff;
+    background-image: url(./assets/images/footer-extended_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    align-items: center;
+}
+
+footer img {
+    height: 20%;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+    font-size: small;
+    width: 60%;
+    text-align: center;
+}
+
+
+
 /* =========================
    SMALL DEVICES
    >= 480px
@@ -541,6 +616,11 @@ header nav div span {
     #page6 div button {
         margin: 0rem 2rem;
     }
+
+    footer {
+        height: 50vh;
+    }
+
 }
 
 /* =========================
@@ -594,6 +674,16 @@ header nav div span {
         width: 40%;
     }
 
+    #page5 .title {
+        align-items: flex-start;
+        padding: 0rem 8rem;
+    }
+
+    #page5 .title h2 {
+        display: inline;
+        width: 70%;
+    }
+
     #page6 {
         flex-direction: row;
     }
@@ -618,6 +708,14 @@ header nav div span {
 
     #page6 div button {
         margin: 0rem 4rem;
+    }
+
+    footer {
+        height: 80vh;
+    }
+
+    footer a {
+        font-size: small;
     }
 }
 
