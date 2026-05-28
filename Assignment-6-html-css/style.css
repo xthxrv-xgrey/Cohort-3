@@ -449,6 +449,62 @@ header nav div span {
     font-size: 2rem;
 }
 
+#page4 {
+    height: max-content;
+}
+
+#page4>img {
+    width: 100%;
+}
+
+#page6 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#page6 div {
+    height: max-content;
+    min-height: 50vh;
+    width: 100vw;
+    background-color: #2a2857;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+#page6 div img {
+    align-self: center;
+    width: 120%;
+    object-fit: cover;
+}
+
+#page6 div h2 {
+    font-family: reckless;
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0rem 1rem;
+}
+
+#page6 div p {
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0rem 1rem;
+}
+
+#page6 div button {
+    width: max-content;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    color: #000;
+    margin: 0rem 1rem;
+    font-size: 1rem;
+}
+
 /* =========================
    SMALL DEVICES
    >= 480px
@@ -468,6 +524,22 @@ header nav div span {
 
     #page3 .box {
         width: 70%;
+    }
+
+    #page6 div h2 {
+        font-size: 3rem;
+        width: 60%;
+        margin: 0rem 2rem;
+    }
+
+    #page6 div p {
+        font-size: 1.25rem;
+        width: 80%;
+        margin: 0rem 2rem;
+    }
+
+    #page6 div button {
+        margin: 0rem 2rem;
     }
 }
 
@@ -520,6 +592,32 @@ header nav div span {
 
     #page3 .box {
         width: 40%;
+    }
+
+    #page6 {
+        flex-direction: row;
+    }
+
+    #page6 div {
+        height: 100%;
+        width: 50%;
+        gap: 4rem;
+    }
+
+    #page6 div h2 {
+        font-size: 4rem;
+        width: 60%;
+        margin: 0rem 4rem;
+    }
+
+    #page6 div p {
+        font-size: 1.5rem;
+        width: 80%;
+        margin: 0rem 4rem;
+    }
+
+    #page6 div button {
+        margin: 0rem 4rem;
     }
 }
 
