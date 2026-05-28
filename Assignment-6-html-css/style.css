@@ -460,7 +460,6 @@ header nav div span {
 #page5 {
     height: 100vh;
     background-color: palegoldenrod;
-    padding: 2rem 2rem;
 
     display: grid;
     grid-template-rows: 40% 60%;
@@ -503,12 +502,14 @@ header nav div span {
     gap: 1rem;
     justify-content: flex-start;
     overflow: hidden;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 #page5 .cards .card {
     height: 100%;
-    width: 300px;
-    min-width: 270px;
+    width: 285px;
+    min-width: 260px;
     padding: 1rem;
     display: grid;
     grid-template-rows: 75% 25%;
@@ -618,6 +619,124 @@ header nav div span {
     border-radius: 2rem;
     color: #000;
     margin: 0rem 1rem;
+    font-size: 1rem;
+}
+
+#page8 {
+    height: 120vh;
+    display: grid;
+
+    grid-template-rows: 30% 55% 15%;
+    grid-template-areas:
+        "title"
+        "products"
+        "bottom"
+    ;
+
+    background-color: #fbf9eb;
+    border: 1px solid black;
+}
+
+#page8 .title {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+}
+
+#page8 .title h1 {
+    width: 80%;
+    font-family: reckless;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+#page8 .products {
+    grid-area: products;
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+#page8 .products .product {
+    height: 95%;
+    min-width: 315px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #d9e9ff;
+    border-radius: 1rem;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+#page8 .product .card {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid black;
+    background-color: #2a2857;
+}
+
+#page8 .product .card button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    font-family: midnight;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+#page8 .product .card img {
+    height: 100%;
+}
+
+#page8 .product h3 {
+    margin: .5rem 1rem;
+    font-weight: 100;
+}
+
+#page8 .bottom {
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#page8 .bottom .lines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#page8 .bottom .lines div {
+    height: 3px;
+    width: 2rem;
+    background-color: #ccc;
+}
+
+#page8 .bottom .lines #selected {
+    background-color: #201c1a;
+}
+
+#page8 .bottom button {
+    width: fit-content;
+    align-self: center;
+    border: none;
+    background-color: #2a2857;
+    color: #fff;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
     font-size: 1rem;
 }
 
@@ -782,6 +901,11 @@ footer a {
 
     #page6 div button {
         margin: 0rem 4rem;
+    }
+
+    #page8 .title h1 {
+        width: 70%;
+        font-size: 4rem;
     }
 
     footer {
