@@ -33,6 +33,11 @@ body {
     width: 100%;
     position: relative;
     font-family: roboto-mono;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* =========================
@@ -255,7 +260,13 @@ header nav div span {
     display: flex;
     padding: 2rem;
     gap: 2rem;
-    overflow: hidden;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#page2 .products::-webkit-scrollbar {
+    display: none;
 }
 
 #page2 .product {
@@ -568,9 +579,13 @@ header nav div span {
     display: flex;
     gap: 1rem;
     justify-content: flex-start;
-    overflow: hidden;
+    overflow: auto;
     margin-left: 1rem;
     margin-bottom: 1rem;
+}
+
+#page5 .cards::-webkit-scrollbar {
+    display: none;
 }
 
 #page5 .cards .card {
@@ -824,7 +839,11 @@ header nav div span {
     display: flex;
     padding: 2rem;
     gap: 1rem;
-    overflow: hidden;
+    overflow: auto;
+}
+
+#page8 .products::-webkit-scrollbar {
+    display: none;
 }
 
 #page8 .products .product {
