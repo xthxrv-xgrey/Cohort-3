@@ -1235,11 +1235,6 @@ footer a {
         padding: 0rem 8rem;
     }
 
-    #page5 .title h2 {
-        display: inline;
-        width: 70%;
-    }
-
     #page5 .cards .card .box h4 {
         font-size: .75rem;
     }
@@ -1314,7 +1309,12 @@ footer a {
    >= 1280px
 ========================= */
 
-@media (min-width: 1280px) {}
+@media (min-width: 1280px) {
+    #page5 .title h2 {
+        display: inline;
+        width: 70%;
+    }
+}
 
 /* =========================
    EXTRA LARGE SCREENS
