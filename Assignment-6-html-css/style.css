@@ -450,11 +450,16 @@ header nav div span {
 }
 
 #page4 {
-    height: max-content;
+    height: 220vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 #page4>img {
-    width: 100%;
+    height: 100%;
 }
 
 #page5 {
@@ -844,7 +849,7 @@ header nav div span {
     height: 115vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     position: relative;
 }
@@ -868,7 +873,6 @@ header nav div span {
     width: 80%;
 }
 
-
 #page9 .content .title {
     display: flex;
     flex-direction: column;
@@ -887,6 +891,75 @@ header nav div span {
     border-radius: 2rem;
     border: 1px solid black;
     justify-self: start;
+}
+
+#page10 {
+    height: max-content;
+    background-color: #bfdbff;
+    display: grid;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+        "socials"
+        "ftr"
+    ;
+}
+
+#page10 .socials {
+    grid-area: socials;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#page10 .socials input {
+    width: 400px;
+    height: 50px;
+    max-width: 80vw;
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+#page10 .socials div {
+    display: flex;
+    gap: 2rem;
+}
+
+#page10 .socials button {
+    font-size: 2rem;
+    background-color: transparent;
+    border: 2px solid black;
+    padding: .5rem .75rem;
+    border-radius: 1.5rem;
+}
+
+#page10 .ftr {
+    grid-area: ftr;
+    background-color: #2a2857;
+    margin: 5%;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#page10 .ftr .sub-ftr {
+    color: #fff;
+}
+
+#page10 .ftr .sub-ftr h4 {
+    font-family: reckless;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+#page10 .ftr .sub-ftr li {
+    color: #999;
+    font-size: .75rem;
+    list-style-type: none;
 }
 
 footer {
@@ -992,6 +1065,22 @@ footer a {
 
     #page9 .content h1 {
         font-size: 3rem;
+    }
+
+    #page10 .socials {
+        flex-direction: row;
+    }
+
+    #page10 .ftr {
+        gap: 7rem;
+    }
+
+    #page10 .ftr .sub-ftr h4 {
+        font-size: 2.75rem;
+    }
+
+    #page10 .ftr .sub-ftr li {
+        font-size: 1rem;
     }
 
     footer {
