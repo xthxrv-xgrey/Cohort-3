@@ -459,7 +459,7 @@ header nav div span {
 
 #page5 {
     height: 100vh;
-    background-color: palegoldenrod;
+    background-color: #faf8eb;
 
     display: grid;
     grid-template-rows: 40% 60%;
@@ -622,6 +622,105 @@ header nav div span {
     font-size: 1rem;
 }
 
+#page7 {
+    height: max-content;
+    background-color: #9e6429;
+
+    display: grid;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+        "content"
+        "product"
+    ;
+}
+
+#page7 .content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 1.5rem;
+    height: max-content;
+    margin: 2rem 1rem;
+}
+
+#page7 .content h2 {
+    font-family: midnight;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #ffcb96;
+    padding: .2rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+    transform: rotateZ(355deg);
+}
+
+#page7 .content h1 {
+    text-transform: uppercase;
+    font-family: midnight;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+#page7 .product {
+    grid-area: product;
+    background-color: #ffcb96;
+    margin: 2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: max-content;
+}
+
+#page7 .product img {
+    bottom: 0;
+    width: 100%;
+}
+
+#page7 .product .productContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#page7 .product .productContent h2 {
+    font-family: midnight;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #f09f54;
+    padding: 0rem .2rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+    transform: rotateZ(355deg);
+    width: max-content;
+}
+
+#page7 .product .productContent h1 {
+    font-family: reckless;
+    font-weight: normal;
+    font-size: 2.5rem;
+}
+
+#page7 .product .productContent p {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+#page7 .product .productContent button {
+    width: max-content;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    font-size: large;
+}
+
 #page8 {
     height: 120vh;
     display: grid;
@@ -740,6 +839,56 @@ header nav div span {
     font-size: 1rem;
 }
 
+#page9 {
+    width: 100%;
+    height: 115vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#page9>img {
+    height: 100%;
+}
+
+#page9 .content {
+    position: absolute;
+    height: 80%;
+    background-color: #f26411;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    left: 10%;
+    width: 80%;
+}
+
+
+#page9 .content .title {
+    display: flex;
+    flex-direction: column;
+}
+
+#page9 .content h1 {
+    font-family: reckless;
+    font-size: 2rem;
+    color: #fff;
+}
+
+#page9 .content button {
+    width: max-content;
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    justify-self: start;
+}
+
 footer {
     height: 30vh;
     background-color: #bfdbff;
@@ -766,8 +915,6 @@ footer a {
     width: 60%;
     text-align: center;
 }
-
-
 
 /* =========================
    SMALL DEVICES
@@ -804,6 +951,47 @@ footer a {
 
     #page6 div button {
         margin: 0rem 2rem;
+    }
+
+    #page7 .content h2 {
+        font-size: 2rem;
+    }
+
+    #page7 .content h1 {
+        font-size: 2.5rem;
+    }
+
+    #page7 .product {
+        flex-direction: column;
+    }
+
+    #page7 .product img {
+        width: 100%;
+    }
+
+    #page7 .product .productContent {
+        gap: 2rem;
+        margin: 2rem;
+    }
+
+    #page7 .product .productContent h2 {
+        font-size: 4rem;
+    }
+
+    #page7 .product .productContent h1 {
+        font-size: 4rem;
+    }
+
+    #page7 .product .productContent p {
+        width: 60%;
+    }
+
+    #page9 .content {
+        width: 50%;
+    }
+
+    #page9 .content h1 {
+        font-size: 3rem;
     }
 
     footer {
@@ -903,8 +1091,34 @@ footer a {
         margin: 0rem 4rem;
     }
 
+    #page7 .content h2 {
+        font-size: 3rem;
+    }
+
+    #page7 .content h1 {
+        font-size: 4rem;
+    }
+
+    #page7 .product {
+        flex-direction: row;
+    }
+
+
+    #page7 .product img {
+        width: 80%;
+    }
+
     #page8 .title h1 {
         width: 70%;
+        font-size: 4rem;
+    }
+
+    #page9 .content {
+        width: 30%;
+        left: 5%;
+    }
+
+    #page9 .content h1 {
         font-size: 4rem;
     }
 
