@@ -452,7 +452,7 @@ header nav div span {
 #page4 {
     height: 220vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow: hidden;
     position: relative;
@@ -460,6 +460,68 @@ header nav div span {
 
 #page4>img {
     height: 100%;
+}
+
+#page4 .content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#page4 .content .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#page4 .content .title h2 {
+    font-family: midnight;
+    background-color: #74bd26;
+    width: max-content;
+    font-size: 4rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    transform: rotateZ(355deg);
+}
+
+#page4 .content .title h1 {
+    color: #fff;
+    font-family: midnight;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+#page4 .content p {
+    font-family: reckless;
+    font-size: 2rem;
+    text-align: center;
+    width: 70%;
+    color: #fff;
+}
+
+#page4 .content .images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    gap: 1rem;
+    width: 100%;
+}
+
+#page4 .content .images img {
+    height: 100%;
+}
+
+#page4 .content button {
+    width: max-content;
+    border: 1px solid black;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
 }
 
 #page5 {
@@ -911,6 +973,7 @@ header nav div span {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 2rem 0rem;
 }
 
 #page10 .socials input {
@@ -1140,6 +1203,14 @@ footer a {
         width: 40%;
     }
 
+    #page4 .content .title h1 {
+        font-size: 10rem;
+    }
+
+    #page4 .content p {
+        font-size: 3rem;
+    }
+
     #page5 .title {
         align-items: flex-start;
         padding: 0rem 8rem;
@@ -1191,7 +1262,6 @@ footer a {
     #page7 .product {
         flex-direction: row;
     }
-
 
     #page7 .product img {
         width: 80%;
