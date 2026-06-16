@@ -1,0 +1,134 @@
+/* =========================
+   RESET / GLOBAL STYLES
+========================= */
+
+@font-face {
+   font-family: poppins-bold;
+   src: url("./assets/fonts/Poppins-Bold.ttf");
+}
+
+/* =========================
+   RESET / GLOBAL STYLES
+========================= */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+}
+
+/* Header */
+
+header {
+   height: 10vh;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 2rem;
+   border-bottom: 1px solid #AEE2FF;
+}
+
+header .logo {
+   width: 30%;
+   height: 100%;
+   display: flex;
+   justify-content: flex-start;
+   gap: 1rem;
+}
+
+header .logo img {
+   height: 100%;
+   border-radius: 5px;
+}
+
+header .logo {
+   font-family: poppins-bold;
+}
+
+header .search {
+   height: 100%;
+   width: 40%;
+   display: flex;
+   align-items: center;
+}
+
+header .search input {
+   padding: .5rem 1rem;
+   border-radius: 10px;
+   border: 1px solid #ccc;
+   width: 100%;
+}
+
+header .search input:focus {
+   border: 1px solid #ccc;
+   background-color: #AEE2FF;
+}
+
+header .menu {
+   height: 100%;
+   width: 30%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 2rem;
+}
+
+header .menu i {
+   font-size: 1.5rem;
+   color: grey;
+   cursor: pointer;
+}
+
+header .menu button {
+   padding: .5rem 1rem;
+   background-color: #B5BAFF;
+   border: 1px solid #9FA1FF;
+   border-radius: .5rem;
+}
+
+/* =========================
+   MOBILE FIRST DEFAULT
+   (0px and above)
+========================= */
+
+/* =========================
+   SMALL DEVICES
+   >= 480px
+========================= */
+
+@media (min-width: 480px) {}
+
+/* =========================
+   TABLETS
+   >= 768px
+========================= */
+
+@media (min-width: 768px) {}
+
+/* =========================
+   LAPTOPS
+   >= 1024px
+========================= */
+
+@media (min-width: 1024px) {}
+
+/* =========================
+   LARGE DESKTOPS
+   >= 1280px
+========================= */
+
+@media (min-width: 1280px) {}
+
+/* =========================
+   EXTRA LARGE SCREENS
+   >= 1440px
+========================= */
+
+@media (min-width: 1440px) {}
