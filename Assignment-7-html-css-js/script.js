@@ -560,7 +560,7 @@ const clearNav = () => {
 
 inboxNav.addEventListener("click", () => {
   clearNav();
-  inboxNav.style.backgroundColor = "#AEE2FF";
+  inboxNav.style.backgroundColor = "rgba(174, 226, 255, .5)";
   state.selectedProject = null;
   renderProjects();
   commit("active");
@@ -568,7 +568,7 @@ inboxNav.addEventListener("click", () => {
 
 todayNav.addEventListener("click", () => {
   clearNav();
-  todayNav.style.backgroundColor = "#AEE2FF";
+  todayNav.style.backgroundColor = "rgba(174, 226, 255, .5)";
 
   const today = formatDate(new Date());
   state.selectedProject = null;
@@ -588,7 +588,7 @@ todayNav.addEventListener("click", () => {
 
 upcomingNav.addEventListener("click", () => {
   clearNav();
-  upcomingNav.style.backgroundColor = "#AEE2FF";
+  upcomingNav.style.backgroundColor = "rgba(174, 226, 255, .5)";
 
   const tomorrow = formatDate(new Date(Date.now() + 86400000));
   state.selectedProject = null;
@@ -607,7 +607,7 @@ upcomingNav.addEventListener("click", () => {
 
 settingsNav.addEventListener("click", () => {
   clearNav();
-  settingsNav.style.backgroundColor = "#AEE2FF";
+  settingsNav.style.backgroundColor = "rgba(174, 226, 255, .5)";
 
   tasks.innerHTML = "";
   const div = document.createElement("div");
