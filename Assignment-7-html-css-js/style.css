@@ -179,6 +179,10 @@ section nav .categories .category span {
    font-size: smaller;
 }
 
+#inbox{
+    background-color: #AEE2FF;
+}
+
 #projects{
    display: flex;
    flex-direction: column;

@@ -551,13 +551,25 @@ projects.addEventListener("click", (e) => {
 /**********************
  * EVENTS — SIDEBAR NAV
  **********************/
+const clearNav = () => {
+  inboxNav.style.backgroundColor = "transparent";
+  todayNav.style.backgroundColor = "transparent";
+  upcomingNav.style.backgroundColor = "transparent";
+  settingsNav.style.backgroundColor = "transparent";
+};
+
 inboxNav.addEventListener("click", () => {
+  clearNav();
+  inboxNav.style.backgroundColor = "#AEE2FF";
   state.selectedProject = null;
   renderProjects();
   commit("active");
 });
 
 todayNav.addEventListener("click", () => {
+  clearNav();
+  todayNav.style.backgroundColor = "#AEE2FF";
+
   const today = formatDate(new Date());
   state.selectedProject = null;
   state.currentView = "active";
@@ -575,6 +587,9 @@ todayNav.addEventListener("click", () => {
 });
 
 upcomingNav.addEventListener("click", () => {
+  clearNav();
+  upcomingNav.style.backgroundColor = "#AEE2FF";
+
   const tomorrow = formatDate(new Date(Date.now() + 86400000));
   state.selectedProject = null;
   state.currentView = "active";
@@ -591,6 +606,9 @@ upcomingNav.addEventListener("click", () => {
 });
 
 settingsNav.addEventListener("click", () => {
+  clearNav();
+  settingsNav.style.backgroundColor = "#AEE2FF";
+
   tasks.innerHTML = "";
   const div = document.createElement("div");
   div.className = "settings-panel";
