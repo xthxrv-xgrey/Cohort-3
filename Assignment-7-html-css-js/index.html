@@ -16,7 +16,7 @@
             <h1>TaskFlow</h1>
         </div>
         <div class="search">
-            <input id="searchBox" type="search" placeholder="🔍 Search Tasks, Projects">
+            <input id="searchBar" type="search" placeholder="🔍 Search Tasks, Projects">
         </div>
         <div class="menu">
             <i class="ri-sun-line"></i>
@@ -39,14 +39,14 @@
                         <i class="ri-calendar-line"></i>
                         <h3>Today</h3>
                     </div>
-                    <span>6</span>
+                    <span id="todaysTaskCount">0</span>
                 </div>
                 <div class="category" id="upcoming">
                     <div class="type">
                         <i class="ri-calendar-2-line"></i>
                         <h3>Upcoming</h3>
                     </div>
-                    <span>8</span>
+                    <span id="tomorowsTaskCount">0</span>
                 </div>
                 <div class="category" id="settings">
                     <div class="type">
@@ -60,9 +60,9 @@
         <main>
             <nav>
                 <div class="task-types">
-                    <button id="active">Active <span>13</span></button>
-                    <button id="completed">Completed <span>5</span></button>
-                    <button id="bin">Bin <span>9</span></button>
+                    <button id="active">Active <span id="activeTaskCount">0</span></button>
+                    <button id="completed">Completed <span id="completedTaskCount">0</span></button>
+                    <button id="bin">Bin <span id="binTaskCount">0</span></button>
                 </div>
                 <button id="addTask"><i class="ri-add-line"></i> Add Task</button>
             </nav>
