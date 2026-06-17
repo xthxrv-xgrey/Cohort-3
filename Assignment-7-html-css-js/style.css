@@ -923,135 +923,401 @@ input:checked + .slider:before {
 /* =========================
    DARK MODE
 ========================= */
+/* =========================
+   DARK MODE
+========================= */
 
 body.dark {
-    background-color: #1a1a2e;
-    color: #e0e0e0;
+    --bg: #1e1e1e;
+    --surface: #252526;
+    --surface-2: #2d2d30;
+    --surface-hover: #333337;
+    --border: #3c3c3c;
+
+    --accent: #007acc;
+    --text: #d4d4d4;
+    --text-muted: #9d9d9d;
+
+    --success: #4ec9b0;
+    --danger: #f14c4c;
+
+    background-color: var(--bg);
+    color: var(--text);
 }
 
+/* Global */
+
+body.dark,
+body.dark section,
+body.dark main {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Header */
+
 body.dark header {
-    background-color: #16213e;
-    border-bottom-color: #2a2a5a;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark .logo h1 {
+    color: var(--text);
+}
+
+body.dark header .menu i {
+    color: var(--text);
 }
 
 body.dark header .search input {
-    background-color: #16213e;
-    border-color: #2a2a5a;
-    color: #e0e0e0;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+body.dark header .search input::placeholder {
+    color: var(--text-muted);
 }
 
 body.dark header .search input:focus {
-    background-color: #0f3460;
-    border-color: #5e5f96;
+    background-color: var(--surface-hover);
+    border-color: var(--accent);
 }
 
 body.dark header .menu button {
-    background-color: #5e5f96;
-    border-color: #9FA1FF;
-    color: #e0e0e0;
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
 }
+
+body.dark header .menu button:hover {
+    background-color: var(--surface-hover);
+}
+
+/* Sidebar */
 
 body.dark section nav {
-    background-color: #16213e;
-    border-right-color: #2a2a5a;
+    background-color: var(--surface);
+    border-right: 1px solid var(--border);
 }
 
-body.dark section nav .categories .category {
-    color: #ccc;
-    border-color: #2a2a5a;
+body.dark .category {
+    color: var(--text);
+    border: 1px solid var(--border);
 }
 
-body.dark section nav .categories .category:hover {
-    background-color: rgba(94, 95, 150, 0.3);
+body.dark .category i {
+    color: var(--text);
 }
+
+body.dark .category:hover {
+    background-color: var(--surface-hover);
+}
+
+body.dark .category span {
+    background-color: var(--accent);
+    color: black;
+}
+
+/* Projects */
 
 body.dark #projects {
-    background-color: #16213e;
+    background-color: var(--surface);
 }
 
 body.dark #projects .project-title {
-    border-bottom-color: #2a2a5a;
-    color: #ccc;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark #projects .project-title i {
+    color: var(--text-muted);
+}
+
+body.dark #projects .project-title i:hover {
+    background-color: var(--surface-hover);
+    color: var(--text);
 }
 
 body.dark #projects .project {
-    color: #ccc;
-    border-color: #2a2a5a;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+body.dark #projects .project i {
+    color: var(--text-muted);
 }
 
 body.dark #projects .project:hover {
-    background-color: rgba(94, 95, 150, 0.3);
+    background-color: var(--surface-hover);
 }
 
-body.dark #projects .project.active-project {
-    background-color: rgba(94, 95, 150, 0.4);
-    border-left-color: #9FA1FF;
+body.dark #projects .project i:hover {
+    background-color: var(--accent);
+    color: white;
 }
+
+body.dark .project.active-project {
+    background-color: rgba(0, 122, 204, 0.15);
+    border-left: 3px solid var(--accent);
+}
+
+/* Main */
 
 body.dark section main {
-    background-color: #1a1a2e;
+    background-color: var(--bg);
 }
 
 body.dark section main nav {
-    background-color: #1a1a2e;
+    background-color: var(--bg);
 }
+
+/* Top Buttons */
+
+body.dark #active {
+    background-color: rgba(0, 122, 204, 0.15);
+    border: 1px solid var(--accent);
+    color: var(--text);
+}
+
+body.dark #active:hover {
+    background-color: rgba(0, 122, 204, 0.3);
+}
+
+body.dark #completed {
+    background-color: rgba(78, 201, 176, 0.15);
+    border: 1px solid var(--success);
+    color: var(--text);
+}
+
+body.dark #completed:hover {
+    background-color: rgba(78, 201, 176, 0.3);
+}
+
+body.dark #bin {
+    background-color: rgba(241, 76, 76, 0.15);
+    border: 1px solid var(--danger);
+    color: var(--text);
+}
+
+body.dark #bin:hover {
+    background-color: rgba(241, 76, 76, 0.3);
+}
+
+body.dark #addTask {
+    background-color: var(--accent);
+    border: none;
+    color: white;
+}
+
+body.dark #addTask:hover {
+    background-color: #0a8ce9;
+}
+
+/* Active Task */
 
 body.dark .activeTask {
-    background-color: rgba(30, 40, 80, 0.8);
-    border-color: #2a2a5a;
-    color: #e0e0e0;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    color: var(--text);
 }
 
-body.dark .activeTask .content h1 span,
-body.dark .activeTask .content p {
-    color: #aaa;
+body.dark .activeTask:hover {
+    background-color: var(--surface-hover);
 }
 
-body.dark .activeTask .details .left .tag {
-    background-color: rgba(94, 95, 150, 0.4);
+body.dark .activeTask h1,
+body.dark .activeTask .content h1 {
+    color: var(--text);
 }
+
+body.dark .activeTask p,
+body.dark .activeTask span {
+    color: var(--text-muted);
+}
+
+body.dark .activeTask i {
+    color: var(--text-muted);
+}
+
+body.dark .activeTask .details {
+    color: var(--text-muted);
+}
+
+body.dark .activeTask .details h6,
+body.dark .activeTask .details h6 i {
+    color: var(--accent);
+}
+
+body.dark .activeTask .tag {
+    background-color: rgba(0, 122, 204, 0.15);
+    color: var(--accent);
+}
+
+body.dark .activeTask .tag i {
+    color: var(--accent);
+}
+
+body.dark .activeTask .type-tag {
+    background-color: rgba(0, 122, 204, 0.15);
+    color: var(--accent);
+}
+
+body.dark .activeTask .type-tag i,
+body.dark .activeTask .priority-tag i,
+body.dark .activeTask .priority-tag {
+    color: var(--accent);
+}
+
+/* Completed Task */
 
 body.dark .completedTask {
-    background-color: rgba(0, 60, 20, 0.4);
-    border-color: rgba(0, 150, 0, 0.5);
-    color: #e0e0e0;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--success);
+    color: var(--text);
 }
 
-body.dark .completedTask .content h1 span,
-body.dark .completedTask .content p,
-body.dark .completedTask h6 {
-    color: #aaa;
+body.dark .completedTask h1 {
+    color: var(--text);
 }
+
+body.dark .completedTask p,
+body.dark .completedTask span,
+body.dark .completedTask h6,
+body.dark .completedTask i {
+    color: var(--text-muted);
+}
+
+/* Bin Task */
 
 body.dark .binTask {
-    background-color: rgba(40, 30, 30, 0.5);
-    border-color: #3a2a2a;
-    color: #888;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--danger);
+    color: var(--text);
 }
 
-body.dark .setting-item {
-    background: rgba(94, 95, 150, 0.15);
-    border-color: #2a2a5a;
+body.dark .binTask h1 {
+    color: var(--text);
 }
 
-body.dark .project-form,
-body.dark .task-form {
-    background-color: #16213e;
-    color: #e0e0e0;
+body.dark .binTask p,
+body.dark .binTask span,
+body.dark .binTask h6,
+body.dark .binTask i {
+    color: var(--text-muted);
+}
+
+/* Common Task Icons */
+
+body.dark .activeTask i:hover,
+body.dark .completedTask i:hover,
+body.dark .binTask i:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+body.dark .activeTask i:active,
+body.dark .completedTask i:active,
+body.dark .binTask i:active {
+    background-color: #0a8ce9;
+    color: white;
+}
+
+/* Modals */
+
+body.dark #taskModal,
+body.dark #projectModal {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+body.dark #taskModal > i,
+body.dark #projectModal > i {
+    color: white;
+}
+
+/* Forms */
+
+body.dark .task-form,
+body.dark .project-form {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+body.dark .task-form h1,
+body.dark .project-form h1 {
+    color: var(--text);
 }
 
 body.dark .task-form input,
 body.dark .task-form select,
 body.dark .project-form input {
-    background-color: #1a1a2e;
-    border-color: #2a2a5a;
-    color: #e0e0e0;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
 }
 
-body.dark .empty-state {
-    color: #555;
+body.dark .task-form input:focus,
+body.dark .task-form select:focus,
+body.dark .project-form input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+body.dark .task-form label {
+    color: var(--text);
+}
+
+/* Settings */
+
+body.dark .settings-panel {
+    color: var(--text);
 }
 
 body.dark .settings-panel h2 {
-    border-bottom-color: #2a2a5a;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark .setting-item {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+body.dark .muted {
+    color: var(--text-muted);
+}
+
+body.dark .danger-btn {
+    background-color: rgba(241, 76, 76, 0.1);
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* Empty State */
+
+body.dark .empty-state {
+    color: var(--text-muted);
+}
+
+/* Scrollbars */
+
+body.dark ::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark ::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 999px;
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
 }
