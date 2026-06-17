@@ -1,7 +1,7 @@
 | Element     | Font                       |
 | ----------- | -------------------------- |
 | Logo        | Poppins Bold               |  poppins-bold
-| Headings    | Plus Jakarta Sans SemiBold |
-| Task Titles | Plus Jakarta Sans Medium   |
-| Body Text   | Inter Regular              |
-| Statistics  | Inter Bold                 |
+| Headings    | Plus Jakarta Sans SemiBold |  plus-jakarta-sans-semibold
+| Task Titles | Plus Jakarta Sans Medium   |  plus-jakarta-sans-medium
+| Body Text   | Inter Regular              |  inter-regular
+| Statistics  | Inter Bold                 |  inter-bold

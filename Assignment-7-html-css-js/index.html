@@ -27,10 +27,95 @@
 
     <section>
         <nav>
-
+            <div class="categories">
+                <div class="category" id="inbox">
+                    <div class="type">
+                        <i class="ri-inbox-2-line"></i>
+                        <h3>Inbox</h3>
+                    </div>
+                </div>
+                <div class="category" id="today">
+                    <div class="type">
+                        <i class="ri-calendar-line"></i>
+                        <h3>Today</h3>
+                    </div>
+                    <span>6</span>
+                </div>
+                <div class="category" id="upcoming">
+                    <div class="type">
+                        <i class="ri-calendar-2-line"></i>
+                        <h3>Upcoming</h3>
+                    </div>
+                    <span>8</span>
+                </div>
+                <div class="category" id="settings">
+                    <div class="type">
+                        <i class="ri-settings-5-line"></i>
+                        <h3>Setttings</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="projects"></div>
         </nav>
         <main>
-
+            <nav>
+                <div class="task-types">
+                    <button id="active">Active <span>13</span></button>
+                    <button id="completed">Completed <span>5</span></button>
+                    <button id="bin">Bin <span>9</span></button>
+                </div>
+                <button id="addTask"><i class="ri-add-line"></i> Add Task</button>
+            </nav>
+            <div id="tasks">
+                <div class="activeTask">
+                    <input type="checkbox">
+                    <div class="content">
+                        <h1>Title here <span>~ project</span></h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quod, veniam, non voluptate
+                            laborum numquam repellendus iste, iusto omnis ipsam voluptates! Nobis, esse. Ea facere sequi
+                            rerum. Corporis, recusandae earum?
+                        </p>
+                        <div class="details">
+                            <div class="left">
+                                <h6 class="type-tag"><i class="ri-circle-fill"></i> Work</h6>
+                                <h6><i class="ri-calendar-line"></i> May 24</h6>
+                            </div>
+                            <h6 class="priority-tag"><i class="ri-flag-line"></i> Medium</h6>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <i class="ri-pencil-line"></i>
+                        <i class="ri-delete-bin-line"></i>
+                    </div>
+                </div>
+                <div class="completedTask">
+                    <input type="checkbox" checked>
+                    <div class="content">
+                        <h1>Title here <span>~ project</span></h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quod, veniam, non voluptate
+                            laborum numquam repellendus iste, iusto omnis ipsam voluptates! Nobis, esse. Ea facere sequi
+                            rerum. Corporis, recusandae earum?
+                        </p>
+                        <h6><i class="ri-calendar-line"></i> May 24</h6>
+                    </div>
+                    <i class="ri-delete-bin-line"></i>
+                </div>
+                <div class="binTask">
+                    <i class="ri-file-fill"></i>
+                    <div class="content">
+                        <h1>Title here <span>~ project</span></h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quod, veniam, non voluptate
+                            laborum numquam repellendus iste, iusto omnis ipsam voluptates! Nobis, esse. Ea facere sequi
+                            rerum. Corporis, recusandae earum?
+                        </p>
+                        <h6>Deleted May 24</h6>
+                    </div>
+                    <div class="icons">
+                        <i class="ri-recycle-line"></i>
+                        <i class="ri-delete-bin-line"></i>
+                    </div>
+                </div>
+            </div>
         </main>
     </section>
 
