@@ -773,3 +773,134 @@ renderProjects();
 updateProjectSelect();
 applyTheme();
 commit("active");
+/**********************
+ EVENT FLOW DEMO
+**********************/
+
+const eventDemoBtn = document.querySelector("#eventDemoBtn");
+const eventDemoModal = document.querySelector("#eventDemoModal");
+
+const bubblingBtn = document.querySelector("#bubbling");
+const capturingBtn = document.querySelector("#capturing");
+
+const grandParent = document.querySelector("#grandParent");
+const parent = document.querySelector("#parent");
+const child = document.querySelector("#child");
+
+/* Open Modal */
+
+eventDemoBtn.addEventListener("click", () => {
+  eventDemoModal.style.display = "flex";
+});
+
+/* Close Modal */
+
+eventDemoModal.addEventListener("click", (e) => {
+  if (e.target === eventDemoModal) {
+    eventDemoModal.style.display = "none";
+  }
+});
+
+/* Reset Animation */
+
+function resetBoxes() {
+  grandParent.classList.remove("active-flow");
+  parent.classList.remove("active-flow");
+  child.classList.remove("active-flow");
+}
+
+/* Animate Single Box */
+
+function animate(element, delay) {
+  setTimeout(() => {
+    element.classList.add("active-flow");
+
+    setTimeout(() => {
+      element.classList.remove("active-flow");
+    }, 500);
+  }, delay);
+}
+
+/* Bubbling Demo
+   Child → Parent → GrandParent
+*/
+
+bubblingBtn.addEventListener("click", () => {
+  resetBoxes();
+
+  animate(child, 0);
+  animate(parent, 700);
+  animate(grandParent, 1400);
+});
+
+/* Capturing Demo
+   GrandParent → Parent → Child
+*/
+
+capturingBtn.addEventListener("click", () => {
+  resetBoxes();
+
+  animate(grandParent, 0);
+  animate(parent, 700);
+  animate(child, 1400);
+});
+
+/**********************
+ RENDER TREE DEMO
+**********************/
+
+const renderTreeBtn = document.querySelector("#renderTreeBtn");
+const renderTreeModal = document.querySelector("#renderTreeModal");
+
+const startRenderDemo = document.querySelector("#startRenderDemo");
+
+const htmlBox = document.querySelector("#htmlBox");
+const parsingBox = document.querySelector("#parsingBox");
+const tokenBox = document.querySelector("#tokenBox");
+const domBox = document.querySelector("#domBox");
+const cssomBox = document.querySelector("#cssomBox");
+const renderBox = document.querySelector("#renderBox");
+
+renderTreeBtn.addEventListener("click", () => {
+  renderTreeModal.style.display = "flex";
+});
+
+renderTreeModal.addEventListener("click", (e) => {
+  if (e.target === renderTreeModal) {
+    renderTreeModal.style.display = "none";
+  }
+});
+
+function activate(box, delay) {
+  setTimeout(() => {
+    box.classList.add("pipeline-active");
+
+    setTimeout(() => {
+      box.classList.remove("pipeline-active");
+    }, 600);
+  }, delay);
+}
+
+function resetPipeline() {
+  [htmlBox, parsingBox, tokenBox, domBox, cssomBox, renderBox].forEach(
+    (box) => {
+      box.classList.remove("pipeline-active");
+    },
+  );
+}
+
+startRenderDemo.addEventListener("click", () => {
+  resetPipeline();
+
+  activate(htmlBox, 0);
+
+  activate(parsingBox, 700);
+
+  activate(tokenBox, 1400);
+
+  activate(domBox, 2100);
+
+  activate(cssomBox, 2800);
+
+  activate(renderBox, 3500);
+});

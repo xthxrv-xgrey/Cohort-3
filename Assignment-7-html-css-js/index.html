@@ -20,8 +20,12 @@
         </div>
         <div class="menu">
             <i class="ri-sun-line"></i>
-            <button>Upcoming</button>
-            <button>Hello</button>
+            <button id="eventDemoBtn">
+                Event Flow Demo
+            </button>
+            <button id="renderTreeBtn">
+                Rendering Pipeline
+            </button>
         </div>
     </header>
 
@@ -121,6 +125,70 @@
                 <button type="submit" id="addProjectSubmitBtn">Add Project</button>
             </div>
         </form>
+    </div>
+
+    <div id="eventDemoModal">
+        <div>
+            <div>
+                <button id="bubbling">Bubbling</button>
+                <button id="capturing">Capturing</button>
+            </div>
+            <div id="grandParent">
+                <div id="parent">
+                    <div id="child">
+                        <h1>Event Flow Demo</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="renderTreeModal">
+        <div>
+
+            <button id="startRenderDemo">
+                Start Rendering Pipeline
+            </button>
+
+            <div class="pipeline">
+
+                <div class="pipeline-box" id="htmlBox">
+                    HTML
+                </div>
+
+                <span>↓</span>
+
+                <div class="pipeline-box" id="parsingBox">
+                    Parsing
+                </div>
+
+                <span>↓</span>
+
+                <div class="pipeline-box" id="tokenBox">
+                    Tokenization
+                </div>
+
+                <span>↓</span>
+
+                <div class="pipeline-box" id="domBox">
+                    DOM Tree
+                </div>
+
+                <span>↓</span>
+
+                <div class="pipeline-box" id="cssomBox">
+                    CSSOM Tree
+                </div>
+
+                <span>↓</span>
+
+                <div class="pipeline-box" id="renderBox">
+                    Render Tree
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
     <script src="script.js"></script>
