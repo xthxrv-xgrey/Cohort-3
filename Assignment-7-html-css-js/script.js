@@ -1,548 +1,381 @@
-let activeTasks = [];
-let completedTasks = [];
-let binTasks = [];
-let projects = [];
+/**********************
+ * STATE
+ **********************/
+const state = {
+  activeTasks: [],
+  completedTasks: [],
+  binTasks: [],
+  editMode: false,
+  editingTaskId: null,
+  currentView: "active",
+};
 
-// selected
+const STORAGE_KEY = "taskAppState";
+
+/**********************
+ * DOM
+ **********************/
 const tasks = document.querySelector("#tasks");
-const activeBtn = document.querySelector("#active");
-const completedBtn = document.querySelector("#completed");
-const binBtn = document.querySelector("#bin");
-const inboxBtn = document.querySelector("#inbox");
-const todayBtn = document.querySelector("#today");
-const upcomingBtn = document.querySelector("#upcoming");
-const settingsBtn = document.querySelector("#settings");
-const projectsSection = document.querySelector("#projects");
 
-// Sample Data
-activeTasks = [
-  {
-    id: 1,
-    title: "Finish Portfolio Website",
-    description: "Complete the responsive design and deploy to GitHub Pages.",
-    project: "Personal",
-    tag: "Development",
-    dueDate: "2026-06-20",
-    priority: "High",
-  },
-  {
-    id: 2,
-    title: "Study JavaScript",
-    description: "Practice DOM manipulation and event handling.",
-    project: "Learning",
-    tag: "Education",
-    dueDate: "2026-06-18",
-    priority: "Medium",
-  },
-  {
-    id: 3,
-    title: "Buy Groceries",
-    description: "Milk, eggs, bread, fruits, and vegetables.",
-    project: "",
-    tag: "Personal",
-    dueDate: "2026-06-17",
-    priority: "Low",
-  },
-];
+const addTaskBtn = document.querySelector("#addTask");
+const taskModal = document.querySelector("#taskModal");
+const closeTaskModal = document.querySelector("#closeTaskModal");
+const taskForm = document.querySelector("#taskForm");
+const taskModalHeading = document.querySelector("#taskModalHeading");
+const addBtn = document.querySelector("#addBtn");
 
-completedTasks = [
-  {
-    id: 4,
-    title: "Submit Assignment",
-    description: "Uploaded the final PDF to the college portal.",
-    project: "College",
-    completionDate: "2026-06-15",
-  },
-  {
-    id: 5,
-    title: "Clean Workspace",
-    description: "Organized desk and removed unnecessary files.",
-    project: "Personal",
-    completionDate: "2026-06-16",
-  },
-];
+const activeViewBtn = document.querySelector("#active");
+const completedViewBtn = document.querySelector("#completed");
+const binViewBtn = document.querySelector("#bin");
 
-binTasks = [
-  {
-    id: 6,
-    title: "Old Shopping List",
-    description: "Items already purchased.",
-    project: "",
-    deletionDate: "2026-06-14",
-  },
-  {
-    id: 7,
-    title: "Abandoned Side Project",
-    description: "Stopped development due to lack of time.",
-    project: "Freelance",
-    deletionDate: "2026-06-13",
-  },
-];
-
-// ################
-// createCards
-// ################
-
-const activeTaskCard = (
-  id,
-  title,
-  project = "",
-  description,
-  tag,
-  dueDate,
-  priority,
-) => {
-  let card = document.createElement("div");
-  card.className = "activeTask";
-  card.dataset.id = id;
-
-  card.innerHTML = `
-        <input type="checkbox">
-        <div class="content">
-            <h1>${title} <span>~ ${project}</span></h1>
-            <p>${description}</p>
-            <div class="details">
-                <div class="left">
-                    <h6 class="type-tag">
-                        <i class="ri-circle-fill"></i> ${tag}
-                    </h6>
-                    <h6>
-                        <i class="ri-calendar-line"></i> ${dueDate}
-                    </h6>
-                </div>
-                <h6 class="priority-tag">
-                    <i class="ri-flag-line"></i> ${priority}
-                </h6>
-            </div>
-        </div>
-        <div class="icons">
-            <i class="ri-pencil-line"></i>
-            <i class="ri-delete-bin-line"></i>
-        </div>
-    `;
-
-  return card;
-};
-
-const completedTaskCard = (
-  id,
-  title,
-  project = "",
-  description,
-  completionDate,
-) => {
-  let card = document.createElement("div");
-  card.className = "completedTask";
-  card.dataset.id = id;
-
-  card.innerHTML = `
-        <input type="checkbox" checked>
-        <div class="content">
-            <h1>${title} <span>~ ${project}</span></h1>
-            <p>${description}</p>
-            <h6>
-                <i class="ri-calendar-line"></i> ${completionDate}
-            </h6>
-        </div>
-        <i class="ri-delete-bin-line"></i>
-    `;
-
-  return card;
-};
-
-const binTaskCard = (id, title, project = "", description, deletionDate) => {
-  let card = document.createElement("div");
-  card.className = "binTask";
-  card.dataset.id = id;
-
-  card.innerHTML = `
-        <i class="ri-file-fill"></i>
-        <div class="content">
-            <h1>${title} <span>~ ${project}</span></h1>
-            <p>${description}</p>
-            <h6>Deleted ${deletionDate}</h6>
-        </div>
-        <div class="icons">
-            <i class="ri-recycle-line"></i>
-            <i class="ri-delete-bin-line"></i>
-        </div>
-    `;
-
-  return card;
-};
-
-const clearCategoriesButton = () => {
-  inboxBtn.style.backgroundColor = "white";
-  todayBtn.style.backgroundColor = "white";
-  upcomingBtn.style.backgroundColor = "white";
-  settingsBtn.style.backgroundColor = "white";
-};
-
-const clearTaskTypesButton = () => {
-  activeBtn.style.opacity = ".75";
-  completedBtn.style.opacity = ".75";
-  binBtn.style.opacity = ".75";
-};
-
-// ################
-// renderCards
-// ################
-
-const renderActiveTask = () => {
-  clearCategoriesButton();
-  inboxBtn.style.backgroundColor = "rgba(174, 227, 255, 1)";
-
-  clearTaskTypesButton();
-  activeBtn.style.opacity = "1";
-
-  tasks.innerHTML = "";
-
-  activeTasks.forEach((task) => {
-    tasks.appendChild(
-      activeTaskCard(
-        task.id,
-        task.title,
-        task.project,
-        task.description,
-        task.tag,
-        task.dueDate,
-        task.priority,
-      ),
-    );
-  });
-};
-
-const renderCompletedTask = () => {
-  clearCategoriesButton();
-  inboxBtn.style.backgroundColor = "rgba(174, 227, 255, 0.5)";
-
-  clearTaskTypesButton();
-  completedBtn.style.opacity = "1";
-
-  tasks.innerHTML = "";
-
-  completedTasks.forEach((task) => {
-    tasks.appendChild(
-      completedTaskCard(
-        task.id,
-        task.title,
-        task.project,
-        task.description,
-        task.completionDate,
-      ),
-    );
-  });
-};
-
-const renderBinTask = () => {
-  clearCategoriesButton();
-  inboxBtn.style.backgroundColor = "rgba(174, 227, 255, 0.5)";
-
-  clearTaskTypesButton();
-  binBtn.style.opacity = "1";
-
-  tasks.innerHTML = "";
-
-  binTasks.forEach((task) => {
-    tasks.appendChild(
-      binTaskCard(
-        task.id,
-        task.title,
-        task.project,
-        task.description,
-        task.deletionDate,
-      ),
-    );
-  });
-};
-
-// ################
-// renderCardsDated
-// ################
-
-const renderActiveTaskDated = (date) => {
-  tasks.innerHTML = "";
-
-  activeTasks.forEach((task) => {
-    if (task.dueDate === date)
-      tasks.appendChild(
-        activeTaskCard(
-          task.id,
-          task.title,
-          task.project,
-          task.description,
-          task.tag,
-          task.dueDate,
-          task.priority,
-        ),
-      );
-  });
-};
-
-// format date
+/**********************
+ * HELPERS
+ **********************/
 const formatDate = (date) => {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
 };
 
-// ################
-// setTaskCounts
-// ################
+const createId = () =>
+  Date.now().toString() + Math.random().toString(16).slice(2);
 
+/**********************
+ * STORAGE
+ **********************/
+const saveState = () => {
+  const cleanState = {
+    activeTasks: state.activeTasks,
+    completedTasks: state.completedTasks,
+    binTasks: state.binTasks,
+  };
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(cleanState));
+};
+
+const loadState = () => {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+
+  const parsed = JSON.parse(saved);
+
+  state.activeTasks = parsed.activeTasks || [];
+  state.completedTasks = parsed.completedTasks || [];
+  state.binTasks = parsed.binTasks || [];
+};
+
+/**********************
+ * CORE
+ **********************/
+const commit = (view = state.currentView) => {
+  state.currentView = view;
+  saveState();
+  render(view);
+  setTaskCounts();
+};
+
+/**********************
+ * CARD BUILDERS
+ **********************/
+const activeTaskCard = (task) => {
+  const card = document.createElement("div");
+  card.className = "activeTask";
+  card.dataset.id = task.id;
+
+  card.innerHTML = `
+    <input type="checkbox">
+    <div class="content">
+      <h1>${task.title} <span>~ ${task.project}</span></h1>
+      <p>${task.description}</p>
+      <div class="details">
+        <div class="left">
+          <h6>${task.tag}</h6>
+          <h6>${task.dueDate}</h6>
+        </div>
+        <h6>${task.priority}</h6>
+      </div>
+    </div>
+    <div class="icons">
+      <i class="ri-pencil-line"></i>
+      <i class="ri-delete-bin-line"></i>
+    </div>
+  `;
+  return card;
+};
+
+const completedTaskCard = (task) => {
+  const card = document.createElement("div");
+  card.className = "completedTask";
+  card.dataset.id = task.id;
+
+  card.innerHTML = `
+    <input type="checkbox" checked>
+    <div class="content">
+      <h1>${task.title} <span>~ ${task.project}</span></h1>
+      <p>${task.description}</p>
+      <h6>${task.completionDate}</h6>
+    </div>
+    <i class="ri-delete-bin-line"></i>
+  `;
+  return card;
+};
+
+const binTaskCard = (task) => {
+  const card = document.createElement("div");
+  card.className = "binTask";
+  card.dataset.id = task.id;
+
+  card.innerHTML = `
+    <i class="ri-file-fill"></i>
+    <div class="content">
+      <h1>${task.title} <span>~ ${task.project}</span></h1>
+      <p>${task.description}</p>
+      <h6>Deleted ${task.deletionDate}</h6>
+    </div>
+    <div class="icons">
+      <i class="ri-recycle-line"></i>
+      <i class="ri-delete-bin-line"></i>
+    </div>
+  `;
+  return card;
+};
+
+/**********************
+ * RENDER
+ **********************/
+const render = (type = "active") => {
+  tasks.innerHTML = "";
+
+  if (type === "active") {
+    state.activeTasks.forEach((t) => tasks.appendChild(activeTaskCard(t)));
+  }
+
+  if (type === "completed") {
+    state.completedTasks.forEach((t) =>
+      tasks.appendChild(completedTaskCard(t)),
+    );
+  }
+
+  if (type === "bin") {
+    state.binTasks.forEach((t) => tasks.appendChild(binTaskCard(t)));
+  }
+};
+
+/**********************
+ * COUNTS
+ **********************/
 const setTaskCounts = () => {
-  document.querySelector("#activeTaskCount").textContent = activeTasks.length;
+  document.querySelector("#activeTaskCount").textContent =
+    state.activeTasks.length;
+
   document.querySelector("#completedTaskCount").textContent =
-    completedTasks.length;
-  document.querySelector("#binTaskCount").textContent = binTasks.length;
+    state.completedTasks.length;
 
-  // today task
-  // upcoming task ie tommorow
+  document.querySelector("#binTaskCount").textContent = state.binTasks.length;
 
-  const now = new Date();
-  // Tomorrow
-  const today = new Date(now);
-  const tomorrow = new Date(now);
-  tomorrow.setDate(now.getDate() + 1);
+  const today = formatDate(new Date());
+  const tomorrow = formatDate(new Date(Date.now() + 86400000));
 
-  const todayDate = formatDate(today);
-  const tomorrowDate = formatDate(tomorrow);
+  let todayCount = 0;
+  let tomorrowCount = 0;
 
-  let todayTaskCount = 0;
-  let tomorowTaskCount = 0;
-
-  activeTasks.map((task) => {
-    if (task.dueDate === todayDate) todayTaskCount++;
-    else if (task.dueDate === tomorrowDate) tomorowTaskCount++;
+  state.activeTasks.forEach((t) => {
+    if (t.dueDate === today) todayCount++;
+    if (t.dueDate === tomorrow) tomorrowCount++;
   });
 
-  document.querySelector("#todaysTaskCount").textContent = `${todayTaskCount}`;
-  document.querySelector("#tomorowsTaskCount").textContent =
-    `${tomorowTaskCount}`;
+  document.querySelector("#todaysTaskCount").textContent = todayCount;
+  document.querySelector("#tomorowsTaskCount").textContent = tomorrowCount;
 };
 
-// renderButtons
+/**********************
+ * TASK ACTIONS
+ **********************/
+const addTask = (data) => {
+  state.activeTasks.push({
+    id: createId(),
+    ...data,
+  });
+};
 
-// ################
-// event listners on task buttons
-// ################
+const updateTask = (id, data) => {
+  const i = state.activeTasks.findIndex((t) => t.id === id);
+  if (i !== -1) {
+    state.activeTasks[i] = {
+      ...state.activeTasks[i],
+      ...data,
+    };
+  }
+};
 
-activeBtn.addEventListener("click", renderActiveTask);
-completedBtn.addEventListener("click", renderCompletedTask);
-binBtn.addEventListener("click", renderBinTask);
-
-inboxBtn.addEventListener("click", () => {
-  clearCategoriesButton();
-  inboxBtn.style.backgroundColor = "rgba(174, 227, 255, 0.5)";
-  renderActiveTask();
-});
-
-todayBtn.addEventListener("click", () => {
-  clearCategoriesButton();
-  todayBtn.style.backgroundColor = "rgba(174, 227, 255, 0.5)";
-
-  const now = new Date();
-  const today = new Date(now);
-  const todayDate = formatDate(today);
-
-  renderActiveTaskDated(todayDate);
-});
-
-upcomingBtn.addEventListener("click", () => {
-  clearCategoriesButton();
-  upcomingBtn.style.backgroundColor = "rgba(174, 227, 255, 0.5)";
-
-  const now = new Date();
-  const tomorrow = new Date(now);
-  tomorrow.setDate(now.getDate() + 1);
-  const tomorrowDate = formatDate(tomorrow);
-
-  renderActiveTaskDated(tomorrowDate);
-});
-
-settingsBtn.addEventListener("click", () => {
-  clearCategoriesButton();
-  settingsBtn.style.backgroundColor = "rgba(174, 227, 255, 0.5)";
-});
-
+/**********************
+ * EVENTS
+ **********************/
 tasks.addEventListener("click", (e) => {
-  // ==========================
-  // Checkbox Click
-  // ==========================
-  if (e.target.type === "checkbox") {
-    // Active -> Completed
-    const activeCard = e.target.closest(".activeTask");
+  const card = e.target.closest("[data-id]");
+  if (!card) return;
 
-    if (activeCard) {
-      const id = Number(activeCard.dataset.id);
+  const id = card.dataset.id;
 
-      setTimeout(() => {
-        const taskIndex = activeTasks.findIndex((task) => task.id === id);
+  // CHECKBOX
+  if (e.target.matches("input[type='checkbox']")) {
+    const isActive = card.classList.contains("activeTask");
+    const isCompleted = card.classList.contains("completedTask");
 
-        if (taskIndex !== -1) {
-          const completedTask = activeTasks.splice(taskIndex, 1)[0];
+    if (isActive) {
+      const i = state.activeTasks.findIndex((t) => t.id === id);
+      const task = state.activeTasks.splice(i, 1)[0];
 
-          completedTasks.push({
-            id: completedTask.id,
-            title: completedTask.title,
-            description: completedTask.description,
-            project: completedTask.project,
-            completionDate: formatDate(new Date()),
-          });
+      state.completedTasks.push({
+        ...task,
+        completionDate: formatDate(new Date()),
+      });
 
-          renderActiveTask();
-          setTaskCounts();
-        }
-      }, 250);
-
-      return;
+      commit("active");
     }
 
-    // Completed -> Active
-    const completedCard = e.target.closest(".completedTask");
+    if (isCompleted) {
+      const i = state.completedTasks.findIndex((t) => t.id === id);
+      const task = state.completedTasks.splice(i, 1)[0];
 
-    if (completedCard) {
-      const id = Number(completedCard.dataset.id);
+      // FIX: keep the task's original tag/dueDate/priority/project/etc.
+      // Just drop the completionDate field instead of overwriting everything.
+      const { completionDate, ...restoredTask } = task;
+      state.activeTasks.push(restoredTask);
 
-      const taskIndex = completedTasks.findIndex((task) => task.id === id);
+      commit("completed");
+    }
 
-      if (taskIndex !== -1) {
-        const restoredTask = completedTasks.splice(taskIndex, 1)[0];
+    return;
+  }
 
-        activeTasks.push({
-          id: restoredTask.id,
-          title: restoredTask.title,
-          description: restoredTask.description,
-          project: restoredTask.project,
-          tag: "Restored",
-          dueDate: formatDate(new Date()),
-          priority: "Low",
-        });
+  // EDIT
+  if (e.target.classList.contains("ri-pencil-line")) {
+    const task = state.activeTasks.find((t) => t.id === id);
+    if (!task) return;
 
-        renderCompletedTask();
-        setTaskCounts();
+    state.editMode = true;
+    state.editingTaskId = id;
+
+    taskModal.style.display = "flex";
+    taskModalHeading.textContent = "Edit Task";
+    addBtn.textContent = "Save Changes";
+
+    taskForm[0].value = task.title;
+    taskForm[1].value = task.description;
+    taskForm[2].value = task.project;
+    taskForm[3].value = task.tag;
+    taskForm[4].value = task.dueDate;
+    taskForm[5].value = task.priority;
+
+    return;
+  }
+
+  // DELETE → BIN
+  if (e.target.classList.contains("ri-delete-bin-line")) {
+    const isActive = card.classList.contains("activeTask");
+    const isCompleted = card.classList.contains("completedTask");
+
+    if (isActive) {
+      const i = state.activeTasks.findIndex((t) => t.id === id);
+      if (i !== -1) {
+        const task = state.activeTasks.splice(i, 1)[0];
+        state.binTasks.push({ ...task, deletionDate: formatDate(new Date()) });
+        commit("active");
       }
+    }
 
-      return;
+    if (isCompleted) {
+      const i = state.completedTasks.findIndex((t) => t.id === id);
+      if (i !== -1) {
+        const task = state.completedTasks.splice(i, 1)[0];
+        state.binTasks.push({ ...task, deletionDate: formatDate(new Date()) });
+        commit("completed");
+      }
     }
   }
 
-  // ==========================
-  // Delete Active -> Bin
-  // ==========================
-  if (
-    e.target.classList.contains("ri-delete-bin-line") &&
-    e.target.closest(".activeTask")
-  ) {
-    const card = e.target.closest(".activeTask");
-    const id = Number(card.dataset.id);
-
-    const taskIndex = activeTasks.findIndex((task) => task.id === id);
-
-    if (taskIndex !== -1) {
-      const deletedTask = activeTasks.splice(taskIndex, 1)[0];
-
-      binTasks.push({
-        id: deletedTask.id,
-        title: deletedTask.title,
-        description: deletedTask.description,
-        project: deletedTask.project,
-        deletionDate: formatDate(new Date()),
-      });
-
-      renderActiveTask();
-      setTaskCounts();
-    }
-
-    return;
-  }
-
-  // ==========================
-  // Delete Completed -> Bin
-  // ==========================
-  if (
-    e.target.classList.contains("ri-delete-bin-line") &&
-    e.target.closest(".completedTask")
-  ) {
-    const card = e.target.closest(".completedTask");
-    const id = Number(card.dataset.id);
-
-    const taskIndex = completedTasks.findIndex((task) => task.id === id);
-
-    if (taskIndex !== -1) {
-      const deletedTask = completedTasks.splice(taskIndex, 1)[0];
-
-      binTasks.push({
-        id: deletedTask.id,
-        title: deletedTask.title,
-        description: deletedTask.description,
-        project: deletedTask.project,
-        deletionDate: formatDate(new Date()),
-      });
-
-      renderCompletedTask();
-      setTaskCounts();
-    }
-
-    return;
-  }
-
-  // ==========================
-  // Restore Bin -> Active
-  // ==========================
+  // RESTORE FROM BIN
   if (e.target.classList.contains("ri-recycle-line")) {
-    const card = e.target.closest(".binTask");
+    const i = state.binTasks.findIndex((t) => t.id === id);
 
-    if (card) {
-      const id = Number(card.dataset.id);
+    if (i !== -1) {
+      const task = state.binTasks.splice(i, 1)[0];
 
-      const taskIndex = binTasks.findIndex((task) => task.id === id);
+      // FIX: same as above — preserve original tag/dueDate/priority,
+      // just strip off the deletionDate marker.
+      const { deletionDate, ...restoredTask } = task;
+      state.activeTasks.push(restoredTask);
 
-      if (taskIndex !== -1) {
-        const restoredTask = binTasks.splice(taskIndex, 1)[0];
-
-        activeTasks.push({
-          id: restoredTask.id,
-          title: restoredTask.title,
-          description: restoredTask.description,
-          project: restoredTask.project,
-          tag: "Restored",
-          dueDate: formatDate(new Date()),
-          priority: "Low",
-        });
-
-        renderBinTask();
-        setTaskCounts();
-      }
+      commit("bin");
     }
-
-    return;
-  }
-
-  // ==========================
-  // Permanently Delete Bin Task
-  // ==========================
-  if (
-    e.target.classList.contains("ri-delete-bin-line") &&
-    e.target.closest(".binTask")
-  ) {
-    const card = e.target.closest(".binTask");
-    const id = Number(card.dataset.id);
-
-    const taskIndex = binTasks.findIndex((task) => task.id === id);
-
-    if (taskIndex !== -1) {
-      binTasks.splice(taskIndex, 1);
-    }
-
-    renderBinTask();
-    setTaskCounts();
   }
 });
 
-// Initial Render
-clearTaskTypesButton();
-renderActiveTask();
-setTaskCounts();
+/**********************
+ * VIEW SWITCHING (was missing — buttons did nothing before)
+ **********************/
+activeViewBtn.addEventListener("click", () => commit("active"));
+completedViewBtn.addEventListener("click", () => commit("completed"));
+binViewBtn.addEventListener("click", () => commit("bin"));
+
+/**********************
+ * MODAL
+ **********************/
+addTaskBtn.addEventListener("click", () => {
+  // FIX: clear any leftover edit-mode values/state before opening a
+  // fresh "Add Task" form (previously stale edited values stuck around).
+  taskForm.reset();
+  state.editMode = false;
+  state.editingTaskId = null;
+
+  taskModal.style.display = "flex";
+  taskModalHeading.textContent = "Add Task";
+  addBtn.textContent = "Add Task";
+});
+
+closeTaskModal.addEventListener("click", () => {
+  taskModal.style.display = "none";
+  taskForm.reset();
+  // FIX: also clear edit state on close so a cancelled edit
+  // doesn't silently overwrite the wrong task later.
+  state.editMode = false;
+  state.editingTaskId = null;
+});
+
+/**********************
+ * FORM
+ **********************/
+taskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = {
+    title: taskForm[0].value.trim(),
+    description: taskForm[1].value.trim(),
+    project: taskForm[2].value,
+    tag: taskForm[3].value.trim(),
+    dueDate: taskForm[4].value,
+    priority: taskForm[5].value,
+  };
+
+  if (!data.title || !data.description || !data.tag) return;
+
+  if (state.editMode) {
+    updateTask(state.editingTaskId, data);
+    state.editMode = false;
+    state.editingTaskId = null;
+  } else {
+    addTask(data);
+  }
+
+  commit("active");
+  taskForm.reset();
+  taskModal.style.display = "none";
+});
+
+/**********************
+ * INIT
+ **********************/
+loadState();
+commit("active");

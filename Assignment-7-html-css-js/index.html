@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projects"></div>
+            <div id="projects"></div>
         </nav>
         <main>
             <nav>
@@ -118,6 +118,37 @@
             </div>
         </main>
     </section>
+
+    <div id="taskModal">
+        <i class="ri-close-large-line" id="closeTaskModal"></i>
+        <form class="task-form" id="taskForm">
+            <h1 id="taskModalHeading">Add Task</h1>
+
+            <input type="text" required placeholder="Title">
+
+            <input type="text" required placeholder="Description...">
+
+            <select id="project" name="project" required>
+                <option value="" disabled selected style="color: grey;">--Select a Project--</option>
+                <option value="default">Default</option>
+            </select>
+            <input id="tag" type="text" placeholder="Tag..." required>
+
+            <div>
+                <label for="deadline">Deadline:</label>
+                <input id="deadline" type="date" required>
+            </div>
+
+            <select id="priority" name="priority" required>
+                <option value="" disabled selected style="color: grey;">--Select Priority--</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+
+            <button type="submit" id="addBtn">Add Task</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
