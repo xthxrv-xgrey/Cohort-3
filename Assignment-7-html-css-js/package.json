@@ -1,0 +1,15 @@
+{
+  "name": "assignment-7-html-css",
+  "version": "1.0.0",
+  "description": "A vanilla JavaScript task management app with project organization, a recycle bin, dark mode, and two built-in interactive demos that visualize core browser concepts (event propagation and the rendering pipeline).",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
