@@ -15,7 +15,6 @@
 </head>
 
 <body>
-    <!-- <main style="display: none;"> -->
     <main>
         <header>
             <div class="logoSection">
@@ -29,6 +28,7 @@
                 </button>
             </div>
         </header>
+
         <section>
             <div class="overview">
                 <div class="title">
@@ -39,17 +39,17 @@
                     <div class="pnl-card">
                         <i class="fa-solid fa-building-columns" style="color: #1e40af; background-color: #dbeafe;"></i>
                         <p>Current Balance</p>
-                        <h3 id="current-balance">$ 0.00</h3>
+                        <h3 id="current-balance">₹ 0.00</h3>
                     </div>
-                    <div class=" pnl-card">
+                    <div class="pnl-card">
                         <i class="fa-solid fa-arrow-trend-up" style="color: green; background-color: #dcfce7;"></i>
                         <p>Total Income</p>
-                        <h3 id="total-income">$ 0.00</h3>
+                        <h3 id="total-income">₹ 0.00</h3>
                     </div>
                     <div class="pnl-card">
                         <i class="fa-solid fa-arrow-trend-down" style="color: red; background-color: #fee2e2;"></i>
                         <p>Total Expenses</p>
-                        <h3 id="total-expense">$ 0.00</h3>
+                        <h3 id="total-expense">₹ 0.00</h3>
                     </div>
                     <div class="pnl-card">
                         <i class="fa-solid fa-piggy-bank" style="color: #1e40af; background-color: #dbeafe;"></i>
@@ -60,53 +60,41 @@
             </div>
 
             <div class="cashFlow">
-
                 <div class="cashFlow-header">
                     <div>
                         <h3>Cash Flow</h3>
                         <p>This Month</p>
                     </div>
-
                     <span class="netAmount" id="net-amount">0</span>
                 </div>
 
                 <div class="cashFlow-content">
-
                     <div class="chart">
-
                         <div class="outer-circle" id="cashFlowPercentageChart">
                             <div class="inner-circle">
                                 <h2 id="cashFlowPercentage">0%</h2>
                                 <span>Income</span>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="legend">
-
                         <div class="legend-item">
                             <div class="dot income"></div>
-
                             <div>
                                 <p>Income</p>
                                 <h4 id="total-income-amount"></h4>
                             </div>
                         </div>
-
                         <div class="legend-item">
                             <div class="dot expense"></div>
-
                             <div>
                                 <p>Expense</p>
                                 <h4 id="total-expense-amount"></h4>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
             <div class="transactions">
@@ -115,11 +103,10 @@
                         <h2>All Transactions</h2>
                         <button id="addTransactionBtn"><i class="ri-add-line"></i>Add Transaction</button>
                     </div>
-
                     <div>
                         <div>
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="search">
+                            <input type="text" id="search" placeholder="Search...">
                         </div>
                         <select name="typeSearch" id="typeSearch">
                             <option value="all" selected>All Types</option>
@@ -130,88 +117,59 @@
                 </div>
                 <table>
                     <thead>
-                        <th>DATE</th>
-                        <th>DESCRIPTION</th>
-                        <th>CATEGORY</th>
-                        <th>AMOUNT</th>
-                        <th>ACTIONS</th>
+                        <tr>
+                            <th>DATE</th>
+                            <th>DESCRIPTION</th>
+                            <th>CATEGORY</th>
+                            <th>AMOUNT</th>
+                            <th>ACTIONS</th>
+                        </tr>
                     </thead>
-                    <tbody id="allTransactions">
-                        <tr data-id="j79080998kjlj">
-                            <td>28-06-2026</td>
-                            <td><span style="font-weight: bold;">Rent</span></td>
-                            <td>Utils</td>
-                            <td><span style="color: green;">+$800</span></td>
-                            <td>
-                                <button class="editTransaction"><i class="ri-pencil-fill"></i></button>
-                                <button class="deleteTransaction"><i class="ri-delete-bin-6-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr data-id="j79080998kjlj">
-                            <td>28-06-2026</td>
-                            <td><span style="font-weight: bold;">Rent</span></td>
-                            <td>Utils</td>
-                            <td><span style="color: green;">+$800</span></td>
-                            <td>
-                                <button class="editTransaction"><i class="ri-pencil-fill"></i></button>
-                                <button class="deleteTransaction"><i class="ri-delete-bin-6-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr data-id="j79080998kjlj">
-                            <td>28-06-2026</td>
-                            <td><span style="font-weight: bold;">Rent</span></td>
-                            <td>Utils</td>
-                            <td><span style="color: red;">-$350</span></td>
-                            <td>
-                                <button class="editTransaction"><i class="ri-pencil-fill"></i></button>
-                                <button class="deleteTransaction"><i class="ri-delete-bin-6-fill"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="allTransactions"></tbody>
                 </table>
             </div>
 
             <div id="menuModal">
-                <p>Name</p>
-                <button id="profile"><i class="ri-user-fill"></i><span>Profile</span></button>
-                <button id="dashboard"><i class="ri-dashboard-fill"></i><span>Dashboard</span></button>
+                <p id="menuName">Name</p>
+                <button id="profile-btn"><i class="ri-user-fill"></i><span>Profile</span></button>
+                <button id="dashboard-btn"><i class="ri-dashboard-fill"></i><span>Dashboard</span></button>
                 <button id="theme-toggle-btn"><i class='ri-moon-fill'></i> <span>Dark</span></button>
-                <button id="setting"><i class="ri-settings-fill"></i><span>Settings</span></button>
-                <button id="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
+                <button id="setting-btn"><i class="ri-settings-fill"></i><span>Settings</span></button>
+                <button id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
             </div>
         </section>
     </main>
 
     <div id="loginModal">
-        <form action="" id="loginForm">
+        <form id="loginForm">
             <div class="title">
                 <h1>Login</h1>
                 <span>Credo</span>
             </div>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
+            <input type="text" placeholder="Username" id="login-username" required>
+            <input type="password" placeholder="Password" id="login-password" required>
             <button type="submit">Login</button>
-            <a>Create a New Account?</a>
+            <a id="showRegisterModal">Create a New Account?</a>
         </form>
     </div>
 
     <div id="registerModal">
-        <form action="" id="registerForm">
+        <form id="registerForm">
             <div class="title">
                 <h1>Register</h1>
                 <span>Credo</span>
             </div>
-            <input type="name" placeholder="Name" required>
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="email" required>
-            <input type="password" placeholder="Password" required>
+            <input type="text" placeholder="Name" required id="register-name">
+            <input type="text" placeholder="Username" required id="register-username">
+            <input type="email" placeholder="Email" required id="register-email">
+            <input type="password" placeholder="Password" required id="register-password">
             <button type="submit">Register</button>
-            <a>Already Have an Account?</a>
+            <a id="showLoginModal">Already Have an Account?</a>
         </form>
     </div>
 
     <div id="addTransactionModal">
-        <form action="" id="addTransactionForm">
+        <form id="addTransactionForm">
             <div class="title">
                 <h1>Add Transaction</h1>
                 <span>Credo</span>
@@ -220,8 +178,8 @@
             <div>
                 <label for="addTransactionType">Type</label>
                 <select name="type" id="addTransactionType">
-                    <option value="Debit" selected>Debit</option>
-                    <option value="Credit">Credit</option>
+                    <option value="debit" selected>Debit</option>
+                    <option value="credit">Credit</option>
                 </select>
             </div>
 
@@ -233,18 +191,17 @@
             <div style="flex-direction: row; gap: 1rem;">
                 <div>
                     <label for="addTransactionAmount">Amount</label>
-                    <input type="number" name="amount" id="addTransactionAmount">
+                    <input type="number" name="amount" id="addTransactionAmount" min="0.01" step="0.01" required>
                 </div>
-
                 <div>
                     <label for="addTransactionDate">Date</label>
-                    <input type="date" name="date" id="addTransactionDate">
+                    <input type="date" name="date" id="addTransactionDate" required>
                 </div>
             </div>
 
             <div>
-                <label for="addTransactionCategory">Type</label>
-                <select name="type" id="addTransactionCategory">
+                <label for="addTransactionCategory">Category</label>
+                <select name="category" id="addTransactionCategory">
                     <option value="" selected disabled>Select a Category</option>
                     <option value="Food &amp; Dining">Food &amp; Dining</option>
                     <option value="Shopping">Shopping</option>
@@ -257,24 +214,25 @@
                 </select>
             </div>
 
-
             <button type="submit">Add Transaction</button>
         </form>
-        <i class="ri-close-large-fill" id="closeAddTransactionModal"></i>
     </div>
 
     <div id="editTransactionModal">
-        <form action="" id=" editTransactionForm">
+        <form id="editTransactionForm">
             <div class="title">
                 <h1>Edit Transaction</h1>
                 <span>Credo</span>
             </div>
 
+            <input type="hidden" id="editTransactionId">
+
             <div>
                 <label for="editTransactionType">Type</label>
+                <!-- FIX #1: lowercase values -->
                 <select name="type" id="editTransactionType">
-                    <option value="Debit">Debit</option>
-                    <option value="Credit">Credit</option>
+                    <option value="debit">Debit</option>
+                    <option value="credit">Credit</option>
                 </select>
             </div>
 
@@ -286,18 +244,17 @@
             <div style="flex-direction: row; gap: 1rem;">
                 <div>
                     <label for="editTransactionAmount">Amount</label>
-                    <input type="number" name="amount" id="editTransactionAmount">
+                    <input type="number" name="amount" id="editTransactionAmount" min="0.01" step="0.01" required>
                 </div>
-
                 <div>
                     <label for="editTransactionDate">Date</label>
-                    <input type="date" name="date" id="editTransactionDate">
+                    <input type="date" name="date" id="editTransactionDate" required>
                 </div>
             </div>
 
             <div>
-                <label for="editTransactionCategory">Type</label>
-                <select name="type" id="editTransactionCategory">
+                <label for="editTransactionCategory">Category</label>
+                <select name="category" id="editTransactionCategory">
                     <option value="Food &amp; Dining">Food &amp; Dining</option>
                     <option value="Shopping">Shopping</option>
                     <option value="Recharge &amp; Bills">Recharge &amp; Bills</option>
@@ -309,10 +266,8 @@
                 </select>
             </div>
 
-
-            <button type="submit">Edit Transaction</button>
+            <button type="submit">Save Changes</button>
         </form>
-        <i class="ri-close-large-fill" id="closeEditTransactionModal"></i>
     </div>
 
     <script src="script.js"></script>

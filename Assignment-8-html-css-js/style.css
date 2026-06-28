@@ -31,33 +31,21 @@
 ========================================================= */
 
 :root {
-
-    /* Backgrounds */
     --bg-color: #F6F5F3;
     --surface-color: #FFFFFF;
-
-    /* Text */
     --text-color: #202020;
     --muted-text: #6B7280;
-
-    /* Brand */
     --primary-color: #B69259;
     --primary-text: #FFFFFF;
-
-    /* Status */
     --success-color: #2E8B57;
     --danger-color: #C84C4C;
-
-    /* Borders */
     --border-color: #E7E4DF;
 
-    /* Typography */
     --font-body: "Inter", system-ui, sans-serif;
     --font-display: "Manrope", system-ui, sans-serif;
     --font-logo: "Zaslia", serif;
     --font-mono: "JetBrainsMono", monospace;
 
-    /* Font Sizes */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-md: 1rem;
@@ -67,12 +55,9 @@
     --font-size-3xl: 2rem;
     --font-size-4xl: 2.5rem;
 
-    /* Radius */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
-
-    /* Transition */
     --transition-fast: 0.2s ease;
 }
 
@@ -81,19 +66,14 @@
 ========================================================= */
 
 html[data-theme="dark"] {
-
     --bg-color: #121212;
     --surface-color: #1A1D20;
-
     --text-color: #F2F2F2;
     --muted-text: #9CA3AF;
-
     --primary-color: #C7CDD1;
     --primary-text: #111111;
-
     --success-color: #4CAF7D;
     --danger-color: #E57373;
-
     --border-color: #353A40;
 }
 
@@ -107,19 +87,7 @@ html[data-theme="dark"] {
     box-sizing: border-box;
 }
 
-/* =========================
-   MOBILE FIRST DEFAULT
-   (0px and above)
-========================= */
-
-
-/* =========================================================
-   BASE
-========================================================= */
-
-
-html,
-body {
+html, body {
     min-height: 100%;
 }
 
@@ -135,7 +103,7 @@ body {
 ========================================================= */
 
 main {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -169,63 +137,58 @@ header .logoSection {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-
+    gap: 0.5rem;
     background: var(--primary-color);
     color: var(--primary-text);
-
     border: none;
     padding: 0.8rem 1.2rem;
     border-radius: var(--radius-sm);
-
     cursor: pointer;
     transition: var(--transition-fast);
 }
 
-.header-btn:hover {
-    filter: brightness(1.05);
-}
+.header-btn:hover { filter: brightness(1.05); }
+.header-btn:active { transform: scale(0.97); }
 
-.header-btn:active {
-    transform: scale(0.97);
-}
-
-#display-name{
+#display-name {
     display: none;
-    border-right: 1px solid var(--text-color);
+    border-right: 1px solid var(--border-color);
     padding: 0 1rem;
 }
 
-
 /* =========================================================
-   MAIN AREA
+   SECTION
 ========================================================= */
 
-section{
+section {
     min-height: 90vh;
     background-color: var(--bg-color);
     padding: 2rem;
     position: relative;
 }
 
-.overview .title>h2{
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.overview .title > h2 {
     color: var(--text-color);
     font-size: var(--font-size-3xl);
 }
 
-.overview .title>p{
+.overview .title > p {
     color: var(--muted-text);
     font-size: var(--font-size-sm);
 }
 
-.pnl-section{
+.pnl-section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 2rem 0;
 }
 
-.pnl-section .pnl-card{
+.pnl-section .pnl-card {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
     min-height: 220px;
@@ -234,200 +197,126 @@ section{
     flex-direction: column;
     justify-content: space-between;
     padding: 1.5rem;
+    /* FIX #12: removed broken hover that made text invisible */
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.pnl-section .pnl-card:hover{
-    background-color: var(--primary-color);
+.pnl-section .pnl-card:hover {
     transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 
-.pnl-section .pnl-card>i{
+.pnl-section .pnl-card > i {
     font-size: var(--font-size-3xl);
     padding: 1rem;
-    background-color: #2E8B57;
     width: max-content;
     border-radius: var(--radius-md);
 }
 
-.pnl-section .pnl-card>p{
+.pnl-section .pnl-card > p {
     color: var(--muted-text);
 }
 
-.pnl-section .pnl-card>h3{
+.pnl-section .pnl-card > h3 {
     font-size: var(--font-size-3xl);
 }
 
 /* =========================================================
-   ANALYTICS
+   CASH FLOW
 ========================================================= */
 
-.cashFlow{
-
-    background:var(--surface-color);
-
-    border:1px solid var(--border-color);
-
-    border-radius:var(--radius-lg);
-
-    padding:2rem;
-
-    margin-bottom:2rem;
+.cashFlow {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
-.cashFlow-header{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    margin-bottom:2rem;
+.cashFlow-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.cashFlow-header h3{
-
-    font-size:1.5rem;
-    margin-bottom:.3rem;
+.cashFlow-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
 }
 
-.cashFlow-header p{
+.cashFlow-header p { color: var(--muted-text); }
 
-    color:var(--muted-text);
+.netAmount {
+    font-family: var(--font-mono);
+    color: var(--success-color);
+    font-size: 1.2rem;
 }
 
-.netAmount{
-
-    font-family:var(--font-mono);
-
-    color:var(--success-color);
-
-    font-size:1.2rem;
-}
-
-.cashFlow-content{
-
-    display:flex;
-
+.cashFlow-content {
+    display: flex;
     flex-direction: column;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:3rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
 }
 
-.chart{
-
-    flex:1;
-
-    display:flex;
-
-    justify-content:center;
+.chart {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.outer-circle{
-
-    width:240px;
-
-    aspect-ratio:1;
-
-    border-radius:50%;
-
-    background:conic-gradient(
-        #00ddff 0% 72%,
-        /* #E35D5D 72% 100% */
-        #ff6400 72% 100%
-    );
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+.outer-circle {
+    width: 240px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(#00ddff 0% 72%, #ff6400 72% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.inner-circle{
-
-    width:72%;
-
-    aspect-ratio:1;
-
-    border-radius:50%;
-
-    background:var(--surface-color);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
+.inner-circle {
+    width: 72%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--surface-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.inner-circle h2{
+.inner-circle h2 { font-size: 2rem; }
+.inner-circle span { color: var(--muted-text); }
 
-    font-size:2rem;
+.legend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.inner-circle span{
-
-    color:var(--muted-text);
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.legend{
-
-    flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:2rem;
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.legend-item{
+.income  { background: #00ddff; }
+.expense { background: #ff6400; }
 
-    display:flex;
-
-    align-items:center;
-
-    gap:1rem;
-}
-
-.dot{
-
-    width:16px;
-
-    height:16px;
-
-    border-radius:50%;
-}
-
-.income{
-    background:#00ddff;
-}
-
-.expense{
-
-    background:#ff6400;
-}
-
-.legend-item p{
-
-    color:var(--muted-text);
-
-    margin-bottom:.25rem;
-}
-
-.legend-item h4{
-
-    font-size:1.2rem;
-
-    font-family:var(--font-mono);
-}
+.legend-item p { color: var(--muted-text); margin-bottom: 0.25rem; }
+.legend-item h4 { font-size: 1.2rem; font-family: var(--font-mono); }
 
 /* =========================================================
    TRANSACTIONS
@@ -453,14 +342,15 @@ section{
 
 .transactions-header > div:first-child {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
-    width: 100%;
 }
 
 .transactions-header > div:last-child {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
     width: 100%;
 }
@@ -477,84 +367,60 @@ section{
 #addTransactionBtn {
     display: flex;
     align-items: center;
-    gap: .5rem;
-    
-    padding: .8rem 1.5rem;
-    
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
     border: none;
     border-radius: var(--radius-sm);
-    
     background: var(--primary-color);
     color: var(--primary-text);
-    
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
-    
     cursor: pointer;
     transition: var(--transition-fast);
 }
 
-#addTransactionBtn>i {
-    color: var(--primary-text);
-}
-
-#addTransactionBtn:hover {
-    filter: brightness(1.05);
-}
-
-#addTransactionBtn:active {
-    transform: scale(.97);
-}
+#addTransactionBtn > i { color: var(--primary-text); }
+#addTransactionBtn:hover { filter: brightness(1.05); }
+#addTransactionBtn:active { transform: scale(0.97); }
 
 /* =========================================================
    SEARCH
 ========================================================= */
 
-.transactions-header input {
-    width:100%;
-
+.transactions-header input[type="text"] {
     border: none;
     outline: none;
-
     background: transparent;
-
     color: var(--text-color);
     font-size: var(--font-size-sm);
+    width: 100%;
 }
 
 .transactions-header > div:last-child > div {
     display: flex;
     align-items: center;
-    gap: .75rem;
-
+    gap: 0.75rem;
     background: var(--surface-color);
-
-    padding: .8rem 1rem;
-
+    padding: 0.8rem 1rem;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-    width: 100%;
+    flex: 1;
+    min-width: 160px;
 }
 
-.transactions-header i {
-    color: var(--muted-text);
-}
+.transactions-header i { color: var(--muted-text); }
 
 /* =========================================================
-   FILTER
+   FILTER SELECT
 ========================================================= */
 
 #typeSearch {
-    padding: .8rem 1rem;
-
+    padding: 0.8rem 1rem;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-
     background: var(--surface-color);
     color: var(--text-color);
-
     font-family: var(--font-body);
-
     cursor: pointer;
 }
 
@@ -562,118 +428,81 @@ section{
    TABLE
 ========================================================= */
 
-
-table{
+table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    
     width: 100%;
     border-collapse: collapse;
-
     background: var(--surface-color);
-
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-
-    overflow: scroll;
     scrollbar-width: none;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
 }
 
-thead {
-    background: rgba(182, 146, 89, .08);
-}
+thead { background: rgba(182, 146, 89, .08); }
 
 thead th {
     padding: 1rem 1.5rem;
-
     text-align: left;
-
     font-size: var(--font-size-sm);
-
     color: var(--muted-text);
-
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
 }
 
 tbody td {
     padding: 1rem 1.5rem;
     border-top: 1px solid var(--border-color);
+    white-space: nowrap;
 }
 
-tbody tr {
-    transition: .2s;
-}
-
-tbody tr:hover {
-    background: rgba(182, 146, 89, .05);
-}
+tbody tr { transition: 0.2s; }
+tbody tr:hover { background: rgba(182, 146, 89, .05); }
 
 tbody td:nth-child(4) {
     font-family: var(--font-mono);
     font-weight: 600;
 }
 
-tbody td:last-child {
-    display: flex;
-    gap: .5rem;
-}
-
 .editTransaction,
 .deleteTransaction {
     width: 38px;
     height: 38px;
-
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-
     border: none;
     border-radius: var(--radius-sm);
-
     cursor: pointer;
-
     transition: var(--transition-fast);
+    margin-right: 4px;
 }
 
 .editTransaction {
     background: rgba(37, 99, 235, .08);
     color: #2563eb;
 }
-
-.editTransaction:hover {
-    background: rgba(37, 99, 235, .15);
-}
+.editTransaction:hover { background: rgba(37, 99, 235, .15); }
 
 .deleteTransaction {
     background: rgba(200, 76, 76, .08);
     color: var(--danger-color);
 }
-
-
-.deleteTransaction:hover {
-    background: rgba(200, 76, 76, .15);
-}
+.deleteTransaction:hover { background: rgba(200, 76, 76, .15); }
 
 /* =========================================================
-   EMPTY TABLE
+   EMPTY TABLE STATE
 ========================================================= */
 
 #allTransactions:empty::after {
     content: "No transactions yet.";
     display: block;
-
     text-align: center;
-
     padding: 3rem;
-
     color: var(--muted-text);
 }
 
-
 /* =========================================================
-   MODAL
+   MENU MODAL
 ========================================================= */
 
 #menuModal {
@@ -687,224 +516,271 @@ tbody td:last-child {
     border-radius: var(--radius-lg);
     padding: 1rem;
     z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
 }
 
 #menuModal p {
-    margin: .5rem 0;
-    font-weight: bolder;
-    padding: .5rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    padding: 0.5rem;
+    color: var(--text-color);
 }
 
 #menuModal button {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     width: 100%;
-    padding: .5rem;
-    margin: .25rem 0;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
     border: none;
     border-radius: var(--radius-sm);
     background: transparent;
     color: var(--muted-text);
     cursor: pointer;
-
     font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    justify-self: flex-start;
+    font-family: var(--font-body);
+    transition: var(--transition-fast);
 }
 
 #menuModal button:hover {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: rgba(182, 146, 89, .1);
+    color: var(--primary-color);
 }
 
+/* =========================================================
+   AUTH MODALS (login / register)
+========================================================= */
+
 #loginModal,
-#registerModal,
-#addTransactionModal,
-#editTransactionModal {
+#registerModal {
     height: 100vh;
     width: 100vw;
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--surface-color);
+    background-color: var(--bg-color);
     justify-content: center;
     align-items: center;
+    z-index: 500;
 }
 
-#addTransactionModal>form,
-#editTransactionModal>form,
-#loginModal>form,
-#registerModal>form{
+#loginModal > form,
+#registerModal > form {
     width: calc(min(90vw, 350px));
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem 2rem;
-    background-color: var(--border-color);
+    padding: 2rem;
+    background-color: var(--surface-color);
     border-radius: var(--radius-md);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     font-family: var(--font-display);
+    box-shadow: 0 8px 32px rgba(0,0,0,.1);
 }
 
-#addTransactionModal form .title,
-#editTransactionModal form .title,
 #loginModal form .title,
-#registerModal form .title{
+#registerModal form .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-
-#addTransactionModal form span,
-#editTransactionModal form span,
 #loginModal form span,
-#registerModal form span{
+#registerModal form span {
     color: var(--primary-text);
     background-color: var(--primary-color);
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
     border-radius: var(--radius-lg);
     font-weight: bold;
     font-family: var(--font-logo);
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
 }
 
-
-#addTransactionModal>form input,
-#editTransactionModal>form input,
-#addTransactionModal>form select,
-#editTransactionModal>form select,
-#loginModal>form>input,
-#registerModal>form>input{
-     padding: 1rem;
-     border-radius: var(--radius-sm);
-     border: 1px solid var(--border-color);
-}
-
-#addTransactionModal>form input,
-#editTransactionModal>form input,
-#addTransactionModal>form select,
-#editTransactionModal>form select{
-    padding: .5rem 0;
-}
-
-#addTransactionModal>form>button,
-#editTransactionModal>form>button,
-#loginModal>form>button,
-#registerModal>form>button{
-    background-color: var(--primary-color);
-    width: 100%;
-    padding: 1rem 4rem;
+#loginModal > form > input,
+#registerModal > form > input {
+    padding: 0.875rem 1rem;   
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
-    align-self: center;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+#loginModal > form > input:focus,
+#registerModal > form > input:focus {
+    border-color: var(--primary-color);
+}
+
+#loginModal > form > button,
+#registerModal > form > button {
+    background-color: var(--primary-color);
+    color: var(--primary-text);
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: none;
     font-size: var(--font-size-md);
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
 }
 
-#loginModal>form>button:hover,
-#registerModal>form>button:hover{
-    filter: brightness(130%);
-}
+#loginModal > form > button:hover,
+#registerModal > form > button:hover { filter: brightness(1.08); }
 
-#loginModal>form>a,
-#registerModal>form>a{
+#loginModal > form > a,
+#registerModal > form > a {
     font-size: var(--font-size-xs);
     align-self: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition-fast);
 }
 
-#loginModal>form>a:hover,
-#registerModal>form>a:hover{
-    text-decoration: underline;
-}
+#loginModal > form > a:hover,
+#registerModal > form > a:hover { text-decoration: underline; }
+
+/* =========================================================
+   TRANSACTION MODALS (add / edit)
+========================================================= */
 
 #addTransactionModal,
 #editTransactionModal {
-    background-color: var(--surface-color);
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 400;
 }
 
-
-#addTransactionModal>form,
-#editTransactionModal>form{
+#addTransactionModal > form,
+#editTransactionModal > form {
     width: calc(min(90vw, 400px));
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-display);
+    box-shadow: 0 8px 32px rgba(0,0,0,.2);
 }
 
-#addTransactionModal>i,
-#editTransactionModal>i{
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    font-size: var(--font-size-2xl);
-    color: var(--primary-color);
+#addTransactionModal form .title,
+#editTransactionModal form .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#addTransactionModal>form>div,
-#editTransactionModal>form>div{
+#addTransactionModal form span,
+#editTransactionModal form span {
+    color: var(--primary-text);
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: bold;
+    font-family: var(--font-logo);
+    letter-spacing: 0.1rem;
+}
+
+#addTransactionModal > form > div,
+#editTransactionModal > form > div {
     display: flex;
     flex-direction: column;
 }
 
-#addTransactionModal>form>div>label,
-#editTransactionModal>form>div>label{
+#addTransactionModal > form > div > label,
+#editTransactionModal > form > div > label {
     font-size: var(--font-size-sm);
     color: var(--muted-text);
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
+#addTransactionModal > form input,
+#editTransactionModal > form input,
+#addTransactionModal > form select,
+#editTransactionModal > form select {
+    padding: 0.625rem 0.875rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color var(--transition-fast);
+    width: 100%;
+}
+
+#addTransactionModal > form input:focus,
+#editTransactionModal > form input:focus,
+#addTransactionModal > form select:focus,
+#editTransactionModal > form select:focus {
+    border-color: var(--primary-color);
+}
+
+#addTransactionModal > form > button,
+#editTransactionModal > form > button {
+    background-color: var(--primary-color);
+    color: var(--primary-text);
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: none;
+    font-size: var(--font-size-md);
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+#addTransactionModal > form > button:hover,
+#editTransactionModal > form > button:hover { filter: brightness(1.08); }
+
+
 /* =========================================================
-   BUTTONS
+   RESPONSIVE
 ========================================================= */
 
-/* =========================
-   SMALL DEVICES
-   >= 480px
-========================= */
-
+/* >= 480px */
 @media (min-width: 480px) {
-    .pnl-section{
-        grid-template-columns:repeat(2,1fr);
-    }
+    .pnl-section { grid-template-columns: repeat(2, 1fr); }
 
     .transactions-header > div:last-child {
         flex-direction: row;
         align-items: center;
     }
-
-    .transactions-header > div:last-child > div {
-        width: auto;
-        flex: 1;
-    }
-
-    #typeSearch {
-        width: auto;
-    }
 }
 
-/* =========================
-   TABLETS
-   >= 768px
-========================= */
-
+/* >= 768px */
 @media (min-width: 768px) {
-    #display-name{
-        display: block;
-    }
+    #display-name { display: block; }
 
-    section{ 
-        padding: 2rem 4rem;
-    }
+    section { padding: 2rem 4rem; }
 
-    .overview .title{
-        padding-left: 1rem;
+    .overview .title { padding-left: 1rem; }
+
+    .transactions-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .transactions-header > div:first-child {
         flex-direction: row;
         align-items: center;
         gap: 1.5rem;
-        width: auto;
     }
 
     .transactions-header > div:last-child {
@@ -913,68 +789,35 @@ tbody td:last-child {
         width: auto;
     }
 
-    .transactions-header input {
-        width: 220px;
-    }
+    .transactions-header input[type="text"] { width: 220px; }
 
-    #typeSearch {
-        width: 160px;
-    }
+    #typeSearch { width: 160px; }
 
-    table{
+    table {
         display: table;
         overflow: visible;
         white-space: normal;
     }
-
 }
 
-/* =========================
-   LAPTOPS
-   >= 1024px
-========================= */
-
+/* >= 1024px */
 @media (min-width: 1024px) {
-    section{ 
-        padding: 2rem 6rem;
-    }
+    section { padding: 2rem 6rem; }
 
-    .pnl-section{
-        grid-template-columns:repeat(4,1fr);
-    }
+    .pnl-section { grid-template-columns: repeat(4, 1fr); }
 
-    .transactions-header input {
-        width: 260px;
-    }
+    .transactions-header input[type="text"] { width: 260px; }
 
-    .cashFlow-content{
-        flex-direction: row;
-    }
-
+    .cashFlow-content { flex-direction: row; }
 }
 
-/* =========================
-   LARGE DESKTOPS
-   >= 1280px
-========================= */
-
+/* >= 1280px */
 @media (min-width: 1280px) {
-    .transactions-header input {
-        width: 300px;
-    }
+    .transactions-header input[type="text"] { width: 300px; }
 }
 
-/* =========================
-   EXTRA LARGE SCREENS
-   >= 1440px
-========================= */
-
+/* >= 1440px */
 @media (min-width: 1440px) {
-    section{ 
-        padding: 2rem 8rem;
-    }
-
-    .transactions-header input {
-        width: 340px;
-    }
+    section { padding: 2rem 8rem; }
+    .transactions-header input[type="text"] { width: 340px; }
 }
