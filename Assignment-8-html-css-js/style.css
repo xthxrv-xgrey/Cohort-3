@@ -1,0 +1,325 @@
+/* =========================================================
+   FONTS
+========================================================= */
+
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/fonts/Inter.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("./assets/fonts/Manrope.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Zaslia";
+    src: url("./assets/fonts/Zaslia.otf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./assets/fonts/JetBrainsMono.ttf");
+    font-display: swap;
+}
+
+/* =========================================================
+   ROOT DESIGN TOKENS (LIGHT THEME)
+========================================================= */
+
+:root {
+
+    /* Backgrounds */
+    --bg-color: #F6F5F3;
+    --surface-color: #FFFFFF;
+
+    /* Text */
+    --text-color: #202020;
+    --muted-text: #6B7280;
+
+    /* Brand */
+    --primary-color: #B69259;
+    --primary-text: #FFFFFF;
+
+    /* Status */
+    --success-color: #2E8B57;
+    --danger-color: #C84C4C;
+
+    /* Borders */
+    --border-color: #E7E4DF;
+
+    /* Typography */
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-display: "Manrope", system-ui, sans-serif;
+    --font-logo: "Zaslia", serif;
+    --font-mono: "JetBrainsMono", monospace;
+
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* Transition */
+    --transition-fast: 0.2s ease;
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+html[data-theme="dark"] {
+
+    --bg-color: #121212;
+    --surface-color: #1A1D20;
+
+    --text-color: #F2F2F2;
+    --muted-text: #9CA3AF;
+
+    --primary-color: #C7CDD1;
+    --primary-text: #111111;
+
+    --success-color: #4CAF7D;
+    --danger-color: #E57373;
+
+    --border-color: #353A40;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   MOBILE FIRST DEFAULT
+   (0px and above)
+========================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    transition: background-color 250ms ease, color 250ms ease;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .logoSection {
+    letter-spacing: 0.1em;
+    font-family: var(--font-logo);
+    color: var(--primary-color);
+}
+
+.header-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    background: var(--primary-color);
+    color: var(--primary-text);
+
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-sm);
+
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.header-btn:hover {
+    filter: brightness(1.05);
+}
+
+.header-btn:active {
+    transform: scale(0.97);
+}
+
+#display-name{
+    display: none;
+    border-right: 1px solid var(--text-color);
+    padding: 0 1rem;
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+section{
+    min-height: 90vh;
+    background-color: #EEEEEE;
+    padding: 2rem;
+}
+
+.overview .title>h2{
+    color: var(--text-color);
+    font-size: var(--font-size-3xl);
+}
+
+.overview .title>p{
+    color: var(--muted-text);
+    font-size: var(--font-size-sm);
+}
+
+.pnl-section{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.pnl-section .pnl-card{
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    min-height: 220px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.pnl-section .pnl-card>i{
+    font-size: var(--font-size-3xl);
+    padding: 1rem;
+    background-color: #2E8B57;
+    width: max-content;
+    border-radius: var(--radius-lg);
+}
+
+.pnl-section .pnl-card>p{
+    color: var(--muted-text);
+}
+
+.pnl-section .pnl-card>h3{
+    font-size: var(--font-size-3xl);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+/* =========================
+   SMALL DEVICES
+   >= 480px
+========================= */
+
+@media (min-width: 480px) {
+    .pnl-section{
+        grid-template-rows:  1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================
+   TABLETS
+   >= 768px
+========================= */
+
+@media (min-width: 768px) {
+    #display-name{
+        display: block;
+    }
+
+    section{ 
+        padding: 2rem 4rem;
+    }
+
+    .overview .title{
+        padding-left: 1rem;
+    }
+
+}
+
+/* =========================
+   LAPTOPS
+   >= 1024px
+========================= */
+
+@media (min-width: 1024px) {
+    section{ 
+        padding: 2rem 6rem;
+    }
+
+    .pnl-section{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* =========================
+   LARGE DESKTOPS
+   >= 1280px
+========================= */
+
+@media (min-width: 1280px) {
+    
+}
+
+/* =========================
+   EXTRA LARGE SCREENS
+   >= 1440px
+========================= */
+
+@media (min-width: 1440px) {
+    section{ 
+        padding: 2rem 8rem;
+    }
+}
+    
