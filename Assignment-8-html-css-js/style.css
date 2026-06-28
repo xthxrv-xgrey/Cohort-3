@@ -240,7 +240,7 @@ section{
     padding: 1rem;
     background-color: #2E8B57;
     width: max-content;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
 }
 
 .pnl-section .pnl-card>p{
