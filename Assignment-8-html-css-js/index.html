@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- <main style="display: none;"> -->
     <main>
         <header>
             <div class="logoSection">
@@ -182,12 +183,136 @@
     </main>
 
     <div id="loginModal">
+        <form action="" id="loginForm">
+            <div class="title">
+                <h1>Login</h1>
+                <span>Credo</span>
+            </div>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <a>Create a New Account?</a>
+        </form>
     </div>
+
     <div id="registerModal">
+        <form action="" id="registerForm">
+            <div class="title">
+                <h1>Register</h1>
+                <span>Credo</span>
+            </div>
+            <input type="name" placeholder="Name" required>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+            <a>Already Have an Account?</a>
+        </form>
     </div>
+
     <div id="addTransactionModal">
+        <form action="" id="addTransactionForm">
+            <div class="title">
+                <h1>Add Transaction</h1>
+                <span>Credo</span>
+            </div>
+
+            <div>
+                <label for="addTransactionType">Type</label>
+                <select name="type" id="addTransactionType">
+                    <option value="Debit" selected>Debit</option>
+                    <option value="Credit">Credit</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="addTransactionDescription">Description</label>
+                <input type="text" placeholder="Description" id="addTransactionDescription" required>
+            </div>
+
+            <div style="flex-direction: row; gap: 1rem;">
+                <div>
+                    <label for="addTransactionAmount">Amount</label>
+                    <input type="number" name="amount" id="addTransactionAmount">
+                </div>
+
+                <div>
+                    <label for="addTransactionDate">Date</label>
+                    <input type="date" name="date" id="addTransactionDate">
+                </div>
+            </div>
+
+            <div>
+                <label for="addTransactionCategory">Type</label>
+                <select name="type" id="addTransactionCategory">
+                    <option value="" selected disabled>Select a Category</option>
+                    <option value="Food &amp; Dining">Food &amp; Dining</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Recharge &amp; Bills">Recharge &amp; Bills</option>
+                    <option value="Petrol &amp; Auto">Petrol &amp; Auto</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+
+            <button type="submit">Add Transaction</button>
+        </form>
+        <i class="ri-close-large-fill" id="closeAddTransactionModal"></i>
     </div>
+
     <div id="editTransactionModal">
+        <form action="" id=" editTransactionForm">
+            <div class="title">
+                <h1>Edit Transaction</h1>
+                <span>Credo</span>
+            </div>
+
+            <div>
+                <label for="editTransactionType">Type</label>
+                <select name="type" id="editTransactionType">
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="editTransactionDescription">Description</label>
+                <input type="text" placeholder="Description" id="editTransactionDescription" required>
+            </div>
+
+            <div style="flex-direction: row; gap: 1rem;">
+                <div>
+                    <label for="editTransactionAmount">Amount</label>
+                    <input type="number" name="amount" id="editTransactionAmount">
+                </div>
+
+                <div>
+                    <label for="editTransactionDate">Date</label>
+                    <input type="date" name="date" id="editTransactionDate">
+                </div>
+            </div>
+
+            <div>
+                <label for="editTransactionCategory">Type</label>
+                <select name="type" id="editTransactionCategory">
+                    <option value="Food &amp; Dining">Food &amp; Dining</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Recharge &amp; Bills">Recharge &amp; Bills</option>
+                    <option value="Petrol &amp; Auto">Petrol &amp; Auto</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+
+            <button type="submit">Edit Transaction</button>
+        </form>
+        <i class="ri-close-large-fill" id="closeEditTransactionModal"></i>
     </div>
 
     <script src="script.js"></script>

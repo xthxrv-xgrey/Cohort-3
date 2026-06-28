@@ -719,6 +719,140 @@ tbody td:last-child {
     color: var(--text-color);
 }
 
+#loginModal,
+#registerModal,
+#addTransactionModal,
+#editTransactionModal {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--surface-color);
+    justify-content: center;
+    align-items: center;
+}
+
+#addTransactionModal>form,
+#editTransactionModal>form,
+#loginModal>form,
+#registerModal>form{
+    width: calc(min(90vw, 350px));
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 2rem;
+    background-color: var(--border-color);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-color);
+    font-family: var(--font-display);
+}
+
+#addTransactionModal form .title,
+#editTransactionModal form .title,
+#loginModal form .title,
+#registerModal form .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#addTransactionModal form span,
+#editTransactionModal form span,
+#loginModal form span,
+#registerModal form span{
+    color: var(--primary-text);
+    background-color: var(--primary-color);
+    padding: .25rem .5rem;
+    border-radius: var(--radius-lg);
+    font-weight: bold;
+    font-family: var(--font-logo);
+    letter-spacing: .1rem;
+}
+
+
+#addTransactionModal>form input,
+#editTransactionModal>form input,
+#addTransactionModal>form select,
+#editTransactionModal>form select,
+#loginModal>form>input,
+#registerModal>form>input{
+     padding: 1rem;
+     border-radius: var(--radius-sm);
+     border: 1px solid var(--border-color);
+}
+
+#addTransactionModal>form input,
+#editTransactionModal>form input,
+#addTransactionModal>form select,
+#editTransactionModal>form select{
+    padding: .5rem 0;
+}
+
+#addTransactionModal>form>button,
+#editTransactionModal>form>button,
+#loginModal>form>button,
+#registerModal>form>button{
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 1rem 4rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    align-self: center;
+    font-size: var(--font-size-md);
+}
+
+#loginModal>form>button:hover,
+#registerModal>form>button:hover{
+    filter: brightness(130%);
+}
+
+#loginModal>form>a,
+#registerModal>form>a{
+    font-size: var(--font-size-xs);
+    align-self: center;
+}
+
+#loginModal>form>a:hover,
+#registerModal>form>a:hover{
+    text-decoration: underline;
+}
+
+#addTransactionModal,
+#editTransactionModal {
+    background-color: var(--surface-color);
+}
+
+
+#addTransactionModal>form,
+#editTransactionModal>form{
+    width: calc(min(90vw, 400px));
+}
+
+#addTransactionModal>i,
+#editTransactionModal>i{
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+}
+
+#addTransactionModal>form>div,
+#editTransactionModal>form>div{
+    display: flex;
+    flex-direction: column;
+}
+
+#addTransactionModal>form>div>label,
+#editTransactionModal>form>div>label{
+    font-size: var(--font-size-sm);
+    color: var(--muted-text);
+    margin-bottom: .5rem;
+}
+
 /* =========================================================
    BUTTONS
 ========================================================= */
