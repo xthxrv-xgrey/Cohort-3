@@ -199,7 +199,7 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
 
   state.users[username] = {
     password,
-    profile: { name, email },
+    profile: { name },
     transactions: [],
   };
   saveState();
