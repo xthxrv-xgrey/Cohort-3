@@ -38,24 +38,68 @@
                     <div class="pnl-card">
                         <i class="fa-solid fa-building-columns" style="color: #1e40af; background-color: #dbeafe;"></i>
                         <p>Current Balance</p>
-                        <h3 id="current-balance">$ 0</h3>
+                        <h3 id="current-balance">$ 0.00</h3>
                     </div>
                     <div class=" pnl-card">
                         <i class="fa-solid fa-arrow-trend-up" style="color: green; background-color: #dcfce7;"></i>
                         <p>Total Income</p>
-                        <h3 id="income">$ 0</h3>
+                        <h3 id="income">$ 0.00</h3>
                     </div>
                     <div class="pnl-card">
                         <i class="fa-solid fa-arrow-trend-down" style="color: red; background-color: #fee2e2;"></i>
                         <p>Total Expenses</p>
-                        <h3 id="expenses">$ 0</h3>
+                        <h3 id="expenses">$ 0.00</h3>
                     </div>
                     <div class="pnl-card">
                         <i class="fa-solid fa-piggy-bank" style="color: #1e40af; background-color: #dbeafe;"></i>
                         <p>Transactions</p>
-                        <h3 id="transactions">$ 0</h3>
+                        <h3 id="transactions">$ 0.00</h3>
                     </div>
                 </div>
+            </div>
+            <!--  Analytics Chart-->
+
+            <!--  -->
+            <div class="transactions">
+                <div class="transactions-header">
+                    <div>
+                        <h2>All Transactions</h2>
+                        <button id="addTransactionBtn"><i class="ri-add-line"></i>Add Transaction</button>
+                    </div>
+
+                    <div>
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search">
+                        </div>
+                        <select name="typeSearch" id="typeSearch">
+                            <option value="all" selected>All Types</option>
+                            <option value="credit">Credit</option>
+                            <option value="debit">Debit</option>
+                        </select>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <th>DATE</th>
+                        <th>DESCRIPTION</th>
+                        <th>CATEGORY</th>
+                        <th>AMOUNT</th>
+                        <th>ACTIONS</th>
+                    </thead>
+                    <tbody id="allTransactions">
+                        <tr data-id="j79080998kjlj">
+                            <td>28-06-2026</td>
+                            <td>Rent</td>
+                            <td>Utils</td>
+                            <td>+$800</td>
+                            <td>
+                                <button class="editTransaction"><i class="ri-pencil-fill"></i></button>
+                                <button class="deleteTransaction"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
