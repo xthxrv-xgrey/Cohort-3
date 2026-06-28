@@ -7,35 +7,7 @@ const state = {
   theme: "light",
   currency: "₹",
   currentUser: null,
-  users: {
-    admin: {
-      password: "admin",
-      profile: {
-        name: "Administrator",
-        email: "admin@gmail.com",
-      },
-      transactions: [
-        {
-          id: crypto.randomUUID(),
-          date: "2026-06-27",
-          description: "Salary",
-          category: "Salary",
-          amount: 50000,
-          type: "credit",
-          delete: false,
-        },
-        {
-          id: crypto.randomUUID(),
-          date: "2026-06-27",
-          description: "Groceries",
-          category: "Food & Dining",
-          amount: 10000,
-          type: "debit",
-          delete: false,
-        },
-      ],
-    },
-  },
+  users: {},
 };
 
 function loadState() {
@@ -213,10 +185,9 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("register-name").value.trim();
   const username = document.getElementById("register-username").value.trim();
-  const email = document.getElementById("register-email").value.trim();
   const password = document.getElementById("register-password").value.trim();
 
-  if (!name || !username || !email || !password) {
+  if (!name || !username || !password) {
     alert("Please fill in all fields.");
     return;
   }
