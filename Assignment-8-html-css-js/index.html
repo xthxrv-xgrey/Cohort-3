@@ -22,7 +22,7 @@
             </div>
             <div>
                 <span id="display-name">Name</span>
-                <button class="header-btn" id="menu-btn">
+                <button class="header-btn" id="menu-toggle-btn">
                     <i class="ri-menu-line"></i>
                     <span>Menu</span>
                 </button>
@@ -43,43 +43,20 @@
                     <div class=" pnl-card">
                         <i class="fa-solid fa-arrow-trend-up" style="color: green; background-color: #dcfce7;"></i>
                         <p>Total Income</p>
-                        <h3 id="income">$ 0.00</h3>
+                        <h3 id="total-income">$ 0.00</h3>
                     </div>
                     <div class="pnl-card">
                         <i class="fa-solid fa-arrow-trend-down" style="color: red; background-color: #fee2e2;"></i>
                         <p>Total Expenses</p>
-                        <h3 id="expenses">$ 0.00</h3>
+                        <h3 id="total-expense">$ 0.00</h3>
                     </div>
                     <div class="pnl-card">
                         <i class="fa-solid fa-piggy-bank" style="color: #1e40af; background-color: #dbeafe;"></i>
                         <p>Transactions</p>
-                        <h3 id="transactions">$ 0.00</h3>
+                        <h3 id="total-transactions">0</h3>
                     </div>
                 </div>
             </div>
-            <!--  Analytics Chart-->
-
-            <!-- <div class="cashFlow">
-                <div class="left">
-                    <h3>Cash Flow Analysis</h3>
-                </div>
-                <div class="center">
-                    <div class="outer-circle">
-                        <div class="inner-circle">
-                        </div>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="type">
-                        <div class="small-circle" style="background-color: green;"></div>
-                        <p>Credit</p>
-                    </div>
-                    <div class="type">
-                        <div class="small-circle" style="background-color: red;"></div>
-                        <p>Debit</p>
-                    </div>
-                </div>
-            </div> -->
 
             <div class="cashFlow">
 
@@ -89,16 +66,16 @@
                         <p>This Month</p>
                     </div>
 
-                    <span class="netAmount">+₹18,300</span>
+                    <span class="netAmount" id="net-amount">0</span>
                 </div>
 
                 <div class="cashFlow-content">
 
                     <div class="chart">
 
-                        <div class="outer-circle">
+                        <div class="outer-circle" id="cashFlowPercentageChart">
                             <div class="inner-circle">
-                                <h2>72%</h2>
+                                <h2 id="cashFlowPercentage">0%</h2>
                                 <span>Income</span>
                             </div>
                         </div>
@@ -112,7 +89,7 @@
 
                             <div>
                                 <p>Income</p>
-                                <h4>₹24,500</h4>
+                                <h4 id="total-income-amount"></h4>
                             </div>
                         </div>
 
@@ -121,7 +98,7 @@
 
                             <div>
                                 <p>Expense</p>
-                                <h4>₹8,200</h4>
+                                <h4 id="total-expense-amount"></h4>
                             </div>
                         </div>
 
@@ -131,7 +108,6 @@
 
             </div>
 
-            <!--  -->
             <div class="transactions">
                 <div class="transactions-header">
                     <div>
@@ -192,6 +168,15 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div id="menuModal">
+                <p>Name</p>
+                <button id="profile"><i class="ri-user-fill"></i><span>Profile</span></button>
+                <button id="dashboard"><i class="ri-dashboard-fill"></i><span>Dashboard</span></button>
+                <button id="theme-toggle-btn"><i class='ri-moon-fill'></i> <span>Dark</span></button>
+                <button id="setting"><i class="ri-settings-fill"></i><span>Settings</span></button>
+                <button id="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
             </div>
         </section>
     </main>

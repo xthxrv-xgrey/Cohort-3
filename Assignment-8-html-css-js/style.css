@@ -205,6 +205,7 @@ section{
     min-height: 90vh;
     background-color: var(--bg-color);
     padding: 2rem;
+    position: relative;
 }
 
 .overview .title>h2{
@@ -236,7 +237,7 @@ section{
 }
 
 .pnl-section .pnl-card:hover{
-    background-color: #fafafa;
+    background-color: var(--primary-color);
     transform: translateY(-3px);
 }
 
@@ -259,76 +260,6 @@ section{
 /* =========================================================
    ANALYTICS
 ========================================================= */
-
-
-/* .cashFlow{
-    height: 50vh;
-    background-color: var(--surface-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-}
-
-.cashFlow .left{
-    font-family: var(--font-mono);
-    padding: 2rem 1rem;
-}
-
-.cashFlow .center{
-    height: 80%;
-    aspect-ratio: 1;
-}
-
-.cashFlow .center .outer-circle{
-    height: 100%;
-    background-color: #ccc;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    background: conic-gradient(
-    #B69259 0% 70%,
-    red 70% 100%
-    );
-}
-
-.cashFlow .center .outer-circle .inner-circle{
-    height: 75%;
-    aspect-ratio: 1;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid black;
-
-}
-
-.cashFlow .right{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-}
-
-.cashFlow .right .type{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: var(--font-size-xl);
-    font-family: var(--font-mono);
-}
-
-.cashFlow .right .type .small-circle{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-} */
 
 .cashFlow{
 
@@ -503,7 +434,7 @@ section{
 ========================================================= */
 
 .transactions {
-    background: rgba(182, 146, 89, .08);
+    background: var(--surface-color);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -553,7 +484,7 @@ section{
     border: none;
     border-radius: var(--radius-sm);
     
-    background: black;
+    background: var(--primary-color);
     color: var(--primary-text);
     
     font-family: var(--font-body);
@@ -720,10 +651,6 @@ tbody td:last-child {
     color: var(--danger-color);
 }
 
-.deleteTransaction::before {
-    content: "\eb99";
-    font-family: "remixicon";
-}
 
 .deleteTransaction:hover {
     background: rgba(200, 76, 76, .15);
@@ -745,7 +672,52 @@ tbody td:last-child {
 }
 
 
+/* =========================================================
+   MODAL
+========================================================= */
 
+#menuModal {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 200px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    z-index: 1000;
+}
+
+#menuModal p {
+    margin: .5rem 0;
+    font-weight: bolder;
+    padding: .5rem;
+}
+
+#menuModal button {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    margin: .25rem 0;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--muted-text);
+    cursor: pointer;
+
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-self: flex-start;
+}
+
+#menuModal button:hover {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
 
 /* =========================================================
    BUTTONS
@@ -792,13 +764,6 @@ tbody td:last-child {
 
     .overview .title{
         padding-left: 1rem;
-    }
-
-    .transactions-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 2rem;
     }
 
     .transactions-header > div:first-child {
