@@ -219,9 +219,9 @@ section{
 
 .pnl-section{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    padding: 2rem 0;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 2rem 0;
 }
 
 .pnl-section .pnl-card{
@@ -232,7 +232,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .pnl-section .pnl-card:hover{
@@ -257,6 +257,248 @@ section{
 }
 
 /* =========================================================
+   ANALYTICS
+========================================================= */
+
+
+/* .cashFlow{
+    height: 50vh;
+    background-color: var(--surface-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.cashFlow .left{
+    font-family: var(--font-mono);
+    padding: 2rem 1rem;
+}
+
+.cashFlow .center{
+    height: 80%;
+    aspect-ratio: 1;
+}
+
+.cashFlow .center .outer-circle{
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background: conic-gradient(
+    #B69259 0% 70%,
+    red 70% 100%
+    );
+}
+
+.cashFlow .center .outer-circle .inner-circle{
+    height: 75%;
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+
+.cashFlow .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.cashFlow .right .type{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-mono);
+}
+
+.cashFlow .right .type .small-circle{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+} */
+
+.cashFlow{
+
+    background:var(--surface-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem;
+
+    margin-bottom:2rem;
+}
+
+.cashFlow-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:2rem;
+}
+
+.cashFlow-header h3{
+
+    font-size:1.5rem;
+    margin-bottom:.3rem;
+}
+
+.cashFlow-header p{
+
+    color:var(--muted-text);
+}
+
+.netAmount{
+
+    font-family:var(--font-mono);
+
+    color:var(--success-color);
+
+    font-size:1.2rem;
+}
+
+.cashFlow-content{
+
+    display:flex;
+
+    flex-direction: column;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:3rem;
+}
+
+.chart{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.outer-circle{
+
+    width:240px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:conic-gradient(
+        #00ddff 0% 72%,
+        /* #E35D5D 72% 100% */
+        #ff6400 72% 100%
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.inner-circle{
+
+    width:72%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:var(--surface-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.inner-circle h2{
+
+    font-size:2rem;
+}
+
+.inner-circle span{
+
+    color:var(--muted-text);
+}
+
+.legend{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+}
+
+.legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+}
+
+.dot{
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+}
+
+.income{
+    background:#00ddff;
+}
+
+.expense{
+
+    background:#ff6400;
+}
+
+.legend-item p{
+
+    color:var(--muted-text);
+
+    margin-bottom:.25rem;
+}
+
+.legend-item h4{
+
+    font-size:1.2rem;
+
+    font-family:var(--font-mono);
+}
+
+/* =========================================================
    TRANSACTIONS
 ========================================================= */
 
@@ -278,7 +520,6 @@ section{
     padding: 0 2rem;
 }
 
-/* Row 1: title + button */
 .transactions-header > div:first-child {
     display: flex;
     flex-direction: column;
@@ -286,7 +527,6 @@ section{
     width: 100%;
 }
 
-/* Row 2: search + filter */
 .transactions-header > div:last-child {
     display: flex;
     flex-direction: column;
@@ -518,8 +758,7 @@ tbody td:last-child {
 
 @media (min-width: 480px) {
     .pnl-section{
-        grid-template-rows:  1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .transactions-header > div:last-child {
@@ -602,12 +841,17 @@ tbody td:last-child {
     }
 
     .pnl-section{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns:repeat(4,1fr);
     }
 
     .transactions-header input {
         width: 260px;
     }
+
+    .cashFlow-content{
+        flex-direction: row;
+    }
+
 }
 
 /* =========================
