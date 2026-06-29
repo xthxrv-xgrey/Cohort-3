@@ -1,0 +1,20 @@
+{
+  "name": "credo",
+  "version": "1.0.0",
+  "description": "A personal finance tracker built with vanilla HTML, CSS, and JavaScript.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "npx serve .",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "finance",
+    "tracker",
+    "personal-finance"
+  ],
+  "author": "Atharv Agrey",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
