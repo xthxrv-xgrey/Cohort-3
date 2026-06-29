@@ -29,12 +29,36 @@ loadState();
 let currentUser = state.currentUser;
 
 /**********************
+ * HELPERS
+ **********************/
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function createTransaction(data) {
+  return {
+    id: crypto.randomUUID
+      ? crypto.randomUUID()
+      : Date.now().toString(36) + Math.random().toString(36).slice(2),
+    type: data.type,
+    description: data.description,
+    amount: data.amount,
+    date: data.date,
+    category: data.category,
+    removed: false,
+  };
+}
+
+/**********************
  * FINANCIAL MANAGEMENT
  **********************/
 
 const updateFinancialData = () => {
   const transactions = state.users[currentUser].transactions.filter(
-    (t) => !t.delete,
+    (t) => !t.removed,
   );
 
   const totalCredit = transactions.reduce(
@@ -82,23 +106,28 @@ const updateFinancialData = () => {
 
 const renderTransactions = (arr) => {
   const tbody = document.getElementById("allTransactions");
-  const filtered = arr.filter((t) => !t.delete);
+  const filtered = arr.filter((t) => !t.removed);
 
   if (!filtered.length) {
-    tbody.innerHTML = "";
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5" style="text-align:center; padding:3rem; color:var(--muted-text);">
+          No transactions found.
+        </td>
+      </tr>`;
     return;
   }
 
   tbody.innerHTML = filtered
     .map(
       (t) => `
-    <tr data-id="${t.id}">
-      <td>${t.date}</td>
-      <td><span style="font-weight:bold;">${t.description}</span></td>
-      <td>${t.category}</td>
+    <tr data-id="${escapeHtml(t.id)}">
+      <td>${escapeHtml(t.date)}</td>
+      <td><span style="font-weight:bold;">${escapeHtml(t.description)}</span></td>
+      <td>${escapeHtml(t.category)}</td>
       <td>
         <span style="color:${t.type === "credit" ? "var(--success-color)" : "var(--danger-color)"}; font-family:var(--font-mono); font-weight:600;">
-          ${t.type === "credit" ? "+" : "-"}${state.currency} ${t.amount.toLocaleString()}
+          ${t.type === "credit" ? "+" : "-"}${escapeHtml(state.currency)} ${t.amount.toLocaleString()}
         </span>
       </td>
       <td>
@@ -116,7 +145,7 @@ const getFilteredTransactions = () => {
   const typeFilter = document.getElementById("typeSearch").value;
 
   return state.users[currentUser].transactions.filter((t) => {
-    if (t.delete) return false;
+    if (t.removed) return false;
     const matchesType = typeFilter === "all" || t.type === typeFilter;
     const matchesQuery =
       t.description.toLowerCase().includes(query) ||
@@ -139,6 +168,7 @@ const main = document.querySelector("main");
 function initializeUser() {
   document.getElementById("display-name").textContent =
     state.users[currentUser].profile.name;
+  document.getElementById("display-name").style.display = "block";
   document.getElementById("menuName").textContent =
     state.users[currentUser].profile.name;
   updateFinancialData();
@@ -166,6 +196,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
     state.currentUser = username;
     saveState();
     document.getElementById("loginModal").style.display = "none";
+    document.getElementById("loginForm").reset();
     initializeUser();
   } else {
     alert("Invalid username or password.");
@@ -197,12 +228,18 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
     return;
   }
 
+  if (password.length < 4) {
+    alert("Password must be at least 4 characters.");
+    return;
+  }
+
   state.users[username] = {
     password,
     profile: { name },
     transactions: [],
   };
   saveState();
+  document.getElementById("registerForm").reset();
   document.getElementById("registerModal").style.display = "none";
   document.getElementById("loginModal").style.display = "flex";
 });
@@ -254,28 +291,17 @@ document.addEventListener("click", (e) => {
   }
 });
 
-document.getElementById("dashboard-btn").addEventListener("click", (e) => {
-  if (main.style.display === "flex") return;
-  main.style.display = "flex";
-});
-
 const settingsModal = document.getElementById("settingsModal");
 
 document.getElementById("setting-btn").addEventListener("click", () => {
   menuModal.style.display = "none";
-
   document.getElementById("settingsName").value =
     state.users[currentUser].profile.name;
-
   document.getElementById("settingsUsername").value = currentUser;
-
   document.getElementById("settingsCurrency").value = state.currency;
-
   document.getElementById("settingsTheme").value = state.theme;
-
   document.getElementById("oldPassword").value = "";
   document.getElementById("newPassword").value = "";
-
   settingsModal.style.display = "flex";
 });
 
@@ -292,11 +318,21 @@ document.getElementById("settingsForm").addEventListener("submit", (e) => {
   const newUsername = document.getElementById("settingsUsername").value.trim();
   const currency = document.getElementById("settingsCurrency").value;
   const theme = document.getElementById("settingsTheme").value;
-
   const oldPassword = document.getElementById("oldPassword").value;
   const newPassword = document.getElementById("newPassword").value;
 
   const user = state.users[currentUser];
+
+  if (oldPassword || newPassword) {
+    if (oldPassword !== user.password) {
+      alert("Current password is incorrect.");
+      return;
+    }
+    if (newPassword.length < 4) {
+      alert("New password must be at least 4 characters.");
+      return;
+    }
+  }
 
   user.profile.name = newName;
 
@@ -305,44 +341,36 @@ document.getElementById("settingsForm").addEventListener("submit", (e) => {
       alert("Username already exists.");
       return;
     }
-
     state.users[newUsername] = user;
     delete state.users[currentUser];
-
     currentUser = newUsername;
     state.currentUser = newUsername;
   }
 
   state.currency = currency;
-
   state.theme = theme;
   applyTheme();
 
-  if (oldPassword || newPassword) {
-    if (oldPassword !== user.password) {
-      alert("Current password is incorrect.");
-      return;
-    }
-
-    if (newPassword.length < 4) {
-      alert("New password should be at least 4 characters.");
-      return;
-    }
-
+  if (oldPassword && newPassword) {
     user.password = newPassword;
   }
 
   saveState();
-
   document.getElementById("display-name").textContent = user.profile.name;
   document.getElementById("menuName").textContent = user.profile.name;
-
   updateFinancialData();
   applyFilters();
-
   settingsModal.style.display = "none";
-
   alert("Settings updated successfully.");
+});
+
+document.getElementById("resetTransactions").addEventListener("click", () => {
+  if (confirm("Are you sure you want to reset all transactions?")) {
+    state.users[currentUser].transactions = [];
+    saveState();
+    updateFinancialData();
+    applyFilters();
+  }
 });
 
 document.getElementById("logout-btn").addEventListener("click", () => {
@@ -350,6 +378,7 @@ document.getElementById("logout-btn").addEventListener("click", () => {
   state.currentUser = null;
   saveState();
   main.style.display = "none";
+  document.getElementById("display-name").style.display = "none";
   document.getElementById("loginModal").style.display = "flex";
   menuModal.style.display = "none";
 });
@@ -390,19 +419,14 @@ document
       return;
     }
 
-    state.users[currentUser].transactions.push({
-      id: crypto.randomUUID(),
-      type,
-      description,
-      amount,
-      date,
-      category,
-      delete: false,
-    });
+    state.users[currentUser].transactions.push(
+      createTransaction({ type, description, amount, date, category }),
+    );
 
     saveState();
     applyFilters();
     updateFinancialData();
+    document.getElementById("addTransactionForm").reset();
     addTransactionModal.style.display = "none";
   });
 
@@ -471,7 +495,7 @@ document.getElementById("allTransactions").addEventListener("click", (e) => {
     if (!confirm("Delete this transaction?")) return;
 
     state.users[currentUser].transactions.forEach((t) => {
-      if (t.id === id) t.delete = true;
+      if (t.id === id) t.removed = true;
     });
 
     saveState();

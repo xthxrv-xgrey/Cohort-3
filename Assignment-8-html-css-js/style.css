@@ -551,6 +551,7 @@ tbody td:nth-child(4) {
 /* =========================================================
    AUTH MODALS (login / register)
 ========================================================= */
+#settingsModal,
 #loginModal,
 #registerModal {
     height: 100vh;
@@ -649,7 +650,6 @@ tbody td:nth-child(4) {
    TRANSACTION MODALS (add / edit)
 ========================================================= */
 
-#settingsModal,
 #addTransactionModal,
 #editTransactionModal {
     height: 100vh;
@@ -679,12 +679,17 @@ tbody td:nth-child(4) {
     box-shadow: 0 8px 32px rgba(0,0,0,.2);
 }
 
+#settingsModal > form{
+    width: calc(min(90vw, 800px));
+}
+
 #settingsModal form .title,
 #addTransactionModal form .title,
 #editTransactionModal form .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
 #settingsModal form span,
@@ -759,7 +764,6 @@ tbody td:nth-child(4) {
 #settingsModal > form > button:hover,
 #addTransactionModal > form > button:hover,
 #editTransactionModal > form > button:hover { filter: brightness(1.08); }
-
 
 /* =========================================================
    RESPONSIVE
