@@ -131,7 +131,6 @@
 
             <div id="menuModal">
                 <p id="menuName">Name</p>
-                <button id="profile-btn"><i class="ri-user-fill"></i><span>Profile</span></button>
                 <button id="dashboard-btn"><i class="ri-dashboard-fill"></i><span>Dashboard</span></button>
                 <button id="theme-toggle-btn"><i class='ri-moon-fill'></i> <span>Dark</span></button>
                 <button id="setting-btn"><i class="ri-settings-fill"></i><span>Settings</span></button>
@@ -263,6 +262,60 @@
                     <option value="Entertainment">Entertainment</option>
                     <option value="Other">Other</option>
                 </select>
+            </div>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+    <div id="settingsModal">
+        <form id="settingsForm">
+            <div class="title">
+                <h1>Settings</h1>
+                <span>Credo</span>
+            </div>
+
+            <div>
+                <label for="settingsName">Name</label>
+                <input type="text" id="settingsName">
+            </div>
+
+            <div>
+                <label for="settingsUsername">Username</label>
+                <input type="text" id="settingsUsername">
+            </div>
+
+            <div>
+                <label for="settingsCurrency">Currency</label>
+                <select id="settingsCurrency">
+                    <option value="₹">₹ Indian Rupee</option>
+                    <option value="$">$ US Dollar</option>
+                    <option value="€">€ Euro</option>
+                    <option value="£">£ Pound</option>
+                    <option value="¥">¥ Yen</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="settingsTheme">Theme</label>
+                <select id="settingsTheme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <h3>Change Password</h3>
+
+            <div>
+                <label for="oldPassword">Current Password</label>
+                <input type="password" id="oldPassword">
+            </div>
+
+            <div>
+                <label for="newPassword">New Password</label>
+                <input type="password" id="newPassword">
             </div>
 
             <button type="submit">Save Changes</button>

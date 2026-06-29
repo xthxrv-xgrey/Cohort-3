@@ -254,6 +254,97 @@ document.addEventListener("click", (e) => {
   }
 });
 
+document.getElementById("dashboard-btn").addEventListener("click", (e) => {
+  if (main.style.display === "flex") return;
+  main.style.display = "flex";
+});
+
+const settingsModal = document.getElementById("settingsModal");
+
+document.getElementById("setting-btn").addEventListener("click", () => {
+  menuModal.style.display = "none";
+
+  document.getElementById("settingsName").value =
+    state.users[currentUser].profile.name;
+
+  document.getElementById("settingsUsername").value = currentUser;
+
+  document.getElementById("settingsCurrency").value = state.currency;
+
+  document.getElementById("settingsTheme").value = state.theme;
+
+  document.getElementById("oldPassword").value = "";
+  document.getElementById("newPassword").value = "";
+
+  settingsModal.style.display = "flex";
+});
+
+settingsModal.addEventListener("click", (e) => {
+  if (e.target === settingsModal) {
+    settingsModal.style.display = "none";
+  }
+});
+
+document.getElementById("settingsForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newName = document.getElementById("settingsName").value.trim();
+  const newUsername = document.getElementById("settingsUsername").value.trim();
+  const currency = document.getElementById("settingsCurrency").value;
+  const theme = document.getElementById("settingsTheme").value;
+
+  const oldPassword = document.getElementById("oldPassword").value;
+  const newPassword = document.getElementById("newPassword").value;
+
+  const user = state.users[currentUser];
+
+  user.profile.name = newName;
+
+  if (newUsername !== currentUser) {
+    if (state.users[newUsername]) {
+      alert("Username already exists.");
+      return;
+    }
+
+    state.users[newUsername] = user;
+    delete state.users[currentUser];
+
+    currentUser = newUsername;
+    state.currentUser = newUsername;
+  }
+
+  state.currency = currency;
+
+  state.theme = theme;
+  applyTheme();
+
+  if (oldPassword || newPassword) {
+    if (oldPassword !== user.password) {
+      alert("Current password is incorrect.");
+      return;
+    }
+
+    if (newPassword.length < 4) {
+      alert("New password should be at least 4 characters.");
+      return;
+    }
+
+    user.password = newPassword;
+  }
+
+  saveState();
+
+  document.getElementById("display-name").textContent = user.profile.name;
+  document.getElementById("menuName").textContent = user.profile.name;
+
+  updateFinancialData();
+  applyFilters();
+
+  settingsModal.style.display = "none";
+
+  alert("Settings updated successfully.");
+});
+
 document.getElementById("logout-btn").addEventListener("click", () => {
   currentUser = null;
   state.currentUser = null;

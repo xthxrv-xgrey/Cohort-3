@@ -551,7 +551,6 @@ tbody td:nth-child(4) {
 /* =========================================================
    AUTH MODALS (login / register)
 ========================================================= */
-
 #loginModal,
 #registerModal {
     height: 100vh;
@@ -615,6 +614,7 @@ tbody td:nth-child(4) {
     border-color: var(--primary-color);
 }
 
+
 #loginModal > form > button,
 #registerModal > form > button {
     background-color: var(--primary-color);
@@ -649,6 +649,7 @@ tbody td:nth-child(4) {
    TRANSACTION MODALS (add / edit)
 ========================================================= */
 
+#settingsModal,
 #addTransactionModal,
 #editTransactionModal {
     height: 100vh;
@@ -663,6 +664,7 @@ tbody td:nth-child(4) {
     z-index: 400;
 }
 
+#settingsModal > form,
 #addTransactionModal > form,
 #editTransactionModal > form {
     width: calc(min(90vw, 400px));
@@ -677,6 +679,7 @@ tbody td:nth-child(4) {
     box-shadow: 0 8px 32px rgba(0,0,0,.2);
 }
 
+#settingsModal form .title,
 #addTransactionModal form .title,
 #editTransactionModal form .title {
     display: flex;
@@ -684,6 +687,7 @@ tbody td:nth-child(4) {
     align-items: center;
 }
 
+#settingsModal form span,
 #addTransactionModal form span,
 #editTransactionModal form span {
     color: var(--primary-text);
@@ -695,12 +699,14 @@ tbody td:nth-child(4) {
     letter-spacing: 0.1rem;
 }
 
+#settingsModal > form > div,
 #addTransactionModal > form > div,
 #editTransactionModal > form > div {
     display: flex;
     flex-direction: column;
 }
 
+#settingsModal > form > div > label,
 #addTransactionModal > form > div > label,
 #editTransactionModal > form > div > label {
     font-size: var(--font-size-sm);
@@ -708,8 +714,10 @@ tbody td:nth-child(4) {
     margin-bottom: 0.5rem;
 }
 
+#settingsModal > form input,
 #addTransactionModal > form input,
 #editTransactionModal > form input,
+#settingsModal > form select,
 #addTransactionModal > form select,
 #editTransactionModal > form select {
     padding: 0.625rem 0.875rem;
@@ -723,13 +731,16 @@ tbody td:nth-child(4) {
     width: 100%;
 }
 
+#settingsModal > form input:focus,
 #addTransactionModal > form input:focus,
 #editTransactionModal > form input:focus,
+#settingsModal > form select:focus,
 #addTransactionModal > form select:focus,
 #editTransactionModal > form select:focus {
     border-color: var(--primary-color);
 }
 
+#settingsModal > form > button,
 #addTransactionModal > form > button,
 #editTransactionModal > form > button {
     background-color: var(--primary-color);
@@ -745,6 +756,7 @@ tbody td:nth-child(4) {
     transition: var(--transition-fast);
 }
 
+#settingsModal > form > button:hover,
 #addTransactionModal > form > button:hover,
 #editTransactionModal > form > button:hover { filter: brightness(1.08); }
 
