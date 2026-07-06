@@ -1,23 +1,15 @@
-// theme.js
+import { state, loadState, saveState } from "./storage.js";
 
-const themeBtn = document.getElementById("theme");
+const themeBtn = document.getElementById("themeBtn");
 const root = document.documentElement;
 
-// optional: remember user choice
-const savedTheme = localStorage.getItem("theme");
+// Apply saved theme
+root.setAttribute("data-theme", state.theme);
 
-// apply saved theme on load
-if (savedTheme) {
-  root.setAttribute("data-theme", savedTheme);
-}
-
-// toggle theme on click
 themeBtn.addEventListener("click", () => {
-  const currentTheme = root.getAttribute("data-theme");
+  state.theme = state.theme === "dark" ? "light" : "dark";
 
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", state.theme);
 
-  root.setAttribute("data-theme", newTheme);
-
-  localStorage.setItem("theme", newTheme);
+  saveState();
 });

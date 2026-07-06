@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +9,7 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/home.css">
     <title>Emerge.</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -19,12 +19,33 @@
             <h1>EMERGE</h1>
             <p>Your day, organiser.</p>
         </div>
+
+        <button id="menuBtn">
+            <i id="themeBtn" class="ri-menu-line"></i>
+        </button>
     </header>
 
     <nav>
-        <button>Home</button>
-        <button>Home</button>
-        <button id="theme">Theme</button>
+        <button id="homeBtn">
+            <i class="ri-home-9-fill"></i>
+            <span class="btnName">Home</span>
+        </button>
+        <button>
+            <i class="ri-task-fill"></i>
+            <span class="btnName">Tasks</span>
+        </button>
+        <button>
+            <i class="ri-target-fill"></i>
+            <span class="btnName">Goals</span>
+        </button>
+        <button>
+            <i class="ri-calendar-fill"></i>
+            <span class="btnName">Daily Planner</span>
+        </button>
+        <button>
+            <i class="ri-double-quotes-l"></i>
+            <span class="btnName">Quotes</span>
+        </button>
     </nav>
 
     <main id="home">
@@ -38,7 +59,7 @@
             </div>
             <div id="weatherArea">
                 <div class="homeWidget">
-                    <span id="temperature">28.6°C</span>
+                    <span id="temperature">0°C</span>
                     <span id="weatherIcon">🌦️</span>
                     <span id="weather">Light Drizzle</span>
                 </div>
@@ -57,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div id="homeGoalsDiplay">
+        <div id="homeGoals">
             <h2>Goals</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam aliquam, quos consequuntur possimus, non
                 consequatur a repudiandae ducimus voluptate ad doloribus corrupti excepturi labore nesciunt fugiat, et
@@ -70,7 +91,9 @@
         </div>
     </main>
 
-    <script src="./script/theme.js"></script>
+    <script type="module" src="./script/storage.js"></script>
+    <script type="module" src="./script/theme.js"></script>
+    <script type="module" src="./script/main.js"></script>
 
 </body>
 

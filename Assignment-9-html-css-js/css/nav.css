@@ -14,22 +14,41 @@ nav{
    display: flex;
    justify-content: space-around;
    align-items: center;
-
+   gap: 1rem;
 }
 
 nav button {
-    background: var(--primary);
+    background: var(--secondary);
     color: white;
     border: none;
-    padding: 10px 12px;
-    margin: 5px 0;
-    border-radius: 6px;
+    padding: 1rem;
+    border-radius: 2rem;
     cursor: pointer;
-    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 nav button:hover {
-    background: var(--secondary);
+    background: var(--primary);
+}
+
+nav button:active{
+   scale: .95;
+}
+
+nav button i{
+   font-size: x-large;
+}
+
+nav button span{
+   font-family: jetBrainsMono;
+}
+
+.btnName{
+   display: none;
 }
 
 /* =========================
@@ -48,6 +67,14 @@ nav button:hover {
    nav{
       flex-direction: column;
       justify-content: flex-start;
+   }
+
+   nav button{
+      width: 100%;
+   }
+
+   .btnName{
+      display: block;
    }
 }
 

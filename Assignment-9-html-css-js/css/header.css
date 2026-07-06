@@ -10,7 +10,7 @@ header{
     border-bottom: 1px solid var(--border);
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 5rem;
 
@@ -26,6 +26,23 @@ header{
 #logo p{
    color: var(--text-muted);
    font-size: small;
+}
+
+#menuBtn{
+   background: var(--secondary);
+   padding: 1rem 2rem;
+   border-radius: 1rem;
+   color: var(--bg);
+   font-size: large;
+   border: 1px solid var(--border);
+}
+
+#menuBtn:hover{
+   background-color: var(--primary);
+}
+
+#menuBtn:active{
+   scale: .95;
 }
 
 /* =========================
