@@ -124,6 +124,15 @@
 #temperature{
    font-size: xx-large;
 }
+
+#weatherIcon{
+   font-size: xx-large;
+}
+
+#weather{
+   font-size: small;
+}
+
 /* ===== Loaction ===== */
 
 #locationArea {
@@ -221,29 +230,6 @@
 
    padding: 2rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================
    SMALL DEVICES
