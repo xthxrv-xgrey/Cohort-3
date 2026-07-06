@@ -1,0 +1,64 @@
+/* =========================
+   MOBILE FIRST DEFAULT
+   (0px and above)
+========================= */
+
+header{
+    grid-area: header;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5rem;
+
+    padding: 1rem 2rem;
+    color: var(--text);
+}
+
+#logo h1{
+   font-family: mushbie;
+   letter-spacing: .5rem;
+}
+
+#logo p{
+   color: var(--text-muted);
+   font-size: small;
+}
+
+/* =========================
+   SMALL DEVICES
+   >= 480px
+========================= */
+
+@media (min-width: 480px) {}
+
+/* =========================
+   TABLETS
+   >= 768px
+========================= */
+
+@media (min-width: 768px) {}
+
+/* =========================
+   LAPTOPS
+   >= 1024px
+========================= */
+
+@media (min-width: 1024px) {}
+
+/* =========================
+   LARGE DESKTOPS
+   >= 1280px
+========================= */
+
+@media (min-width: 1280px) {}
+
+/* =========================
+   EXTRA LARGE SCREENS
+   >= 1440px
+========================= */
+
+@media (min-width: 1440px) {}

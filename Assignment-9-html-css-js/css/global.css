@@ -1,0 +1,184 @@
+/* =========================================================
+   FONTS
+========================================================= */
+
+@font-face {
+   /* for header */
+    font-family: "mushbie";
+    src: url("../assets/fonts/mushbie.otf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "flowersKingdom";
+    src: url("../assets/fonts/flowersKingdom.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "inter";
+    src: url("../assets/fonts/inter.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "manrope";
+    src: url("../assets/fonts/manrope.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "jetBrainsMono";
+    src: url("../assets/fonts/jetBrainsMono.ttf");
+    font-display: swap;
+}
+
+/* =========================================================
+   ROOT DESIGN TOKENS (LIGHT THEME)
+========================================================= */
+
+:root {
+
+   /* ocean */
+   --bg:#F0F9FF;
+   --surface:#FFFFFF;
+   --surface2:#E0F2FE;
+
+   --primary:#0EA5E9;
+   --secondary:#06B6D4;
+
+   --text:#0F172A;
+   --text-muted:#475569;
+   --text-inverted:#F8FAFC;
+
+   --border:#BAE6FD;
+
+   /* emerge */
+
+   /* --bg:#F8FAFC;
+    --surface:#FFFFFF;
+    --surface2:#EEF3F7;
+
+    --primary:#10B981;
+    --secondary:#4F46E5;
+
+    --text:#111827;
+    --text-muted:#6B7280;
+
+    --border:#E5E7EB; */
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+html[data-theme="dark"] {
+   --bg:#050505;
+   --surface:#0B0B0B;
+   --surface2:#121212;
+
+   --primary:#A855F7;
+   --secondary:#22D3EE;
+
+   --text:#F8FAFC;
+   --text-muted:#9CA3AF;
+   --text-inverted:#0F172A;
+
+   --border:#1F1F1F;
+
+   /* ember */
+
+   /* --bg:#0F0A0A;
+    --surface:#1A0F0F;
+    --surface2:#2A1414;
+
+    --primary:#EF4444;
+    --secondary:#F97316;
+
+    --text:#FEE2E2;
+    --text-muted:#FCA5A5;
+
+    --border:#3B1F1F; */
+}
+
+/* =========================
+   RESET / GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* =========================
+   MOBILE FIRST DEFAULT
+   (0px and above)
+========================= */
+
+body{
+    height: 100vh;
+    width: 100vw;
+
+    /* font-family: 'Courier New', Courier, monospace; */
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "nav"
+    ;
+}
+
+/* =========================
+   SMALL DEVICES
+   >= 480px
+========================= */
+
+@media (min-width: 480px) {}
+
+/* =========================
+   TABLETS
+   >= 768px
+========================= */
+
+@media (min-width: 768px) {
+    body{
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 10fr;
+        grid-template-areas:
+            "header header"
+            "nav main"
+        ;
+    }
+}
+
+/* =========================
+   LAPTOPS
+   >= 1024px
+========================= */
+
+@media (min-width: 1024px) {}
+
+/* =========================
+   LARGE DESKTOPS
+   >= 1280px
+========================= */
+
+@media (min-width: 1280px) {}
+
+/* =========================
+   EXTRA LARGE SCREENS
+   >= 1440px
+========================= */
+
+@media (min-width: 1440px) {}
