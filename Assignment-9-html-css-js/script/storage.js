@@ -35,6 +35,36 @@ export const state = {
       status: "Pending",
       isCompleted: false,
     },
+    {
+      id: 5,
+      title: "Complete Portfolio Website",
+      description:
+        "Finish the responsive homepage, add project cards, optimize images, and deploy the website.",
+      status: "In Progress",
+      isCompleted: false,
+    },
+    {
+      id: 6,
+      title: "Practice JavaScript",
+      description: "Solve 5 DOM manipulation problems and review ES6 concepts.",
+      status: "Completed",
+      isCompleted: true,
+    },
+    {
+      id: 7,
+      title: "Workout",
+      description:
+        "Complete a 45-minute strength training session and stretching.",
+      status: "Pending",
+      isCompleted: false,
+    },
+    {
+      id: 8,
+      title: "Read a Book",
+      description: "Read 30 pages of 'Atomic Habits' before bedtime.",
+      status: "Pending",
+      isCompleted: false,
+    },
   ],
 
   goals: [
@@ -54,6 +84,27 @@ export const state = {
     },
     {
       id: 3,
+      title: "Improve Fitness",
+      description:
+        "Exercise at least 5 days a week and maintain a healthy diet.",
+      status: "Pending",
+    },
+    {
+      id: 4,
+      title: "Become a Full Stack Developer",
+      description:
+        "Master HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB while building real-world projects.",
+      status: "In Progress",
+    },
+    {
+      id: 5,
+      title: "Get an Internship",
+      description:
+        "Build a strong portfolio, polish resume, and apply to software development internships.",
+      status: "In Progress",
+    },
+    {
+      id: 6,
       title: "Improve Fitness",
       description:
         "Exercise at least 5 days a week and maintain a healthy diet.",
@@ -81,6 +132,26 @@ export const state = {
     },
     {
       id: 4,
+      text: "Your only limit is the one you set yourself.",
+      author: "Unknown",
+    },
+    {
+      id: 5,
+      text: "Success is the sum of small efforts, repeated day in and day out.",
+      author: "Robert Collier",
+    },
+    {
+      id: 6,
+      text: "The best way to predict the future is to create it.",
+      author: "Peter Drucker",
+    },
+    {
+      id: 7,
+      text: "Discipline is choosing between what you want now and what you want most.",
+      author: "Abraham Lincoln",
+    },
+    {
+      id: 8,
       text: "Your only limit is the one you set yourself.",
       author: "Unknown",
     },

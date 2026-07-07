@@ -5,10 +5,11 @@ import { initGoals } from "./home/goals.js";
 import { initQuote } from "./home/quote.js";
 
 export const initHome = () => {
-  console.log("home runned");
   initGreeting();
   initHomeWidgets();
   initTaskProgress();
   initGoals();
   initQuote();
+
+  document.querySelector("#home").style.display = "grid";
 };

@@ -9,17 +9,22 @@ export const initQuote = () => {
 
   if (!quoteContainer) return;
 
-  const title = quoteContainer.querySelector("h2");
-  const quoteText = quoteContainer.querySelector("p");
-
-  title.textContent = "Quote of the Day.";
+  const quoteText = quoteContainer.querySelector("#homeQuoteDisplay");
+  const quoteAutor = quoteContainer.querySelector("#homeQuoteAuthor");
 
   const quotes =
     Array.isArray(state.quotes) && state.quotes.length
       ? state.quotes
       : defaultQuotes;
 
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)].text;
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-  quoteText.textContent = `“${randomQuote}”`;
+  quoteText.textContent = `“${randomQuote.text}”`;
+
+  if (randomQuote.author !== "Unknown") {
+    quoteAutor.style.display = "block";
+    quoteAutor.textContent = `~ ${randomQuote.author}`;
+  } else {
+    quoteAutor.style.display = "none";
+  }
 };

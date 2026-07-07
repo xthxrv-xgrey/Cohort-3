@@ -34,23 +34,23 @@
             <i class="ri-home-9-fill"></i>
             <span class="btnName">Home</span>
         </button>
-        <button>
+        <button id="tasksBtn">
             <i class="ri-task-fill"></i>
             <span class="btnName">Tasks</span>
         </button>
-        <button>
+        <button id="goalsBtn">
             <i class="ri-target-fill"></i>
             <span class="btnName">Goals</span>
         </button>
-        <button>
+        <button id="dailyPlannerBtn">
             <i class="ri-calendar-fill"></i>
             <span class="btnName">Daily Planner</span>
         </button>
-        <button>
+        <button id="pomodoroBtn">
             <i class="ri-alarm-fill"></i>
             <span class="btnName">Pomodoro</span>
         </button>
-        <button>
+        <button id="quotesBtn">
             <i class="ri-double-quotes-l"></i>
             <span class="btnName">Quotes</span>
         </button>
@@ -94,8 +94,10 @@
         </div>
         <div id="homeQuote">
             <h2>Quote of the Day.</h2>
-            <p>“If you are willing to do more than you are paid to do, eventually you will be paid to do
+            <p id="homeQuoteDisplay">“If you are willing to do more than you are paid to do, eventually you will be paid
+                to do
                 more than you do.”</p>
+            <span id="homeQuoteAuthor"></span>
         </div>
     </main>
 
@@ -186,21 +188,24 @@
             </button>
         </div>
 
-        <div class="quoteCard">
-            <div class="quoteInner">
-                <h2>“It is impossible to live without failing at something, unless you live so cautiously that you might
-                    as well not have lived at all.” <span> J.K. Rowling </span></h2>
-                <div class="quoteButtons">
-                    <div class="quoteFunctions">
-                        <button class="quoteEditBtn">
-                            <i class="ri-pencil-fill"></i>
-                            <span class="quoteBtnText">Edit</span>
-                        </button>
+        <div id="quoteCards">
+            <div class="quoteCard">
+                <div class="quoteInner">
+                    <h2>“It is impossible to live without failing at something, unless you live so cautiously that you
+                        might
+                        as well not have lived at all.” <span> J.K. Rowling </span></h2>
+                    <div class="quoteButtons">
+                        <div class="quoteFunctions">
+                            <button class="quoteEditBtn">
+                                <i class="ri-pencil-fill"></i>
+                                <span class="quoteBtnText">Edit</span>
+                            </button>
 
-                        <button class="quoteDeleteBtn">
-                            <i class="ri-delete-bin-fill"></i>
-                            <span class="quoteBtnText">Delete</span>
-                        </button>
+                            <button class="quoteDeleteBtn">
+                                <i class="ri-delete-bin-fill"></i>
+                                <span class="quoteBtnText">Delete</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

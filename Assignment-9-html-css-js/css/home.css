@@ -235,6 +235,14 @@
    padding: 2rem;
 }
 
+#homeQuote span{
+   width: max-content;
+   padding: 1rem 2rem;
+   border-radius: 2rem;
+   background-color: var(--bg);
+   color: var(--primary);
+}
+
 /* =========================
    SMALL DEVICES
    >= 480px
