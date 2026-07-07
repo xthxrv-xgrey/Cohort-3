@@ -7,7 +7,8 @@
    grid-area: main;
    background-color: var(--bg);
     padding: 1rem;
-    display: grid;
+    /* display: grid; */
+    display: none;
 
     grid-template-columns: 1fr;
     grid-template-areas:

@@ -55,7 +55,7 @@
 
    /* emerge */
 
-   /* --bg:#F8FAFC;
+   --bg:#F8FAFC;
     --surface:#FFFFFF;
     --surface2:#EEF3F7;
 
@@ -65,7 +65,7 @@
     --text:#111827;
     --text-muted:#6B7280;
 
-    --border:#E5E7EB; */
+    --border:#E5E7EB; 
 }
 
 /* =========================================================
@@ -82,23 +82,8 @@ html[data-theme="dark"] {
 
    --text:#F8FAFC;
    --text-muted:#9CA3AF;
-   --text-inverted:#0F172A;
 
    --border:#1F1F1F;
-
-   /* ember */
-
-   /* --bg:#0F0A0A;
-    --surface:#1A0F0F;
-    --surface2:#2A1414;
-
-    --primary:#EF4444;
-    --secondary:#F97316;
-
-    --text:#FEE2E2;
-    --text-muted:#FCA5A5;
-
-    --border:#3B1F1F; */
 }
 
 /* =========================

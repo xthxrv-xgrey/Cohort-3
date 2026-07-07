@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/tasks.css">
+    <link rel="stylesheet" href="./css/goals.css">
+    <link rel="stylesheet" href="./css/quotes.css">
+    <link rel="stylesheet" href="./css/play.css">
     <title>Emerge.</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
@@ -43,6 +47,10 @@
             <span class="btnName">Daily Planner</span>
         </button>
         <button>
+            <i class="ri-alarm-fill"></i>
+            <span class="btnName">Pomodoro</span>
+        </button>
+        <button>
             <i class="ri-double-quotes-l"></i>
             <span class="btnName">Quotes</span>
         </button>
@@ -53,20 +61,20 @@
         <div id="homeWidgets">
             <div id="clockArea">
                 <div class="homeWidget">
-                    <span id="time">11:23</span>
-                    <p id="date">MONDAY 23 JULY 2026</p>
+                    <span id="time">00:</span>
+                    <p id="date">MONDAY 01 JANUARY 2001</p>
                 </div>
             </div>
             <div id="weatherArea">
                 <div class="homeWidget">
                     <span id="temperature">0°C</span>
-                    <span id="weatherIcon">🌦️</span>
-                    <span id="weather">Light Drizzle</span>
+                    <span id="weatherIcon">☀️</span>
+                    <span id="weather">Clear</span>
                 </div>
             </div>
             <div id="locationArea">
                 <div class="homeWidget">
-                    <span>📍London, UK</span>
+                    <span>📍City, Country</span>
                 </div>
             </div>
         </div>
@@ -88,6 +96,114 @@
             <h2>Quote of the Day.</h2>
             <p>“If you are willing to do more than you are paid to do, eventually you will be paid to do
                 more than you do.”</p>
+        </div>
+    </main>
+
+    <main id="tasks">
+        <div class="header">
+            <h1>Tasks</h1>
+            <button>
+                <i class="ri-add-line"></i>
+                Add Task
+            </button>
+        </div>
+
+        <div id="taskCards">
+            <div class="taskCard">
+                <div class="taskInner">
+                    <div class="title">
+                        <h1>Complete Portfolio Website</h1>
+                        <span>~In Progress</span>
+                    </div>
+                    <p>Finish the responsive homepage, add project cards, optimize images, and deploy the website to
+                        GitHub Pages.</p>
+                    <div class="taskButtons">
+                        <div class="taskStatus">
+                            <input type="checkbox" id="task1">
+                            <label for="task1">Completed</label>
+                        </div>
+                        <div class="taskFunctions">
+                            <button class="taskEditBtn">
+                                <i class="ri-pencil-fill"></i>
+                                <span class="taskBtnText">Edit</span>
+                            </button>
+                            <button class="taskDeleteBtn">
+                                <i class="ri-delete-bin-fill"></i>
+                                <span class="taskBtnText">Delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main id="goals">
+        <div class="header">
+            <h1>Goals</h1>
+            <button>
+                <i class="ri-add-line"></i>
+                Add Goal
+            </button>
+        </div>
+
+        <div id="goalCards">
+            <div class="goalCard">
+                <div class="goalInner">
+                    <div class="title">
+                        <h1>Complete Portfolio Website</h1>
+                        <span>~In Progress</span>
+                    </div>
+                    <p>Finish the responsive homepage, add project cards, optimize images, and deploy the website to
+                        GitHub Pages.</p>
+                    <div class="goalButtons">
+                        <div class="goalStatus">
+                            <input type="checkbox" id="goal1">
+                            <label for="goal1">Completed</label>
+                        </div>
+                        <div class="goalFunctions">
+                            <button class="goalEditBtn">
+                                <i class="ri-pencil-fill"></i>
+                                <span class="goalBtnText">Edit</span>
+                            </button>
+                            <button class="goalDeleteBtn">
+                                <i class="ri-delete-bin-fill"></i>
+                                <span class="goalBtnText">Delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main id="quotes">
+        <div class="header">
+            <h1>Quotes</h1>
+            <button>
+                <i class="ri-add-line"></i>
+                Add Quote
+            </button>
+        </div>
+
+        <div class="quoteCard">
+            <div class="quoteInner">
+                <h2>“It is impossible to live without failing at something, unless you live so cautiously that you might
+                    as well not have lived at all.” <span> J.K. Rowling </span></h2>
+                <div class="quoteButtons">
+                    <div class="quoteFunctions">
+                        <button class="quoteEditBtn">
+                            <i class="ri-pencil-fill"></i>
+                            <span class="quoteBtnText">Edit</span>
+                        </button>
+
+                        <button class="quoteDeleteBtn">
+                            <i class="ri-delete-bin-fill"></i>
+                            <span class="quoteBtnText">Delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
