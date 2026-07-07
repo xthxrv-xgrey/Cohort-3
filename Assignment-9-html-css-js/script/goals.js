@@ -40,7 +40,7 @@ function renderGoals() {
               id="goal-${goal.id}"
               ${goal.isCompleted ? "checked" : ""}
             >
-            <label for="goal-${goal.id}">Completed</label>
+            <label for="goal-${goal.id}">${goal.isCompleted ? "Completed" : "Pending"}</label>
           </div>
 
           <div class="goalFunctions">

@@ -40,7 +40,7 @@ function renderTasks() {
               id="task-${task.id}"
               ${task.isCompleted ? "checked" : ""}
             >
-            <label for="task-${task.id}">Completed</label>
+            <label for="task-${task.id}">${task.isCompleted ? "Completed" : "Pending"}</label>
           </div>
 
           <div class="taskFunctions">
