@@ -19,7 +19,7 @@ export const initQuote = () => {
       ? state.quotes
       : defaultQuotes;
 
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)].text;
 
   quoteText.textContent = `“${randomQuote}”`;
 };

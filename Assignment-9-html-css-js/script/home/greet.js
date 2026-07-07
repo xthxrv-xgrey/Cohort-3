@@ -1,5 +1,7 @@
 import { state } from "../storage.js";
 
+console.log(state);
+
 export const initGreeting = () => {
   const greetingElement = document.getElementById("homeGreetings");
 
@@ -27,4 +29,4 @@ export const initGreeting = () => {
   const username = state.username?.trim() || "User";
 
   greetingElement.textContent = `${emoji} ${greeting} ${username}!`;
-}
+};
