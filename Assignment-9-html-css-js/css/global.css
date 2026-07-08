@@ -55,7 +55,7 @@
 
    /* emerge */
 
-   --bg:#F8FAFC;
+   /* --bg:#F8FAFC;
     --surface:#FFFFFF;
     --surface2:#EEF3F7;
 
@@ -65,7 +65,7 @@
     --text:#111827;
     --text-muted:#6B7280;
 
-    --border:#E5E7EB; 
+    --border:#E5E7EB;  */
 }
 
 /* =========================================================
@@ -100,7 +100,15 @@ html,
 body {
     height: 100%;
     width: 100%;
+    overflow: auto; /* Enable scrolling */
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
 }
+
+body::-webkit-scrollbar {
+display: none; /* Chrome, Safari, Opera */
+}
+
 
 
 /* =========================

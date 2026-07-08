@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/tasks.css">
     <link rel="stylesheet" href="./css/goals.css">
+    <link rel="stylesheet" href="./css/dailyPlanner.css">
     <link rel="stylesheet" href="./css/quotes.css">
     <title>Emerge.</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
@@ -123,6 +124,44 @@
         </div>
 
         <div id="goalCards">
+        </div>
+    </main>
+
+    <main id="dailyPlanner">
+        <div class="header">
+            <h1>Daily Planner</h1>
+            <div class="dateSwitchBar">
+                <div id="dateSwitchBarLeftBtn">></div>
+                <div id="dateSwitchBarDate"><i class="ri-calendar-fill"></i> WEDNESDAY, 08 JULY 2026</div>
+                <div id="dateSwitchBarRightBtn">></div>
+            </div>
+        </div>
+
+        <div class="dailyPlannerMain">
+            <div class="dailyPlannerSchedule">
+                <div class="title">
+                    <h1>Schedule :</h1>
+                    <button id="addDailyPlansBtn">Add Plans</button>
+                </div>
+                <div id="dailyPlannerSchedule">
+                    <div class="dailyPlannerScheduleCard">
+                        <div class="left">
+                            <span class="dailyPlannerScheduleCardTime">06:00</span>
+                            <div class="text">
+                                <h2>Wake Up</h2>
+                                <p>Hydrate and freshen up</p>
+                            </div>
+                        </div>
+                        <div class="tag">
+                            <i class="ri-sun-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dailyPlannerNotes">
+                <h1>Notes :</h1>
+                <textarea placeholder="Add Notes Here..."></textarea>
+            </div>
         </div>
     </main>
 

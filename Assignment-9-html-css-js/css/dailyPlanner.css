@@ -1,0 +1,241 @@
+/* =========================
+   MOBILE FIRST DEFAULT
+   (0px and above)
+========================= */
+
+#dailyPlanner{
+    grid-area: main;
+    display: flex;
+    font-family: jetBrainsMono;
+    background: var(--bg);
+}
+
+#dailyPlanner .header{
+    background-color: var(--surface);
+    padding: 1rem 2rem;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--text);
+}
+
+#dailyPlanner .dateSwitchBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface2);
+    border-radius: 1rem;
+    border: 1px solid var(--primary);
+}
+
+#dateSwitchBarLeftBtn{
+    height: 100%;
+    transform: rotateZ(180deg);
+    padding: 1rem;
+    border-left: 2px solid var(--border);
+}
+
+#dateSwitchBarDate{
+    padding: 1rem;    
+}
+
+#dateSwitchBarRightBtn{
+    height: 100%;
+    padding: 1rem;
+    border-left: 2px solid var(--border);
+}
+
+.dailyPlannerMain{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 1rem;
+    padding: 1rem;
+
+    grid-template-areas:
+        "dailyPlannerSchedule"
+        "dailyPlannerNotes";
+
+    background: var(--bg);
+}
+
+.dailyPlannerSchedule{    
+    grid-area: dailyPlannerSchedule;
+    background-color: var(--surface);
+    min-height: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dailyPlannerSchedule .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.dailyPlannerSchedule .title h1{
+    font-size: x-large;
+    color: var(--text);
+}
+
+.dailyPlannerSchedule .title button{
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: jetBrainsMono;
+}
+
+#dailyPlannerSchedule{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#dailyPlannerSchedule .dailyPlannerScheduleCard{
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dailyPlannerSchedule .dailyPlannerScheduleCard .left {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+
+.dailyPlannerSchedule .dailyPlannerScheduleCard .left .dailyPlannerScheduleCardTime{
+    background: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    height: max-content;
+}
+
+#dailyPlannerSchedule .dailyPlannerScheduleCard .text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#dailyPlannerSchedule .dailyPlannerScheduleCard .text h2{
+    color: var(--secondary);
+}
+
+#dailyPlannerSchedule .dailyPlannerScheduleCard .text p{
+    color: var(--text-muted);
+}
+
+#dailyPlannerSchedule .dailyPlannerScheduleCard .tag i{
+    color: var(--primary);
+    font-size: xx-large;
+    padding: 1rem;
+}
+
+.dailyPlannerNotes{
+    height: max-content;
+    min-height: 50vh;
+    grid-area: dailyPlannerNotes;
+    background-color: var(--surface);
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    resize: vertical;      /* optional */
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap; /* preserves line breaks */
+    overflow-wrap: break-word;
+}
+
+.dailyPlannerNotes h1{
+    font-size: x-large;
+}
+
+.dailyPlannerNotes textarea{
+    width: 100%;
+    min-height: 50vh;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    font-family: jetBrainsMono;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* =========================
+   SMALL DEVICES
+   >= 480px
+========================= */
+
+@media (min-width: 480px) {}
+
+/* =========================
+   TABLETS
+   >= 768px
+========================= */
+
+@media (min-width: 768px) {}
+
+/* =========================
+   LAPTOPS
+   >= 1024px
+========================= */
+
+@media (min-width: 1024px) {
+    .dailyPlannerMain{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        grid-template-areas:
+            "dailyPlannerSchedule dailyPlannerNotes";
+    }
+}
+
+/* =========================
+   LARGE DESKTOPS
+   >= 1280px
+========================= */
+
+@media (min-width: 1280px) {}
+
+/* =========================
+   EXTRA LARGE SCREENS
+   >= 1440px
+========================= */
+
+@media (min-width: 1440px) {}

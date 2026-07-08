@@ -1,6 +1,7 @@
 import { initHome } from "./home.js";
 import { initTasks } from "./tasks.js";
 import { initGoals } from "./goals.js";
+import { initDailyPlanner } from "./dailyPlanner.js";
 import { initQuotes } from "./quotes.js";
 
 // Nav Buttons
@@ -17,6 +18,7 @@ const quotesBtn = document.querySelector("#quotesBtn");
 const home = document.querySelector("#home");
 const tasks = document.querySelector("#tasks");
 const goals = document.querySelector("#goals");
+const dailyPlanner = document.querySelector("#dailyPlanner");
 const quotes = document.querySelector("#quotes");
 
 const renderPage = (page) => {
@@ -32,6 +34,7 @@ const renderPage = (page) => {
   home.style.display = "none";
   tasks.style.display = "none";
   goals.style.display = "none";
+  dailyPlanner.style.display = "none";
   quotes.style.display = "none";
 
   // Main Rendering
@@ -47,6 +50,10 @@ const renderPage = (page) => {
     goalsBtn.style.backgroundColor = "var(--primary)";
     initGoals();
   }
+  if (page === "dailyPlanner") {
+    dailyPlannerBtn.style.backgroundColor = "var(--primary)";
+    initDailyPlanner();
+  }
   if (page === "quotes") {
     quotesBtn.style.backgroundColor = "var(--primary)";
     initQuotes();
@@ -56,7 +63,9 @@ const renderPage = (page) => {
 homeBtn.addEventListener("click", () => renderPage("home"));
 tasksBtn.addEventListener("click", () => renderPage("tasks"));
 goalsBtn.addEventListener("click", () => renderPage("goals"));
+dailyPlannerBtn.addEventListener("click", () => renderPage("dailyPlanner"));
 quotesBtn.addEventListener("click", () => renderPage("quotes"));
 
 // Default Render
-renderPage("home");
+// renderPage("home");
+renderPage("dailyPlanner");
