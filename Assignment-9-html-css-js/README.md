@@ -244,9 +244,9 @@ Examples:
 
 **Atharv Agrey**
 
-GitHub: https://github.com/<your-github>
+GitHub: https://github.com/xthxrv-xgrey/
 
-LinkedIn: https://linkedin.com/in/<your-linkedin>
+LinkedIn: https://www.linkedin.com/in/xthxrv-xgrey/
 
 ---
 
