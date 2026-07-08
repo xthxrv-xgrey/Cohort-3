@@ -4,6 +4,7 @@ import { initGoals } from "./goals.js";
 import { initDailyPlanner } from "./dailyPlanner.js";
 import { initPomodoro } from "./pomodoro.js";
 import { initQuotes } from "./quotes.js";
+import { initSettings } from "./settings.js";
 
 // Nav Buttons
 
@@ -13,6 +14,7 @@ const goalsBtn = document.querySelector("#goalsBtn");
 const dailyPlannerBtn = document.querySelector("#dailyPlannerBtn");
 const pomodoroBtn = document.querySelector("#pomodoroBtn");
 const quotesBtn = document.querySelector("#quotesBtn");
+const settingsBtn = document.querySelector("#settingsBtn");
 
 // Pages
 
@@ -22,6 +24,7 @@ const goals = document.querySelector("#goals");
 const dailyPlanner = document.querySelector("#dailyPlanner");
 const pomodoro = document.querySelector("#pomodoro");
 const quotes = document.querySelector("#quotes");
+const settings = document.querySelector("#settings");
 
 const renderPage = (page) => {
   // clean UI buttons
@@ -31,14 +34,16 @@ const renderPage = (page) => {
   dailyPlannerBtn.style.backgroundColor = "var(--secondary)";
   pomodoroBtn.style.backgroundColor = "var(--secondary)";
   quotesBtn.style.backgroundColor = "var(--secondary)";
+  settingsBtn.style.backgroundColor = "var(--secondary)";
 
   // clean UI pages
   home.style.display = "none";
   tasks.style.display = "none";
   goals.style.display = "none";
   dailyPlanner.style.display = "none";
-  quotes.style.display = "none";
   pomodoro.style.display = "none";
+  quotes.style.display = "none";
+  settings.style.display = "none";
 
   // Main Rendering
   if (page === "home") {
@@ -59,6 +64,9 @@ const renderPage = (page) => {
   } else if (page === "quotes") {
     quotesBtn.style.backgroundColor = "var(--primary)";
     initQuotes();
+  } else if (page === "settings") {
+    settingsBtn.style.backgroundColor = "var(--primary)";
+    initSettings();
   }
 };
 
@@ -68,6 +76,7 @@ goalsBtn.addEventListener("click", () => renderPage("goals"));
 dailyPlannerBtn.addEventListener("click", () => renderPage("dailyPlanner"));
 pomodoroBtn.addEventListener("click", () => renderPage("pomodoro"));
 quotesBtn.addEventListener("click", () => renderPage("quotes"));
+settingsBtn.addEventListener("click", () => renderPage("settings"));
 
 // Default Render
 renderPage("home");

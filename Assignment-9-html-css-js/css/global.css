@@ -34,27 +34,14 @@
 }
 
 /* =========================================================
-   ROOT DESIGN TOKENS (LIGHT THEME)
+   ROOT DESIGN TOKENS ( THEME)
 ========================================================= */
 
-:root {
+/* =========================================================
+   🌿 1. EMERGE (Default Growth Theme)
+========================================================= */
 
-   /* ocean */
-   --bg:#F0F9FF;
-   --surface:#FFFFFF;
-   --surface2:#E0F2FE;
-
-   --primary:#0EA5E9;
-   --secondary:#06B6D4;
-
-   --text:#0F172A;
-   --text-muted:#475569;
-   --text-inverted:#F8FAFC;
-
-   --border:#BAE6FD;
-
-   /* emerge */
-
+html[data-theme="emerge"]{
     --bg:#F8FAFC;
     --surface:#FFFFFF;
     --surface2:#EEF3F7;
@@ -65,25 +52,183 @@
     --text:#111827;
     --text-muted:#6B7280;
 
-    --border:#E5E7EB;  
+    --border:#E5E7EB;
 }
 
 /* =========================================================
-   DARK THEME
+   🌌 2. AURORA (AI / Startup / Purple Glow)
 ========================================================= */
 
-html[data-theme="dark"] {
-   --bg:#050505;
-   --surface:#0B0B0B;
-   --surface2:#121212;
+html[data-theme="aurora"]{
+    --bg:#0B1020;
+    --surface:#121A33;
+    --surface2:#1A2445;
 
-   --primary:#A855F7;
-   --secondary:#22D3EE;
+    --primary:#8B5CF6;
+    --secondary:#22D3EE;
 
-   --text:#F8FAFC;
-   --text-muted:#9CA3AF;
+    --text:#F8FAFC;
+    --text-muted:#94A3B8;
 
-   --border:#1F1F1F;
+    --border:#24304D;
+}
+
+/* =========================================================
+   🌊 3. OCEAN (Calm / Focus / Blue Flow)
+========================================================= */
+
+html[data-theme="ocean"]{
+    --bg:#F0F9FF;
+    --surface:#FFFFFF;
+    --surface2:#E0F2FE;
+
+    --primary:#0EA5E9;
+    --secondary:#06B6D4;
+
+    --text:#0F172A;
+    --text-muted:#475569;
+
+    --border:#BAE6FD;
+}
+
+/* =========================================================
+   🌅 4. SUNRISE (Energy / Motivation / Warm Start)
+========================================================= */
+
+html[data-theme="sunrise"]{
+    --bg:#FFFBF5;
+    --surface:#FFFFFF;
+    --surface2:#FFF1E6;
+
+    --primary:#F97316;
+    --secondary:#FBBF24;
+
+    --text:#1F2937;
+    --text-muted:#6B7280;
+
+    --border:#FED7AA;
+}
+
+/* =========================================================
+   🌸 5. SAKURA (Soft / Emotional / Gen Z Cute)
+========================================================= */
+
+html[data-theme="sakura"]{
+    --bg:#FFF7FB;
+    --surface:#FFFFFF;
+    --surface2:#FFE4EC;
+
+    --primary:#EC4899;
+    --secondary:#FB7185;
+
+    --text:#1F2937;
+    --text-muted:#6B7280;
+
+    --border:#FBCFE8;
+}
+
+:root{
+    --bg:#F8FAFC;
+    --surface:#FFFFFF;
+    --surface2:#EEF3F7;
+
+    --primary:#10B981;
+    --secondary:#4F46E5;
+
+    --text:#111827;
+    --text-muted:#6B7280;
+
+    --border:#E5E7EB;
+}
+
+/* =========================================================
+   🌙 6. MIDNIGHT (Premium Dark / Startup SaaS Feel)
+========================================================= */
+
+html[data-theme="midnight"]{
+    --bg:#070A12;
+    --surface:#0F172A;
+    --surface2:#111C33;
+
+    --primary:#38BDF8;
+    --secondary:#818CF8;
+
+    --text:#F9FAFB;
+    --text-muted:#94A3B8;
+
+    --border:#1F2A44;
+}
+
+/* =========================================================
+   ❄️ 7. FROST (Minimal / Apple-like Clean UI)
+========================================================= */
+
+html[data-theme="frost"]{
+    --bg:#F9FAFB;
+    --surface:#FFFFFF;
+    --surface2:#F3F4F6;
+
+    --primary:#64748B;
+    --secondary:#94A3B8;
+
+    --text:#0F172A;
+    --text-muted:#6B7280;
+
+    --border:#E5E7EB;
+}
+
+/* =========================================================
+   🍂 8. EARTH (Natural / Calm / Organic Growth)
+========================================================= */
+
+html[data-theme="earth"]{
+    --bg:#F6F1E7;
+    --surface:#FFFFFF;
+    --surface2:#EFE6D6;
+
+    --primary:#7C5C3B;
+    --secondary:#A3A380;
+
+    --text:#2B2B2B;
+    --text-muted:#6B5E4F;
+
+    --border:#D6C6A8;
+}
+
+/* =========================================================
+   🔥 9. EMBER (Motivation / Fire / Energy Push)
+========================================================= */
+
+html[data-theme="ember"]{
+    --bg:#0F0A0A;
+    --surface:#1A0F0F;
+    --surface2:#2A1414;
+
+    --primary:#EF4444;
+    --secondary:#F97316;
+
+    --text:#FEE2E2;
+    --text-muted:#FCA5A5;
+
+    --border:#3B1F1F;
+}
+
+/* =========================================================
+   🟣 10. NEON (Gen Z / Cyber / Loud Growth Energy)
+========================================================= */
+
+html[data-theme="neon"]{
+    --bg:#050505;
+    --surface:#0B0B0B;
+    --surface2:#121212;
+
+    --primary:#A855F7;
+    --secondary:#22D3EE;
+
+    --text:#F8FAFC;
+    --text-muted:#9CA3AF;
+
+    --border:#1F1F1F;
 }
 
 /* =========================

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/pomodoro.css">
     <link rel="stylesheet" href="./css/quotes.css">
     <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/settings.css">
     <title>Emerge.</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
@@ -26,8 +27,8 @@
             <p>Your day, organiser.</p>
         </div>
 
-        <button id="menuBtn">
-            <i id="themeBtn" class="ri-menu-line"></i>
+        <button id="settingsBtn">
+            <i class="ri-settings-5-fill"></i>
         </button>
     </header>
 
@@ -210,7 +211,278 @@
         </div>
     </main>
 
-    <main id="settings"></main>
+    <main id="settings">
+
+        <div class="header">
+            <h1>Settings</h1>
+        </div>
+
+        <form id="changeUsername">
+            <input type="text" id="changeUsernameInput" name="username" placeholder="Enter new username" required />
+
+            <button type="submit" id="saveUsernameBtn">
+                Save Changes
+            </button>
+
+        </form>
+
+        <section>
+            <h1>Themes</h1>
+            <div class="themeCards">
+
+                <!-- 🌿 EMERGE -->
+                <div class="theme-card" id="theme-emerge">
+                    <div class="theme-preview" style="background:#F8FAFC;">
+                        <div class="palette">
+                            <span style="background:#10B981;"></span>
+                            <span style="background:#4F46E5;"></span>
+                            <span style="background:#FFFFFF;"></span>
+                            <span style="background:#EEF3F7;"></span>
+                            <span style="background:#111827;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#FFFFFF;">
+                            <div class="fake-title" style="background:#10B981;"></div>
+                            <div class="fake-line" style="background:#D1D5DB;"></div>
+                            <div class="fake-line" style="background:#E5E7EB;width:80%;"></div>
+                            <div class="fake-btn" style="background:#4F46E5;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🌿 Emerge</h3>
+                        <p>Fresh • Productive • Default</p>
+                    </div>
+                </div>
+
+                <!-- 🌌 AURORA -->
+                <div class="theme-card" id="theme-aurora">
+                    <div class="theme-preview" style="background:#0B1020;">
+                        <div class="palette">
+                            <span style="background:#8B5CF6;"></span>
+                            <span style="background:#22D3EE;"></span>
+                            <span style="background:#121A33;"></span>
+                            <span style="background:#1A2445;"></span>
+                            <span style="background:#F8FAFC;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#121A33;">
+                            <div class="fake-title" style="background:#8B5CF6;"></div>
+                            <div class="fake-line" style="background:#334155;"></div>
+                            <div class="fake-line" style="background:#24304D;width:80%;"></div>
+                            <div class="fake-btn" style="background:#22D3EE;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🌌 Aurora</h3>
+                        <p>AI • Startup • Purple Glow</p>
+                    </div>
+                </div>
+
+                <!-- 🌊 OCEAN -->
+                <div class="theme-card" id="theme-ocean">
+                    <div class="theme-preview" style="background:#F0F9FF;">
+                        <div class="palette">
+                            <span style="background:#0EA5E9;"></span>
+                            <span style="background:#06B6D4;"></span>
+                            <span style="background:#FFFFFF;"></span>
+                            <span style="background:#E0F2FE;"></span>
+                            <span style="background:#0F172A;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#FFFFFF;">
+                            <div class="fake-title" style="background:#0EA5E9;"></div>
+                            <div class="fake-line" style="background:#CBD5E1;"></div>
+                            <div class="fake-line" style="background:#BAE6FD;width:80%;"></div>
+                            <div class="fake-btn" style="background:#06B6D4;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🌊 Ocean</h3>
+                        <p>Calm • Focus • Blue Flow</p>
+                    </div>
+                </div>
+
+                <!-- 🌅 SUNRISE -->
+                <div class="theme-card" id="theme-sunrise">
+                    <div class="theme-preview" style="background:#FFFBF5;">
+                        <div class="palette">
+                            <span style="background:#F97316;"></span>
+                            <span style="background:#FBBF24;"></span>
+                            <span style="background:#FFFFFF;"></span>
+                            <span style="background:#FFF1E6;"></span>
+                            <span style="background:#1F2937;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#FFFFFF;">
+                            <div class="fake-title" style="background:#F97316;"></div>
+                            <div class="fake-line" style="background:#E5E7EB;"></div>
+                            <div class="fake-line" style="background:#FED7AA;width:80%;"></div>
+                            <div class="fake-btn" style="background:#FBBF24;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🌅 Sunrise</h3>
+                        <p>Energy • Warm • Motivation</p>
+                    </div>
+                </div>
+
+                <!-- 🌸 SAKURA -->
+                <div class="theme-card" id="theme-sakura">
+                    <div class="theme-preview" style="background:#FFF7FB;">
+                        <div class="palette">
+                            <span style="background:#EC4899;"></span>
+                            <span style="background:#FB7185;"></span>
+                            <span style="background:#FFFFFF;"></span>
+                            <span style="background:#FFE4EC;"></span>
+                            <span style="background:#1F2937;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#FFFFFF;">
+                            <div class="fake-title" style="background:#EC4899;"></div>
+                            <div class="fake-line" style="background:#E5E7EB;"></div>
+                            <div class="fake-line" style="background:#FBCFE8;width:80%;"></div>
+                            <div class="fake-btn" style="background:#FB7185;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🌸 Sakura</h3>
+                        <p>Soft • Cute • Gen Z</p>
+                    </div>
+                </div>
+
+                <!-- 🌙 MIDNIGHT -->
+                <div class="theme-card" id="theme-midnight">
+                    <div class="theme-preview" style="background:#070A12;">
+                        <div class="palette">
+                            <span style="background:#38BDF8;"></span>
+                            <span style="background:#818CF8;"></span>
+                            <span style="background:#0F172A;"></span>
+                            <span style="background:#111C33;"></span>
+                            <span style="background:#F9FAFB;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#0F172A;">
+                            <div class="fake-title" style="background:#38BDF8;"></div>
+                            <div class="fake-line" style="background:#334155;"></div>
+                            <div class="fake-line" style="background:#1F2A44;width:80%;"></div>
+                            <div class="fake-btn" style="background:#818CF8;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🌙 Midnight</h3>
+                        <p>Premium • SaaS • Dark</p>
+                    </div>
+                </div>
+
+                <!-- ❄️ FROST -->
+                <div class="theme-card" id="theme-frost">
+                    <div class="theme-preview" style="background:#F9FAFB;">
+                        <div class="palette">
+                            <span style="background:#64748B;"></span>
+                            <span style="background:#94A3B8;"></span>
+                            <span style="background:#FFFFFF;"></span>
+                            <span style="background:#F3F4F6;"></span>
+                            <span style="background:#0F172A;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#FFFFFF;">
+                            <div class="fake-title" style="background:#64748B;"></div>
+                            <div class="fake-line" style="background:#D1D5DB;"></div>
+                            <div class="fake-line" style="background:#E5E7EB;width:80%;"></div>
+                            <div class="fake-btn" style="background:#94A3B8;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>❄️ Frost</h3>
+                        <p>Minimal • Apple Style • Clean</p>
+                    </div>
+                </div>
+
+                <!-- 🍂 EARTH -->
+                <div class="theme-card" id="theme-earth">
+                    <div class="theme-preview" style="background:#F6F1E7;">
+                        <div class="palette">
+                            <span style="background:#7C5C3B;"></span>
+                            <span style="background:#A3A380;"></span>
+                            <span style="background:#FFFFFF;"></span>
+                            <span style="background:#EFE6D6;"></span>
+                            <span style="background:#2B2B2B;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#FFFFFF;">
+                            <div class="fake-title" style="background:#7C5C3B;"></div>
+                            <div class="fake-line" style="background:#D6C6A8;"></div>
+                            <div class="fake-line" style="background:#E8DCC7;width:80%;"></div>
+                            <div class="fake-btn" style="background:#A3A380;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🍂 Earth</h3>
+                        <p>Natural • Organic • Calm</p>
+                    </div>
+                </div>
+
+                <!-- 🔥 EMBER -->
+                <div class="theme-card" id="theme-ember">
+                    <div class="theme-preview" style="background:#0F0A0A;">
+                        <div class="palette">
+                            <span style="background:#EF4444;"></span>
+                            <span style="background:#F97316;"></span>
+                            <span style="background:#1A0F0F;"></span>
+                            <span style="background:#2A1414;"></span>
+                            <span style="background:#FEE2E2;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#1A0F0F;">
+                            <div class="fake-title" style="background:#EF4444;"></div>
+                            <div class="fake-line" style="background:#3B1F1F;"></div>
+                            <div class="fake-line" style="background:#4B2323;width:80%;"></div>
+                            <div class="fake-btn" style="background:#F97316;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🔥 Ember</h3>
+                        <p>Fire • Energy • Motivation</p>
+                    </div>
+                </div>
+
+                <!-- 🟣 NEON -->
+                <div class="theme-card" id="theme-neon">
+                    <div class="theme-preview" style="background:#050505;">
+                        <div class="palette">
+                            <span style="background:#A855F7;"></span>
+                            <span style="background:#22D3EE;"></span>
+                            <span style="background:#0B0B0B;"></span>
+                            <span style="background:#121212;"></span>
+                            <span style="background:#F8FAFC;"></span>
+                        </div>
+
+                        <div class="fake-ui" style="background:#0B0B0B;">
+                            <div class="fake-title" style="background:#A855F7;"></div>
+                            <div class="fake-line" style="background:#374151;"></div>
+                            <div class="fake-line" style="background:#1F1F1F;width:80%;"></div>
+                            <div class="fake-btn" style="background:#22D3EE;"></div>
+                        </div>
+                    </div>
+
+                    <div class="theme-info">
+                        <h3>🟣 Neon</h3>
+                        <p>Cyber • Gen Z • Vibrant</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
 
     <div id="addTaskModal" class="modal">
         <form id="addTaskForm" class="taskForm">

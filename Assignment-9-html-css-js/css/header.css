@@ -28,7 +28,7 @@ header{
    font-size: small;
 }
 
-#menuBtn{
+#settingsBtn{
    background: var(--secondary);
    padding: 1rem 2rem;
    border-radius: 1rem;
@@ -37,11 +37,11 @@ header{
    border: 1px solid var(--border);
 }
 
-#menuBtn:hover{
+#settingsBtn:hover{
    background-color: var(--primary);
 }
 
-#menuBtn:active{
+#settingsBtn:active{
    scale: .95;
 }
 
