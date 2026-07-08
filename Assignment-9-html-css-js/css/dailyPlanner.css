@@ -109,6 +109,11 @@
     align-items: center;
 }
 
+#dailyPlannerSchedule p{
+    color: var(--text-muted);
+    font-size: small;
+}
+
 #dailyPlannerSchedule .dailyPlannerScheduleCard{
     width: 100%;
     border-radius: 1rem;
@@ -196,6 +201,86 @@
     resize: none;
     outline: none;
     box-sizing: border-box;
+}
+
+.dailyPlannerScheduleCard .tag{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+
+.editPlannerBtn,
+.deletePlannerBtn{
+
+    border:none;
+    background:transparent;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+}
+
+
+.editPlannerBtn:hover{
+
+    color:var(--primary);
+
+}
+
+
+.deletePlannerBtn:hover{
+
+    color:red;
+
+}
+
+
+
+.iconCategories{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+
+.iconCategory{
+    border:none;
+    padding:8px 14px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+
+.iconCategory.active{
+    background:var(--primary);
+    color:var(--bg);
+}
+
+
+.iconPicker{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:12px;
+}
+
+
+.iconOption{
+    height:45px;
+    border:1px solid #ddd;
+    background: var(--bg);
+    border-radius:12px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+
+.iconOption.selected{
+    background:var(--primary);
+    color:white;
 }
 
 /* =========================

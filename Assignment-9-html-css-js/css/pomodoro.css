@@ -2,7 +2,7 @@
     grid-area: main;
 
     background: var(--bg);
-    display: flex;
+    display: none;
     flex-direction: column;
 
     justify-content: space-between;

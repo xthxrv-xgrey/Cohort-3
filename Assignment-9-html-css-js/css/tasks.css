@@ -25,6 +25,7 @@
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
+    height: max-content;
 }
 
 #tasks .header button{
