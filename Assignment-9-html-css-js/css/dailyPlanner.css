@@ -272,6 +272,7 @@
     height:45px;
     border:1px solid #ddd;
     background: var(--bg);
+    color: var(--primary);
     border-radius:12px;
     font-size:22px;
     cursor:pointer;
