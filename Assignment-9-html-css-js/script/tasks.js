@@ -25,7 +25,7 @@ let editingTaskId = null;
 export const initTasks = () => {
   renderTasks();
 
-  document.querySelector("#tasks").style.display = "grid";
+  document.querySelector("#tasks").style.display = "flex";
 
   initTaskEvents();
 };

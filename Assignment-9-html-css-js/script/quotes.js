@@ -25,7 +25,7 @@ let editingQuoteId = null;
 export const initQuotes = () => {
   renderQuotes();
 
-  document.querySelector("#quotes").style.display = "grid";
+  document.querySelector("#quotes").style.display = "flex";
 
   initQuoteEvents();
 };

@@ -25,7 +25,7 @@ let editingGoalId = null;
 export const initGoals = () => {
   renderGoals();
 
-  document.querySelector("#goals").style.display = "grid";
+  document.querySelector("#goals").style.display = "flex";
 
   initGoalEvents();
 };
