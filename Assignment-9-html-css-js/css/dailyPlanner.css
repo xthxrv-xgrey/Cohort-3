@@ -5,7 +5,7 @@
 
 #dailyPlanner{
     grid-area: main;
-    display: flex;
+    display: none;
     font-family: jetBrainsMono;
     background: var(--bg);
 }
@@ -179,6 +179,7 @@
 
 .dailyPlannerNotes h1{
     font-size: x-large;
+    color: var(--text);
 }
 
 .dailyPlannerNotes textarea{

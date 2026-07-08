@@ -361,6 +361,24 @@ export const state = {
     },
   ],
 
+  pomodoro: {
+    duration: 25 * 60, // Total session time (seconds)
+    remaining: 25 * 60, // Remaining time (seconds)
+    isRunning: false,
+    mode: "focus", // focus | shortBreak | longBreak
+
+    sessionsCompleted: 0,
+
+    settings: {
+      focus: 25, // minutes
+      shortBreak: 5, // minutes
+      longBreak: 15, // minutes
+      longBreakAfter: 4, // After every 4 focus sessions
+      autoStartBreak: false,
+      autoStartFocus: false,
+    },
+  },
+
   quotes: [
     {
       id: 1,
