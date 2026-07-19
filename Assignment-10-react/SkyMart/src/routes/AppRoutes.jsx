@@ -7,6 +7,9 @@ import Login from "../pages/auth/Login.jsx";
 import Register from "../pages/auth/Register.jsx";
 
 import Home from "../pages/Home.jsx";
+import Products from "../pages/Products.jsx";
+
+import AppLayout from "../layouts/AppLayout.jsx";
 
 const AppRoutes = () => {
   return (
@@ -17,7 +20,10 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} />
       </Route>
       <Route element={<ProtectedRoutes />}>
-        <Route path="/home" element={<Home />} />
+        <Route element={<AppLayout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+        </Route>
       </Route>
     </Routes>
   );
