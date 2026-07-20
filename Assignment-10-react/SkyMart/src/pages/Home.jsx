@@ -9,121 +9,86 @@ const Home = () => {
     "Accessories",
   ];
 
-  const products = [
+  const highlights = [
     {
-      name: "Smart Watch",
-      price: "₹2,999",
-      image: "⌚",
+      title: "Fast Delivery",
+      description: "Get your favorite products delivered quickly.",
+      icon: "🚚",
     },
     {
-      name: "Wireless Headphones",
-      price: "₹1,499",
-      image: "🎧",
+      title: "Best Deals",
+      description: "Enjoy amazing offers and affordable prices.",
+      icon: "🔥",
     },
     {
-      name: "Gaming Laptop",
-      price: "₹59,999",
-      image: "💻",
+      title: "Secure Shopping",
+      description: "Safe payments and trusted shopping experience.",
+      icon: "🔒",
     },
   ];
 
   return (
-    <div className="h-full overflow-y-auto space-y-6">
-      {/* Hero Section */}
-      <section className="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col md:flex-row justify-between items-center">
-        <div className="space-y-4 max-w-xl">
-          <h1 className="text-4xl font-bold text-slate-800">
-            Welcome to Sky<span className="text-emerald-600">Mart</span>
+    <div className="space-y-6">
+      {/* Main Hero Banner */}
+      <section className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-xl space-y-5">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800">
+            Welcome to <span className="text-emerald-600">SkyMart</span>
           </h1>
 
-          <p className="text-slate-500 text-lg">
-            Discover amazing products at the best prices. Shop electronics,
-            fashion, accessories and more from one place.
+          <p className="text-lg text-slate-500">
+            Everything you need, delivered with trust. Explore thousands of
+            products and enjoy a smooth shopping experience.
           </p>
 
           <Link
             to="/products"
-            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition"
+            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition"
           >
-            Explore Products
+            Browse Products
           </Link>
         </div>
 
-        <div className="mt-6 md:mt-0 bg-emerald-100 rounded-full w-48 h-48 flex items-center justify-center">
-          <span className="text-7xl">🛒</span>
+        {/* Replace this later with your banner image */}
+        <div className="w-full md:w-80 h-64 bg-emerald-100 rounded-2xl flex items-center justify-center">
+          <span className="text-8xl">🛍️</span>
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="bg-white rounded-2xl border border-slate-200 p-6">
-        <div className="flex justify-between items-center mb-5">
-          <h2 className="text-xl font-semibold text-slate-800">
-            Shop By Category
+      {/* SkyMart Experience */}
+      <section className="bg-emerald-600 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 className="text-2xl font-semibold">
+            Shop with confidence at SkyMart
           </h2>
 
-          <Link
-            to="/products"
-            className="text-emerald-600 text-sm hover:underline"
-          >
-            View All
-          </Link>
+          <p className="mt-2 text-emerald-100">
+            Quality products, secure payments and reliable delivery.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {categories.map((category) => (
-            <Link
-              key={category}
-              to="/products"
-              className="border border-slate-200 rounded-xl p-4 text-center hover:border-emerald-500 hover:bg-emerald-50 transition"
-            >
-              <p className="font-medium text-slate-700">{category}</p>
-            </Link>
-          ))}
-        </div>
+        <Link
+          to="/products"
+          className="bg-white text-emerald-700 px-6 py-3 rounded-lg font-medium hover:bg-emerald-50 transition"
+        >
+          Start Shopping
+        </Link>
       </section>
 
-      {/* Featured Products */}
-      <section className="bg-white rounded-2xl border border-slate-200 p-6">
-        <div className="flex justify-between items-center mb-5">
-          <h2 className="text-xl font-semibold text-slate-800">
-            Featured Products
-          </h2>
-
-          <Link
-            to="/products"
-            className="text-emerald-600 text-sm hover:underline"
+      {/* Highlights */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {highlights.map((item) => (
+          <div
+            key={item.title}
+            className="bg-white border border-slate-200 rounded-xl p-5"
           >
-            See More
-          </Link>
-        </div>
+            <div className="text-3xl">{item.icon}</div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {products.map((product) => (
-            <div
-              key={product.name}
-              className="border border-slate-200 rounded-xl p-5 hover:shadow-sm transition"
-            >
-              <div className="h-32 bg-slate-100 rounded-lg flex items-center justify-center text-5xl">
-                {product.image}
-              </div>
+            <h3 className="mt-3 font-semibold text-slate-800">{item.title}</h3>
 
-              <h3 className="mt-4 font-medium text-slate-800">
-                {product.name}
-              </h3>
-
-              <p className="mt-2 text-emerald-600 font-semibold">
-                {product.price}
-              </p>
-
-              <Link
-                to="/products"
-                className="block mt-4 text-center border border-slate-300 rounded-lg py-2 text-sm hover:bg-slate-100"
-              >
-                View Product
-              </Link>
-            </div>
-          ))}
-        </div>
+            <p className="mt-2 text-sm text-slate-500">{item.description}</p>
+          </div>
+        ))}
       </section>
     </div>
   );

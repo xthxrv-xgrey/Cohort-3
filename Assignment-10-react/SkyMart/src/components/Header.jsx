@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Menu } from "lucide-react";
+import { Menu, ShoppingCart } from "lucide-react";
 
 const Header = () => {
   return (
@@ -10,12 +10,21 @@ const Header = () => {
         </h1>
       </Link>
 
-      <button
-        className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"
-        aria-label="Open menu"
-      >
-        <Menu size={24} />
-      </button>
+      <div className="flex flex-row gap-4">
+        <Link
+          to={"/cart"}
+          className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"
+          aria-label="Open menu"
+        >
+          <ShoppingCart size={24} />
+        </Link>
+        <button
+          className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"
+          aria-label="Open menu"
+        >
+          <Menu size={24} />
+        </button>
+      </div>
     </header>
   );
 };

@@ -31,7 +31,7 @@ const Register = () => {
       name,
       email,
       password,
-      cart: [],
+      cart: {},
     };
 
     setUsers((prev) => ({

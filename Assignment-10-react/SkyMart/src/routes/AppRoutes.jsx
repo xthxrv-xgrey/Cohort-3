@@ -8,6 +8,7 @@ import Register from "../pages/auth/Register.jsx";
 
 import Home from "../pages/Home.jsx";
 import Products from "../pages/Products.jsx";
+import Cart from "../pages/Cart.jsx";
 
 import AppLayout from "../layouts/AppLayout.jsx";
 
@@ -23,6 +24,7 @@ const AppRoutes = () => {
         <Route element={<AppLayout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Route>
     </Routes>
