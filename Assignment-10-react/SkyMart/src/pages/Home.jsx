@@ -1,14 +1,6 @@
 import { Link } from "react-router";
 
 const Home = () => {
-  const categories = [
-    "Electronics",
-    "Fashion",
-    "Home & Kitchen",
-    "Mobiles",
-    "Accessories",
-  ];
-
   const highlights = [
     {
       title: "Fast Delivery",
@@ -28,9 +20,9 @@ const Home = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Main Hero Banner */}
-      <section className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="bg-white rounded-2xl border border-slate-200 p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-7">
         <div className="max-w-xl space-y-5">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800">
             Welcome to <span className="text-emerald-600">SkyMart</span>
@@ -49,14 +41,16 @@ const Home = () => {
           </Link>
         </div>
 
-        {/* Replace this later with your banner image */}
-        <div className="w-full md:w-80 h-64 bg-emerald-100 rounded-2xl flex items-center justify-center">
-          <span className="text-8xl">🛍️</span>
+        <div className="w-full md:w-96 h-56 bg-emerald-100 rounded-2xl flex items-center justify-center overflow-hidden">
+          <img
+            alt=""
+            src="https://images.pexels.com/photos/7319118/pexels-photo-7319118.jpeg?_gl=1*1jopxru*_ga*MTgwMTE3NjY2My4xNzgzMzEwNTcy*_ga_8JE65Q40S6*czE3ODQ1NTExNzQkbzIkZzEkdDE3ODQ1NTEyMzAkajQkbDAkaDA."
+          />
         </div>
       </section>
 
       {/* SkyMart Experience */}
-      <section className="bg-emerald-600 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="bg-emerald-600 rounded-2xl p-7 text-white flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h2 className="text-2xl font-semibold">
             Shop with confidence at SkyMart

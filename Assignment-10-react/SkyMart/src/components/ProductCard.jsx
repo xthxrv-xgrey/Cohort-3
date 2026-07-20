@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md transition">
       {/* Product Image */}
-      <Link to="#">
+      <Link to={`/products/${product.id}`}>
         <div className="h-56 bg-slate-100 rounded-xl flex items-center justify-center overflow-hidden">
           <img
             src={product.image}
@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
           {product.category}
         </p>
 
-        <h3 className="text-lg font-semibold text-slate-800 line-clamp-2">
+        <h3 className="text-lg font-semibold text-slate-800 line-clamp-1">
           {product.title}
         </h3>
 
@@ -53,9 +53,9 @@ const ProductCard = ({ product }) => {
       {inCart ? (
         <Link
           to="/cart"
-          className="mt-5 block w-full rounded-lg bg-slate-800 py-3 text-center font-medium text-white transition hover:bg-slate-900"
+          className="mt-5 block w-full rounded-lg bg-gray-500 py-3 text-center font-medium text-white transition hover:bg-slate-900"
         >
-          Go to Cart
+          Added
         </Link>
       ) : (
         <button

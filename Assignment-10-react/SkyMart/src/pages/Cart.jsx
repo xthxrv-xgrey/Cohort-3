@@ -10,16 +10,10 @@ const Cart = () => {
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
-  const subtotal = cartItems.reduce(
+  const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0,
   );
-
-  const shipping = cartItems.length ? 99 : 0;
-
-  const discount = 0;
-
-  const total = subtotal + shipping - discount;
 
   return (
     <div className="space-y-6">
@@ -73,24 +67,14 @@ const Cart = () => {
           <div className="mt-6 space-y-4">
             <div className="flex justify-between text-slate-600">
               <span>Items ({totalItems})</span>
-              <span>₹{subtotal.toFixed(2)}</span>
-            </div>
-
-            <div className="flex justify-between text-slate-600">
-              <span>Shipping</span>
-              <span>{shipping === 0 ? "Free" : `₹${shipping.toFixed(2)}`}</span>
-            </div>
-
-            <div className="flex justify-between text-slate-600">
-              <span>Discount</span>
-              <span className="text-emerald-600">-₹{discount.toFixed(2)}</span>
+              <span>${total.toFixed(2)}</span>
             </div>
 
             <hr className="border-slate-200" />
 
             <div className="flex justify-between text-xl font-bold text-slate-800">
               <span>Total</span>
-              <span>₹{total.toFixed(2)}</span>
+              <span>${total.toFixed(2)}</span>
             </div>
           </div>
 
@@ -98,9 +82,11 @@ const Cart = () => {
             Proceed to Checkout
           </button>
 
-          <button className="w-full mt-3 rounded-xl border border-slate-300 py-3 font-medium text-slate-700 hover:bg-slate-100 transition">
-            Continue Shopping
-          </button>
+          <Link to={"/products"}>
+            <button className="w-full mt-3 rounded-xl border border-slate-300 py-3 font-medium text-slate-700 hover:bg-slate-100 transition">
+              Continue Shopping
+            </button>
+          </Link>
 
           <div className="mt-6 border-t border-slate-200 pt-5 space-y-2 text-sm text-slate-500">
             <p>✓ Secure Checkout</p>

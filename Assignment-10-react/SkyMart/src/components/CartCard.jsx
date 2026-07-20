@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Trash2 } from "lucide-react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router";
 
 const CartCard = ({ item }) => {
   const { removeFromCart, increaseQuantity, decreaseQuantity } =
@@ -9,13 +10,16 @@ const CartCard = ({ item }) => {
   return (
     <article className="flex flex-col sm:flex-row gap-5 p-5 border border-slate-200 rounded-2xl hover:border-emerald-300 transition">
       {/* Image */}
-      <div className="w-full sm:w-36 h-36 bg-white rounded-xl border border-slate-200 flex items-center justify-center overflow-hidden">
+      <Link
+        to={`/products/${item.id}`}
+        className="w-full sm:w-36 h-36 bg-white rounded-xl border border-slate-200 flex items-center justify-center overflow-hidden"
+      >
         <img
           src={item.image}
           alt={item.title}
           className="h-full w-full object-contain p-3"
         />
-      </div>
+      </Link>
 
       {/* Product Details */}
       <div className="flex-1 flex flex-col">
@@ -23,9 +27,12 @@ const CartCard = ({ item }) => {
           {item.category}
         </span>
 
-        <h2 className="mt-3 text-lg font-semibold text-slate-800 line-clamp-2">
+        <Link
+          to={`/products/${item.id}`}
+          className="mt-3 text-lg font-semibold text-slate-800 line-clamp-2"
+        >
           {item.title}
-        </h2>
+        </Link>
 
         <p className="mt-2 text-sm text-slate-500 line-clamp-2">
           {item.description}
@@ -33,11 +40,11 @@ const CartCard = ({ item }) => {
 
         <div className="mt-auto pt-4">
           <p className="text-2xl font-bold text-emerald-600">
-            ₹{item.price.toFixed(2)}
+            ${item.price.toFixed(2)}
           </p>
 
           <p className="text-sm text-slate-500 mt-1">
-            Total: ₹{(item.price * item.quantity).toFixed(2)}
+            Total: ${(item.price * item.quantity).toFixed(2)}
           </p>
         </div>
       </div>
