@@ -1,89 +1,75 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { MoveRight } from "lucide-react";
+import { AuthContext } from "../context/AuthContext.jsx";
+
+const categories = [
+  { id: "01", title: "Men's Clothing" },
+  { id: "02", title: "Jewelery" },
+  { id: "03", title: "Electronics" },
+  { id: "04", title: "Women's Clothing" },
+];
 
 const Home = () => {
-  const highlights = [
-    {
-      title: "Fast Delivery",
-      description: "Get your favorite products delivered quickly.",
-      icon: "🚚",
-    },
-    {
-      title: "Best Deals",
-      description: "Enjoy amazing offers and affordable prices.",
-      icon: "🔥",
-    },
-    {
-      title: "Secure Shopping",
-      description: "Safe payments and trusted shopping experience.",
-      icon: "🔒",
-    },
-  ];
+  const { currentUser, users } = useContext(AuthContext);
 
   return (
-    <div className="space-y-5">
-      {/* Main Hero Banner */}
-      <section className="bg-white rounded-2xl border border-slate-200 p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-7">
-        <div className="max-w-xl space-y-5">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800">
-            Welcome to <span className="text-emerald-600">SkyMart</span>
-          </h1>
+    <div className="min-h-[92vh] py-4 overflow-y-scroll hide-scrollbar flex flex-col gap-4">
+      <div className="pt-20 flex flex-col gap-4">
+        <p className="font-sans text-xs text-muted-foreground font-semibold tracking-widest">
+          GOOD TO SEE YOU
+        </p>
 
-          <p className="text-lg text-slate-500">
-            Everything you need, delivered with trust. Explore thousands of
-            products and enjoy a smooth shopping experience.
+        <h1 className="font-serif text-8xl">
+          Hello, <span className="italic">{users[currentUser].firstName}</span>.
+        </h1>
+
+        <div className="flex flex-col justify-between gap-4 md:flex-row">
+          <p className="text-sm text-muted-foreground max-w-100">
+            A fresh selection has landed. Browse by category, or dive into what
+            we're leading with this week.
           </p>
 
           <Link
-            to="/products"
-            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition"
+            to="/shop"
+            className="flex gap-2 text-sm hover:text-muted-foreground active:scale-95"
           >
-            Browse Products
+            Shop everything
+            <MoveRight />
           </Link>
         </div>
+      </div>
 
-        <div className="w-full md:w-96 h-56 bg-emerald-100 rounded-2xl flex items-center justify-center overflow-hidden">
-          <img
-            alt=""
-            src="https://images.pexels.com/photos/7319118/pexels-photo-7319118.jpeg?_gl=1*1jopxru*_ga*MTgwMTE3NjY2My4xNzgzMzEwNTcy*_ga_8JE65Q40S6*czE3ODQ1NTExNzQkbzIkZzEkdDE3ODQ1NTEyMzAkajQkbDAkaDA."
-          />
-        </div>
-      </section>
+      <div>
+        <div className="flex justify-between items-center pt-8 pb-4 border-b-2 border-border">
+          <h1>Departments</h1>
 
-      {/* SkyMart Experience */}
-      <section className="bg-emerald-600 rounded-2xl p-7 text-white flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <h2 className="text-2xl font-semibold">
-            Shop with confidence at SkyMart
-          </h2>
-
-          <p className="mt-2 text-emerald-100">
-            Quality products, secure payments and reliable delivery.
+          <p className="font-sans text-xs text-muted-foreground font-semibold tracking-widest">
+            {categories.length} CATEGORIES
           </p>
         </div>
 
-        <Link
-          to="/products"
-          className="bg-white text-emerald-700 px-6 py-3 rounded-lg font-medium hover:bg-emerald-50 transition"
-        >
-          Start Shopping
-        </Link>
-      </section>
+        <div className="grid gap-4 py-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              to="/shop"
+              className="h-50 w-full bg-surface rounded-2xl p-4 flex flex-col justify-between hover:bg-secondary transition-all duration-200 hover:scale-[1.02] active:scale-95 cursor-pointer"
+            >
+              <p className="font-serif text-xl">{category.id}</p>
 
-      {/* Highlights */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {highlights.map((item) => (
-          <div
-            key={item.title}
-            className="bg-white border border-slate-200 rounded-xl p-5"
-          >
-            <div className="text-3xl">{item.icon}</div>
+              <div className="flex flex-col gap-4">
+                <h2 className="font-serif text-2xl">{category.title}</h2>
 
-            <h3 className="mt-3 font-semibold text-slate-800">{item.title}</h3>
-
-            <p className="mt-2 text-sm text-slate-500">{item.description}</p>
-          </div>
-        ))}
-      </section>
+                <span className="flex gap-2 text-sm items-center text-muted-foreground">
+                  Browse
+                  <MoveRight size={12} />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

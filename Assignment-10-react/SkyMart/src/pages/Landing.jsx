@@ -1,109 +1,115 @@
 import { Link } from "react-router";
+import { MoveRight } from "lucide-react";
 
 const Landing = () => {
-  const features = [
-    {
-      title: "Fast Delivery",
-      description:
-        "Get your orders delivered quickly and safely right at your doorstep.",
-      icon: "🚚",
-    },
-    {
-      title: "Quality Products",
-      description: "Shop from a wide range of carefully selected products.",
-      icon: "✨",
-    },
-    {
-      title: "Secure Payments",
-      description:
-        "Your transactions and personal information are always protected.",
-      icon: "🔒",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-slate-100 p-4 flex items-center justify-center">
-      <div className="w-full max-w-5xl space-y-4">
-        {/* Hero */}
-        <section className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="max-w-xl space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800">
-              Shop Smarter with{" "}
-              <span className="text-emerald-600">SkyMart</span>
-            </h1>
+    <div>
+      <header className="h-[8vh] z-50 bg-background py-4 border-b-2 border-border flex justify-between items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
+        <Link to="/home">
+          <h1 className="font-serif text-2xl">Sky Mart</h1>
+        </Link>
 
-            <p className="text-base text-slate-500">
-              Your trusted online shopping destination for amazing products,
-              great deals, and a smooth shopping experience.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/register"
-                className="bg-emerald-600 text-white px-5 py-2.5 rounded-lg font-medium text-center hover:bg-emerald-700 transition"
-              >
-                Create Account
-              </Link>
-
-              <Link
-                to="/login"
-                className="border border-slate-300 text-slate-700 px-5 py-2.5 rounded-lg font-medium text-center hover:bg-slate-100 transition"
-              >
-                Login
-              </Link>
-            </div>
-          </div>
-
-          <div className="w-50 h-50 bg-emerald-100 rounded-full flex items-center justify-center overflow-hidden">
-            <img
-              src="https://images.pexels.com/photos/23223851/pexels-photo-23223851.jpeg?_gl=1*1oj88u4*_ga*MTgwMTE3NjY2My4xNzgzMzEwNTcy*_ga_8JE65Q40S6*czE3ODQ1NTExNzQkbzIkZzEkdDE3ODQ1NTE0MjEkajQzJGwwJGgw"
-              alt=""
-            />
-          </div>
-        </section>
-
-        {/* Why SkyMart */}
-        <section className="bg-white border border-slate-200 rounded-2xl p-5">
-          <h2 className="text-lg font-semibold text-slate-800 mb-4">
-            Why Choose SkyMart?
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="border border-slate-200 rounded-xl p-4"
-              >
-                <div className="text-2xl">{feature.icon}</div>
-
-                <h3 className="mt-2 font-semibold text-slate-800">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-1 text-sm text-slate-500">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Trust Banner */}
-        <section className="bg-emerald-600 rounded-2xl p-6 text-center text-white">
-          <h2 className="text-xl font-semibold">Ready to start shopping?</h2>
-
-          <p className="mt-1 text-sm text-emerald-100">
-            Join SkyMart today and enjoy a simple, secure shopping experience.
-          </p>
-
+        <div className="flex">
           <Link
-            to="/register"
-            className="inline-block mt-4 bg-white text-emerald-700 px-5 py-2.5 rounded-lg font-medium hover:bg-emerald-50 transition"
+            className="py-2 px-8 text-accent-foreground font-sans text-sm rounded-4xl hover:text-muted-foreground active:scale-95"
+            to={"/login"}
           >
-            Register Now
+            Sign in
           </Link>
-        </section>
+          <Link
+            className="bg-accent-foreground py-2 px-6 text-background font-sans text-xs rounded-4xl border-accent-foreground border-2 hover:bg-background hover:text-accent-foreground active:scale-95"
+            to={"/register"}
+          >
+            JOIN
+          </Link>
+        </div>
+      </header>
+
+      <div className="min-h-[70vh] pb-32 py-4 overflow-y-scroll hide-scrollbar flex flex-col gap-4 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
+        <div className="pt-20 flex flex-col gap-8">
+          <p className="font-sans text-xs text-muted-foreground font-semibold tracking-widest">
+            VOLUME 01 — SPRING COLLECTION
+          </p>
+          <h1 className="font-serif text-8xl">
+            Objects of
+            <br />
+            <span className="italic">quiet consequence</span>.
+          </h1>
+          <div className="flex flex-col justify-between gap-4 md:flex-row ">
+            <p className="text-muted-foreground max-w-100">
+              Sky Mart is a small, thoughtful store. We collect pieces across
+              fashion, electronics, and jewelry — chosen for how they feel in
+              the hand and how they last across seasons.
+            </p>
+            <Link
+              className=" flex h-max justify-center items-center gap-4 bg-accent-foreground py-2 px-6 text-background font-sans text-xs rounded-4xl border-accent-foreground border-2 hover:bg-background hover:text-accent-foreground active:scale-95"
+              to={"/login"}
+            >
+              Begin Shopping <MoveRight />
+            </Link>
+          </div>
+        </div>
       </div>
+
+      <div className="columns-1 lg:columns-2 gap-4 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
+        <img
+          src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80"
+          className="w-full mb-4 rounded-4xl"
+          alt=""
+        />
+
+        <img
+          src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1200&q=80"
+          className="w-full mb-4 rounded-4xl"
+          alt=""
+        />
+      </div>
+
+      <div className="flex flex-col md:flex-row py-16">
+        <div className="w-full border-2 border-border p-8 flex flex-col gap-8">
+          <p className="font-serif text-2xl text-primary">01</p>
+          <h2 className="font-serif text-4xl text-primary">Secure payments</h2>
+          <p className="font-sans text-muted-foreground">
+            Handled through trusted processors, encrypted end-to-end.
+          </p>
+        </div>
+        <div className="w-full border-2 border-border p-8 flex flex-col gap-8">
+          <p className="font-serif text-2xl text-primary">02</p>
+          <h2 className="font-serif text-4xl text-primary">Quality curation</h2>
+          <p className="font-sans text-muted-foreground">
+            Every piece is reviewed by our editors before it lists.
+          </p>
+        </div>
+        <div className="w-full border-2 border-border p-8 flex flex-col gap-8">
+          <p className="font-serif text-2xl text-primary">03</p>
+          <h2 className="font-serif text-4xl text-primary">
+            Considered shipping
+          </h2>
+          <p className="font-sans text-muted-foreground">
+            Carbon-conscious carriers, tracked from door to door.
+          </p>
+        </div>
+      </div>
+
+      <footer className="flex flex-col  justify-between items-center gap-4 py-8 sm:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
+        <p className="text-primary font-sans text-sm">
+          © 2026 Sky Mart. All goods, all considered.
+        </p>
+        <div className="flex gap-8">
+          <Link
+            to={"login"}
+            className="text-muted-foreground text-xs hover:text-primary active:scale-95"
+          >
+            Sign in
+          </Link>
+          <Link
+            to={"register"}
+            className="text-muted-foreground text-xs hover:text-primary active:scale-95"
+          >
+            Create account
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 };

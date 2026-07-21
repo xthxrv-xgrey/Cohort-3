@@ -1,36 +1,70 @@
-import { Routes, Route } from "react-router";
-import GuestRoutes from "./GuestRoutes.jsx";
-import ProtectedRoutes from "./ProtectedRoutes.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Landing from "../pages/Landing.jsx";
 import Login from "../pages/auth/Login.jsx";
 import Register from "../pages/auth/Register.jsx";
 
 import Home from "../pages/Home.jsx";
-import Products from "../pages/Products.jsx";
+import Shop from "../pages/Shop.jsx";
 import Cart from "../pages/Cart.jsx";
-import ProductDisplay from "../pages/ProductDisplay.jsx";
+import Product from "../pages/Product.jsx";
 
-import AppLayout from "../layouts/AppLayout.jsx";
+import MainLayout from "../layout/MainLayout.jsx";
+
+import ProtectedRoutes from "./ProtectedRoutes.jsx";
+import GuestRoutes from "./GuestRoutes.jsx";
+
+const router = createBrowserRouter([
+  // Guest Routes
+  {
+    element: <GuestRoutes />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+    ],
+  },
+
+  // Protected Routes
+  {
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        element: <MainLayout />,
+        children: [
+          {
+            path: "home",
+            element: <Home />,
+          },
+          {
+            path: "shop",
+            element: <Shop />,
+          },
+          {
+            path: "cart",
+            element: <Cart />,
+          },
+          {
+            path: "product/:id",
+            element: <Product />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route element={<GuestRoutes />}>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Route>
-      <Route element={<ProtectedRoutes />}>
-        <Route element={<AppLayout />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/products/:id" element={<ProductDisplay />} />
-        </Route>
-      </Route>
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default AppRoutes;

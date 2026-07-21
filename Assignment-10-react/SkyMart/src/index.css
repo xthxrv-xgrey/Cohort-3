@@ -1,1 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&display=swap");
+
 @import "tailwindcss";
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root {
+  --background: oklch(0.972 0.012 82);
+  --surface: oklch(0.955 0.016 82);
+  --card: oklch(0.985 0.008 82);
+
+  --foreground: oklch(0.22 0.02 55);
+  --ink: oklch(0.18 0.015 60);
+
+  --primary: oklch(0.32 0.045 155);
+  --primary-foreground: oklch(0.97 0.012 82);
+
+  --secondary: oklch(0.92 0.02 82);
+  --secondary-foreground: var(--ink);
+
+  --muted: oklch(0.93 0.015 82);
+  --muted-foreground: oklch(0.48 0.02 60);
+
+  --accent: oklch(0.88 0.05 55);
+  --accent-foreground: var(--ink);
+
+  --ochre: oklch(0.72 0.14 65);
+
+  --destructive: oklch(0.55 0.19 27);
+
+  --border: oklch(0.88 0.015 82);
+  --ring: oklch(0.32 0.045 155);
+}
+
+@theme {
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-ochre: var(--ochre);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-destructive: var(--destructive);
+}
+
+body {
+  @apply bg-background text-foreground font-sans;
+}

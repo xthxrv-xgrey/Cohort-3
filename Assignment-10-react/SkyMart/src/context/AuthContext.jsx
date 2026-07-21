@@ -43,30 +43,3 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-// a brief look of the Users
-
-// {
-//   "john@gmail.com": {
-//     name: "John Doe",
-//     email: "john@gmail.com",
-//     password: "123456",
-//     cart: [],
-//   },
-
-//   "jane@gmail.com": {
-//     name: "Jane Doe",
-//     email: "jane@gmail.com",
-//     password: "abcdef",
-//     cart: [],
-//   }
-// }
-
-// a brief look of the currentUsers
-
-// {
-//     name: "John Doe",
-//     email: "john@gmail.com",
-//     password: "123456",
-//     cart: [],
-// }
