@@ -1,16 +1,186 @@
-# React + Vite
+# 🛍️ SkyMart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern e-commerce web application built with **React 19**, **Vite**, **Tailwind CSS v4**, and **React Router v8**.
 
-Currently, two official plugins are available:
+SkyMart delivers a clean shopping experience with user authentication, persistent shopping carts, dynamic product browsing, and a responsive modern interface powered by the Fake Store API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- User Registration & Login
+- Persistent Authentication
+- Individual Cart for Every User
+- Product Catalog from Fake Store API
+- Product Details Page
+- Search Products
+- Filter by Category
+- Sort by Price & Rating
+- Quantity Management
+- Responsive Design
+- Beautiful Toast Notifications
+- Modern UI built with Tailwind CSS v4
+- LocalStorage Persistence
+- Context API State Management
+- Custom Hooks
+- Reusable Components
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- React 19
+- Vite
+- Tailwind CSS v4
+- React Router v8
+- Context API
+- Axios
+- React Hook Form
+- Sonner
+- Lucide React
+- Remix Icons
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+│
+├── components/
+│   ├── auth/
+│   ├── card/
+│   └── ui/
+│
+├── context/
+│
+├── hooks/
+│
+├── layout/
+│
+├── lib/
+│
+├── pages/
+│
+├── routes/
+│
+└── assets/
+```
+
+---
+
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Build production
+
+```bash
+npm run build
+```
+
+Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+## 📸 Screens
+
+- Landing Page
+- Login
+- Register
+- Home
+- Shop
+- Product Details
+- Shopping Cart
+
+---
+
+## 📦 Main Features
+
+### Authentication
+
+- Register new users
+- Login validation
+- Persistent login
+- LocalStorage based session
+
+### Shopping
+
+- Browse products
+- View product details
+- Search
+- Category filtering
+- Sorting
+- Add to cart
+- Update quantity
+- Remove items
+
+### Cart
+
+Each registered user has an independent shopping cart stored in localStorage.
+
+---
+
+## 🎯 Learning Outcomes
+
+This project demonstrates:
+
+- React Component Architecture
+- Context API
+- Custom Hooks
+- React Router
+- API Integration
+- Form Validation
+- State Management
+- Local Storage Persistence
+- Responsive UI Design
+
+---
+
+## 📌 Future Improvements
+
+- Wishlist
+- Checkout Flow
+- Payment Integration
+- Order History
+- User Profile
+- Skeleton Loaders
+- Dark Mode
+- Backend Authentication
+- Database Integration
+
+---
+
+## 👨‍💻 Author
+
+**Atharv Agrey**
+
+GitHub: https://github.com/xthxrv-xgrey
+
+LinkedIn: https://linkedin.com/in/xthxrv-xgrey
+
+---
+
+## ⭐ If you like this project
+
+Consider giving it a star!
