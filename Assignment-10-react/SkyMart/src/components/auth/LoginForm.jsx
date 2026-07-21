@@ -74,12 +74,6 @@ const LoginForm = () => {
             <input
               {...register("password", {
                 required: "Password is required",
-                pattern: {
-                  value:
-                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/,
-                  message:
-                    "Must contain 8+ characters, uppercase, lowercase, number & special character",
-                },
               })}
               type={showPassword ? "text" : "password"}
               className="w-full border-b border-border bg-transparent py-3 pr-10 text-sm outline-none transition-colors focus:border-primary"
