@@ -5,11 +5,12 @@ import { useCart } from "../hooks/useCart.js";
 import CartProductCard from "../components/card/CartProductCard.jsx";
 import { CartContext } from "../context/CartContext.jsx";
 import { AuthContext } from "../context/AuthContext.jsx";
+import { toast } from "sonner";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
   const { currentUser } = useContext(AuthContext);
-  const { itemsInCart, totalCartValue } = useCart();
+  const { itemsInCart, totalCartValue, clearCart } = useCart();
 
   const userCart = Object.values(cart[currentUser] || []);
 
@@ -75,7 +76,13 @@ const Cart = () => {
               <span className="font-serif text-4xl">${totalCartValue}</span>
             </div>
 
-            <button className="w-full p-4 flex items-center justify-center gap-4 bg-primary rounded-full text-secondary mt-4 hover:bg-muted-foreground active:scale-95 transition">
+            <button
+              className="w-full p-4 flex items-center justify-center gap-4 bg-primary rounded-full text-secondary mt-4 hover:bg-muted-foreground active:scale-95 transition"
+              onClick={() => {
+                toast.success("Order successful!");
+                clearCart();
+              }}
+            >
               Checkout
               <MoveRight />
             </button>

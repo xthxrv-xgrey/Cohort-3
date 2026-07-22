@@ -82,6 +82,10 @@ export const useCart = () => {
     });
   };
 
+  const clearCart = cart[currentUser]
+    ? () => setCart((prevCart) => ({ ...prevCart, [currentUser]: {} }))
+    : null;
+
   const totalCartValue = Object.values(cart[currentUser] || {})
     .reduce(
       (total, product) => total + Number(product.price) * product.quantity,
@@ -101,6 +105,7 @@ export const useCart = () => {
     increaseQuantityCartProduct,
     decreaseQuantityCartProduct,
     removeCartProduct,
+    clearCart,
     totalCartValue,
     isInCart,
     itemsInCart,
