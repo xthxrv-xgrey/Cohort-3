@@ -4,7 +4,7 @@ import React from "react";
 import { cn } from "@/libs/utils";
 
 const modalVariants = cva(
-  "fixed inset-0 flex items-center justify-center z-50 transition-all duration-300",
+  "relative z-50 transition-all duration-300",
   {
     variants: {
       variant: {

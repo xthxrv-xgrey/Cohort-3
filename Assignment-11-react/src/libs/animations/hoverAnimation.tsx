@@ -88,9 +88,11 @@ export const hoverAnimations = {
   },
 
   wobbleFollow: (el: HTMLElement) => {
-    const rect = el.getBoundingClientRect();
+    if (el.getAttribute("data-wobble-initialized") === "true") return;
+    el.setAttribute("data-wobble-initialized", "true");
 
     const handleMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       const centerX = rect.width / 2;
@@ -120,11 +122,6 @@ export const hoverAnimations = {
 
     el.addEventListener("mousemove", handleMove);
     el.addEventListener("mouseleave", handleLeave);
-
-    return () => {
-      el.removeEventListener("mousemove", handleMove);
-      el.removeEventListener("mouseleave", handleLeave);
-    };
   },
 
   none: () => {},

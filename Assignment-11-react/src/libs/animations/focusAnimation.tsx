@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export const focusAnimations = {
   glow: (el: HTMLElement) => {
     gsap.fromTo(

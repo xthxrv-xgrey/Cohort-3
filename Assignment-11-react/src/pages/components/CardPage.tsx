@@ -167,7 +167,7 @@ const CardPage = () => {
         <h2 className="text-2xl font-semibold">Usage</h2>
         <div className="flex flex-col gap-20">
           <ComponentDemo code={darkCard}>
-            <div className="w-100">
+            <div className="w-full max-w-sm mx-auto">
               <Card
                 title="Modern Animated Card"
                 description="This card fades in and jiggles on hover!"
@@ -190,7 +190,7 @@ const CardPage = () => {
             </div>
           </ComponentDemo>
           <ComponentDemo code={outLineCard}>
-            <div className="w-100">
+            <div className="w-full max-w-sm mx-auto">
               <Card
                 title="Modern Animated Card"
                 description="This card fades in and jiggles on hover!"
@@ -215,7 +215,7 @@ const CardPage = () => {
           <div className="flex flex-col gap-10">
             <h1 className="text-2xl font-bold">Animated Card</h1>
             <ComponentDemo code={animatedCard}>
-              <div className="w-100">
+              <div className="w-full max-w-sm mx-auto">
                 <Card
                   title="Modern Animated Card"
                   description="This card fades in and jiggles on hover!"
@@ -239,7 +239,7 @@ const CardPage = () => {
             </ComponentDemo>
 
             <ComponentDemo code={animatedCard}>
-              <div className="w-100">
+              <div className="w-full max-w-sm mx-auto">
                 <Card
                   title="Modern Animated Card"
                   description="This card fades in and jiggles on hover!"

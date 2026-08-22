@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/libs/utils";
 import { cva } from "class-variance-authority";
 
@@ -26,15 +26,26 @@ export interface FloatingLabelProps
 export const FloatingLabelInput = React.forwardRef<
   HTMLInputElement,
   FloatingLabelProps
->(({ label, size = "md", className, ...props }, ref) => {
+>(({ label, size = "md", className, onChange, ...props }, ref) => {
   const [focused, setFocused] = useState(false);
-  const filled = !!(props.value ?? props.defaultValue);
-  const shrink = focused || filled;
+  const [localValue, setLocalValue] = useState(props.value ?? props.defaultValue ?? "");
+
+  useEffect(() => {
+    if (props.value !== undefined) {
+      setLocalValue(props.value);
+    }
+  }, [props.value]);
+
+  const shrink = focused || !!localValue;
   return (
     <div className={wrapper()}>
       <input
         ref={ref}
         {...props}
+        onChange={(e) => {
+          setLocalValue(e.target.value);
+          onChange?.(e);
+        }}
         onFocus={(e) => {
           setFocused(true);
           props.onFocus?.(e);

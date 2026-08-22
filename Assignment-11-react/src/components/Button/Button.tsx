@@ -107,7 +107,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             (ref as React.MutableRefObject<HTMLButtonElement | null>).current =
               node;
         }}
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size }), className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseDown={handleMouseDown}
