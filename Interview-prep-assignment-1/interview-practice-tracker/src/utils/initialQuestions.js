@@ -1,0 +1,42 @@
+export const initialQuestions = [
+  {
+    id: "seed-1",
+    title: "Explain the JavaScript event loop.",
+    category: "Full-Stack Technical",
+    difficulty: "Medium",
+    status: "Pending",
+    notes: "Call stack, task queue, microtask queue.",
+  },
+  {
+    id: "seed-2",
+    title: "What is the difference between merge and rebase?",
+    category: "Git & GitHub",
+    difficulty: "Easy",
+    status: "Completed",
+    notes: "",
+  },
+  {
+    id: "seed-3",
+    title: "How does React.memo work?",
+    category: "Full-Stack Technical",
+    difficulty: "Medium",
+    status: "In Progress",
+    notes: "Shallow prop comparison.",
+  },
+  {
+    id: "seed-4",
+    title: "How do you handle authentication middleware in Express?",
+    category: "Full-Stack Technical",
+    difficulty: "Hard",
+    status: "Pending",
+    notes: "",
+  },
+  {
+    id: "seed-5",
+    title: "How do unique indexes prevent duplicate records in MongoDB?",
+    category: "Full-Stack Technical",
+    difficulty: "Medium",
+    status: "Pending",
+    notes: "",
+  },
+];
